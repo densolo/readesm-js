@@ -2,11 +2,15 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "outDir": "./dist/",
+        "moduleResolution": "node",
+        "outDir": "./dist",
         "allowJs": true,
-        "sourceMap": true
+        "pretty": true,
+        "sourceMap": true,
+        "baseUrl": "./src",
+        "rootDir": "./src"
     },
     "include": [
-        "./src/**/*"
+        "src/**/*.ts"
     ]
 }

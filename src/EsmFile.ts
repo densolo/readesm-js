@@ -6,6 +6,7 @@ import {blockFactory} from "blockFactory";
 import TopLevelBlock from 'DataTypes/TopLevelBlock';
 import Reporter from 'Reporter/Reporter';
 import Converter from 'utils/Converter';
+import CardIccIdentification from 'CardBlocks/CardIccIdentification';
 
 export default class EsmFile {
 
@@ -28,11 +29,9 @@ export default class EsmFile {
             pos += block.size()
             
             ef.blocks.push(block);
-
             
             console.log("card type: " + Converter.dec2hexString(block.getBlockType()));
             console.log("card size: " + block.size());
-            //break;
         }
 
         return ef;

@@ -1,10 +1,10 @@
 
-import DataReader from './utils/DataReader';    
-import CardIccIdentification from './CardBlocks/CardIccIdentification';
-import CardBlock from './CardBlocks/CardBlock';
-import TopLevelBlock from './TopLevelBlock';
-import VuBlock from './VuBlocks/VuBlock';
-import Converter from './utils/Converter';
+import DataReader from 'utils/DataReader';    
+import CardIccIdentification from 'CardBlocks/CardIccIdentification';
+import CardBlock from 'CardBlocks/CardBlock';
+import TopLevelBlock from 'DataTypes/TopLevelBlock';
+import VuBlock from 'VuBlocks/VuBlock';
+import Converter from 'utils/Converter';
 
 
 export function blockFactory(data, pos): TopLevelBlock {
@@ -16,7 +16,7 @@ export function blockFactory(data, pos): TopLevelBlock {
 }
 
 function vuBlockFactory(data, pos) {
-    var blockType = DataReader.readInt8(data, pos + 1);
+    var blockType = DataReader.readUint8(data, pos + 1);
     data = data.slice(pos);
     
     switch (blockType) {
@@ -28,7 +28,7 @@ function vuBlockFactory(data, pos) {
 }
 
 function cardBlockFactory(data, pos) {
-    let blockType = DataReader.readInt16(data, pos);
+    let blockType = DataReader.readUint16(data, pos);
     data = data.slice(pos);
 
     switch (blockType) {

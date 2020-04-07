@@ -1,6 +1,6 @@
 
-import TopLevelBlock from '../TopLevelBlock';
-import DataReader from '../utils/DataReader';
+import TopLevelBlock from 'DataTypes/TopLevelBlock';
+import DataReader from 'utils/DataReader';
 
 
 export default class CardBlock extends TopLevelBlock {
@@ -10,7 +10,7 @@ export default class CardBlock extends TopLevelBlock {
     constructor(data: ArrayBuffer) {
         super();
 
-        this.datasize = DataReader.readInt16(data, 3);
+        this.datasize = DataReader.readUint16(data, 3);
     }
     
     size() {

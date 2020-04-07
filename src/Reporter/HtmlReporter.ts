@@ -2,6 +2,7 @@
 import Reporter from 'Reporter/Reporter';
 import Block from 'DataTypes/Block';
 import FileUtil from 'utils/FileUtil';
+import * as isEmpty from 'lodash/isEmpty';
 
 
 export default class HtmlReporter extends Reporter {
@@ -21,25 +22,54 @@ export default class HtmlReporter extends Reporter {
 
     renderReport(): string {
         let html = FileUtil.readFile('resources/template.html').toString();
-        console.log("html: " + html);
         
-        html = html.replace("$title", this.title);
+        html = html.replace(/\$title/g, this.title);
         html = html.replace("$content", this.collected);
-        html = html.replace("$show", "show");
-        html = html.replace("$hide", "hide");
+        html = html.replace(/\$show/g, "show");
+        html = html.replace(/\$hide/g, "hide");
         html = html.replace("$links", this.linkCollected + "</ul>");
-        html = html.replace("$version", "ReadESM (version)");
+        html = html.replace(/\$version/g, "ReadESM (version)");
 
         return html;
     }
 
     tagValuePair(tag: string, value: string) {
-        let copy = tag.replace('&', '&amp;');
-        this.collected += '\n<li>' + tag + ': <b>' + copy + '</b></li>';
+        let copy = HtmlReporter.replaceAmp(value.toString());
+        this.collected += `\n<li>${tag}: <b>${copy}</b></li>`;
     }
 
     subBlock(value: Block, tag: string) {
-        //TODO
+        let lTag = tag;
+        if (this.nestLevel === 1) {
+            this.linkNumber += 1;
+            this.linkCollected += `<li><a href='#${this.linkNumber}'>${tag}</a></li>`;
+            lTag = `<a name='${this.linkNumber}'>${tag}</a>`;
+        }
+
+        if (this.nestLevel === 1) {
+            this.collected += `\n<h3>${lTag}</h3>`;
+            this.collected += "<ul>";
+            value.printOn(this);
+            this.collected += "</ul>";
+        } else {
+            if (!isEmpty(value.toString())) {
+                if (isEmpty(tag)) {
+                    this.collected += this.toggleAbleBlocks(HtmlReporter.replaceAmp(value.toString()), false);
+                } else {
+                    this.collected += this.toggleAbleBlocks(`${lTag}: <b>${HtmlReporter.replaceAmp(value.toString())}</b>`, false);
+                }
+                value.printOn(this);
+                this.collected += "</ul></li>";
+            } else {
+                if (!isEmpty(tag)) {
+                    this.collected += `\n<li>${lTag}: <ul>`;
+                } else {
+                    this.collected += "\n<li><ul>";
+                }
+                value.printOn(this);
+                this.collected += "</ul></li>";
+            }
+        }
     }
 
     toggleAbleBlocks(title: string, showByDefault: boolean) {
@@ -70,5 +100,9 @@ export default class HtmlReporter extends Reporter {
         if (count > 0) {
             this.collected += '</ul></li>';
         }
+    }
+
+    static replaceAmp(value: string) {
+        return value.replace(/&/g, "&amp;");
     }
 }
