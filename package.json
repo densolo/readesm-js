@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "build:web": "webpack src/main.EsmDownloader.ts && cp dist/main*.js htmlpage/js/",
-    "start": "NODE_PATH=./src ts-node webpack.config.js",
+    "convert": "NODE_PATH=./src ts-node src/main.EsmConverter.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

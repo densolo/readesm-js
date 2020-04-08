@@ -24,4 +24,14 @@ export default class DataReader {
     static readRawData(data: ArrayBuffer, pos: number, length: number) {
         return new RawData(data.slice(pos), length);
     }
+
+    static readString(data: ArrayBuffer, pos: number, length: number) {
+        let rd = new RawData(data.slice(pos), length);
+        return rd.toTextString();
+    }
+
+    static readCodePageString(data: ArrayBuffer, pos: number, length: number) {
+        // TODO: migrate codepageStringCombination from readTypes.cpp 
+        return this.readString(data, pos, length);
+    }
 }

@@ -14,6 +14,10 @@ export default class RawData extends Block {
     }
 
     toString() {
+        return this.toHexString();
+    }
+
+    toHexString() {
         let items = new Uint8Array(this.data);
         let allzeros = findIndex(items, (c) => {return c !== 0;}) < 0;
         if (allzeros) {
@@ -27,6 +31,14 @@ export default class RawData extends Block {
         return rv.replace(/ *$/, '');
     }
 
+    toTextString() {
+        return String.fromCharCode.apply(null, new Uint8Array(this.data));
+    }
+
+    toUint8Array() {
+        return new Uint8Array(this.data);
+    }
+
     printOn(report: Reporter) {
         report.tagValuePair("Raw data(hex encoded)", this.toString());
     }
@@ -37,9 +49,5 @@ export default class RawData extends Block {
 
     size() {
         return this.data.byteLength;
-    }
-
-    toUint8Array() {
-        return new Uint8Array(this.data);
     }
 }
