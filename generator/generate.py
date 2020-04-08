@@ -17,7 +17,6 @@ APP_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 from class_template import generateClassCode
 
 
-
 def main():
     xmlFilepath = os.path.join(APP_ROOT, 'resources/DataDefinitions.xml')
     tree = readXml(xmlFilepath)
@@ -50,9 +49,10 @@ def generateDataType(d, typesMap):
     title = d.find('title')
 
     ctx = {		
-        'offset': 0,	
+        'offset': 5 if classType == 'CardBlock' else 0,	
+        'baseClass': classType,
         'className': rawClassName,
-        'classTitle': title.text if title else '',
+        'classTitle': title.text if title is not None else '',
         'classSize': 0,
         'classSizeMethod': '',
         'classTypeCode': d.get('type') or '0',
@@ -107,7 +107,12 @@ def parseField(className, xmlField, fieldSize, typesMap, ctx):
         ctx['fieldInitializations'] += '\n        this.%s = DataReader.readUint%s(data, %s);' % (
             name, fieldSize*8, ctx['offset']
         )
-        ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s);' % (name, name)
+        
+        tableName = xmlField.get('table')
+        if tableName:
+            ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), FormatStrings.%s(this.%s));' % (name, tableName, name)
+        else:
+            ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s);' % (name, name)
         
     elif xmlField.tag == 'RawData':
         if fieldSize == 0:
@@ -177,6 +182,7 @@ def parseToString(d, className, fields, ctx):
 
     for f in fields:
         toString = toString.replace(f, 'this.%s' % f)
+    toString = toString.replace(".this.", ".")
 
     ctx['toString'] = toString
 
@@ -277,7 +283,7 @@ def writeCodeFile(name, directory, classCode):
     "classCode": classCode
 }
 
-    filepath = os.path.join(APP_ROOT, 'src/generated', directory + '/' + name + '.ts')
+    filepath = os.path.join(APP_ROOT, 'src', directory, name + '.ts')
     if not os.path.exists(os.path.dirname(filepath)):
         os.makedirs(os.path.dirname(filepath))
 

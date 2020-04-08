@@ -5,11 +5,15 @@ JavaScript implementation of the reader of ESM tachograph files from https://sou
 
 Working JavaScript FILE is commmited in htmlpage/js/main.EsmDownloader.bundle.js
 
+
 To build a new version from TypeScript source code
 
 ```
+python generator/generate.py
+
 npm install
 npm run build:web
+npm run test
 ```
 
 ## Command line

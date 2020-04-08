@@ -493,7 +493,10 @@
 		<content>
 			<RawData name="encodedDate" length="2"/>
 		</content>
-		<toString>"20" + bcdbyte(encodedDate[1]) + '-' + bcdbyte(encodedDate[0])</toString>
+		<toString> '';
+		let d = this.encodedDate.toUint8Array();
+		qs = "20" + padStart(Converter.bcdbyte(d[1]), 2, '0') + '-' + padStart(Converter.bcdbyte(d[0]), 2, '0');
+		</toString>
 	</DataType>
 
 	<CardBlock name="CardVehiclesUsed" type="0x0505">

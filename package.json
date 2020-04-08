@@ -7,7 +7,7 @@
     "build": "tsc",
     "build:web": "webpack src/main.EsmDownloader.ts && cp dist/main*.js htmlpage/js/",
     "convert": "NODE_PATH=./src ts-node src/main.EsmConverter.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --no-cache"
   },
   "author": "",
   "license": "ISC",
@@ -19,8 +19,11 @@
     "test": "tests"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "@types/node": "^7.10.9",
+    "jest": "^25.3.0",
     "lodash": "^4.17.15",
+    "ts-jest": "^25.3.1",
     "ts-loader": "^6.2.2",
     "ts-node": "^8.8.1",
     "typescript": "^3.8.3",

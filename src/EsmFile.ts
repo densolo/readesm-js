@@ -29,9 +29,9 @@ export default class EsmFile {
             pos += block.size()
             
             ef.blocks.push(block);
-            
-            console.log("card type: " + Converter.dec2hexString(block.getBlockType()));
-            console.log("card size: " + block.size());
+
+            //console.log("card type: " + Converter.dec2hexString(block.getBlockType()));
+            //console.log("card size: " + block.size());
         }
 
         return ef;
