@@ -4,6 +4,30 @@ import QString from 'utils/QString';
 
 export default class FormatStrings {
 
+    static eventType(value: number): string {
+        return "" + value;
+    }
+
+    static eventRecordPurpose(value: number): string {
+        return "" + value;
+    }
+
+    static nationNumeric(value: number): string {
+        return "" + value;
+    }
+
+    static specificCondition(value: number): string {
+        return "" + value;
+    }
+
+    static calibrationPurpose(value: number): string {
+        return "" + value;
+    }
+
+    static controlType(value: number): string {
+        return "" + value;
+    }
+
     static equipmentType(value: number): string {
         let codes = [
             "Reserved",
@@ -23,6 +47,29 @@ export default class FormatStrings {
             rv = new QString(tr("RFU: %1")).arg(value).toString();
         }
         return rv;
+    }
+
+    static dailyWorkPeriod(value: number): string {
+        return "" + value;
+    }
+
+    static regionNumeric(value: number): string {
+        return "" + value;
+    }
+    
+    static previous2(now: string, past: string): string {
+        return new QString(tr("%1 (formerly %2)"))
+            .arg(now).arg(past).toString();
+    }
+
+    static previous3(now: string, past: string, ancientpast: string) {
+        return new QString(tr("%1 (formerly %2 and before that %3)"))
+            .arg(now).arg(past).arg(ancientpast).toString();
+    }
+
+    static previous4(now: string, past: string, ancientpast: string, prehistory: string) {
+        return new QString(tr("%1 (formerly %2, before that %3 and before that %4)"))
+            .arg(now).arg(past).arg(ancientpast).arg(prehistory).toString();
     }
 
     static manufacturerCode(code: number): string {
@@ -83,20 +130,5 @@ export default class FormatStrings {
             case 0xE0: return "Turker Roll Paper Trade";
         }
         return new QString(tr("Unknown Manufacturer %1 or equipment not type approved")).arg(code).toString();
-    }
-
-    static previous2(now: string, past: string): string {
-        return new QString(tr("%1 (formerly %2)"))
-            .arg(now).arg(past).toString();
-    }
-
-    static previous3(now: string, past: string, ancientpast: string) {
-        return new QString(tr("%1 (formerly %2 and before that %3)"))
-            .arg(now).arg(past).arg(ancientpast).toString();
-    }
-
-    static previous4(now: string, past: string, ancientpast: string, prehistory: string) {
-        return new QString(tr("%1 (formerly %2, before that %3 and before that %4)"))
-            .arg(now).arg(past).arg(ancientpast).arg(prehistory).toString();
     }
 }

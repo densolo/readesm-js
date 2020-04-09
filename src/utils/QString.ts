@@ -6,12 +6,12 @@ export default class QString {
     
     protected argIndex: number;
 
-    constructor(value: string = '') {
+    constructor(value: string|QString = '') {
         this.value = value.toString();
         this.argIndex = 0;
     }
     
-    arg(argValue: string|number) {
+    arg(argValue: string|number|QString) {
         let rv = new QString();
         rv.argIndex = this.argIndex + 1;
         rv.value = this.value.replace(new RegExp(`%${rv.argIndex}`, 'g'), "" + argValue);

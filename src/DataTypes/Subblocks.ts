@@ -1,23 +1,34 @@
 
-import Block from 'DataTypes/Block';
+import DataType from 'DataTypes/DataType';
 import Reporter from 'Reporter/Reporter';
 
 
-export default class Subblocks extends Block {
+export default class Subblocks<T extends DataType> extends DataType {
 
-    protected array: Block[];
+    protected items: T[];
     protected numberOfBytes: number;
 
     constructor() {
         super();
+
+        this.numberOfBytes = 0;
+        this.items = [];
     }
 
-    get(i: number) {
-        return this.array[i];
+	append(block: T) {
+        if (!block.isDefaultValue()) {
+            this.items.push(block);
+        }
+        this.numberOfBytes += block.size();
+        //console.log("this.numberOfBytes: " + this.numberOfBytes);
+    }
+
+    get(i: number): T {
+        return this.items[i];
     }
 
     numberOfBlocks() {
-        return this.array.length;
+        return this.items.length;
     }
 
     size() {
@@ -29,6 +40,6 @@ export default class Subblocks extends Block {
     }
 
     className() {
-        return 'Subblocks';
+        return `Subblocks<${this.constructor.name}>`;
     }
 }

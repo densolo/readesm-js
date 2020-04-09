@@ -1,6 +1,9 @@
 
 import Converter from 'utils/Converter';
 import RawData from 'DataTypes/RawData';
+import Block from 'DataTypes/Block';
+import DataType from 'DataTypes/DataType';
+import Subblocks from 'DataTypes/Subblocks';
 
 
 export default class DataReader {
@@ -33,5 +36,32 @@ export default class DataReader {
     static readCodePageString(data: ArrayBuffer, pos: number, length: number) {
         // TODO: migrate codepageStringCombination from readTypes.cpp 
         return this.readString(data, pos, length);
+    }
+
+    static readSubblocksByCount<T extends DataType>(blockType: {build(...args: any[]): T}, data: ArrayBuffer, pos: number, count: number): Subblocks<T> {
+        let blocks: Subblocks<T> = new Subblocks();
+
+        for(let i = 0; i < count; i++) {
+            let b = blockType.build(data.slice(pos));
+            blocks.append(b);
+            pos += b.size();
+        }
+
+        return blocks;
+    }
+
+    static readSubblocksByLength<T extends DataType>(blockType: {name: string; build(...args: any[]): T}, data: ArrayBuffer, pos: number, length: number): Subblocks<T> {
+        let i = 0;
+        let blocks: Subblocks<T> = new Subblocks();
+
+        while (i < length) {
+            //console.log(`Read subblock ${blockType.name} at ${i} of ${length}`);
+
+            let b = blockType.build(data.slice(pos+i));
+            blocks.append(b);
+            i += b.size();
+        }
+
+        return blocks;
     }
 }

@@ -1,17 +1,18 @@
 
 DATA_CLASS_TEMPLATE = """
-
 import * as padStart from 'lodash/padStart';
 import Block from 'DataTypes/Block';
+import Subblocks from 'DataTypes/Subblocks';
+import RawData from 'DataTypes/RawData';
+import DataType from 'DataTypes/DataType';
 import DataReader from 'utils/DataReader';
 import Converter from 'utils/Converter';
 import QString from 'utils/QString';
-import RawData from 'DataTypes/RawData';
+import FormatStrings from 'utils/FormatStrings';
 import CardBlock from 'CardBlocks/CardBlock';
 import VuBlock from 'VuBlocks/VuBlock';
-import DataType from 'DataTypes/DataType';
-import FormatStrings from 'utils/FormatStrings';
 import Reporter from 'Reporter/Reporter';
+
 import {tr} from 'utils/Translation';
 %(subtypeImports)s
 
@@ -33,7 +34,7 @@ export default class %(className)s extends %(baseClass)s {
     }
 
     title() {
-        return "%(classTitle)s";
+        return %(classTitle)s;
     }
 
 %(classSizeMethod)s
@@ -52,10 +53,11 @@ export default class %(className)s extends %(baseClass)s {
 def generateClassCode(ctx):
 
     if ctx['classSize']:
-        ctx['classSizeMethod'] = """    
+        ctx['classSizeMethod'] = """\
     size() {
         return %(classSize)s;
-    }
-""" % ctx
+    }""" % ctx
+
+    ctx['subtypeImports'] = '\n'.join(set(ctx['subtypeImports'].splitlines()))
 
     return DATA_CLASS_TEMPLATE % ctx

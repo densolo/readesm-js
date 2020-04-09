@@ -11,6 +11,7 @@
 
 from xml.etree.ElementTree import ElementTree
 import os
+import re
 
 APP_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -44,15 +45,15 @@ def generateDataTypes(tree, typesMap):
 def generateDataType(d, typesMap):
     className = d.get('name')
     classType = d.tag
-    rawClassName = 'Raw' + className if d.get('hasredefined') else className
-
-    title = d.find('title')
+    rawClassName = 'Raw' + className if d.get('hasrefined') else className
 
     ctx = {		
         'offset': 5 if classType == 'CardBlock' else 0,	
+        'offsetextra': '',
+
         'baseClass': classType,
         'className': rawClassName,
-        'classTitle': title.text if title is not None else '',
+        'classTitle': '',
         'classSize': 0,
         'classSizeMethod': '',
         'classTypeCode': d.get('type') or '0',
@@ -70,13 +71,30 @@ def generateDataType(d, typesMap):
     for xmlField in d.find('content'):
         fields.add(xmlField.get('name') or lcfirst(xmlField.get('type')))
         sz = parseFieldSize(classType, className, xmlField, typesMap)
-        parseField(className, xmlField, sz, typesMap, ctx)
+        parseField(classType, className, xmlField, sz, typesMap, ctx)
 
+    parseTitle(d, className, fields, ctx)
     parseToString(d, className, fields, ctx)
 
     if d.tag != 'CardBlock':
         ctx['classSize'] = ctx['offset']  # + extraoffset for Subblocks
+
+    if d.tag == 'CardBlock':
+        ctx['printOn'] += """
+        if (this.size() != %(offset)i %(offsetextra)s) {
+            report.tagValuePair("should have", %(offset)i %(offsetextra)s);
+            report.tagValuePair("has", this.size());
+        }""" % {
+            'offset': ctx['offset'],
+            'offsetextra': ctx['offsetextra']
+        }  
+
+    if d.tag == 'VuBlock' and d.get('requiresSignature') == 'no':
+        ctx['fieldInitializations'] += '\n        this.hasSignature = false;'
     
+    if d.tag == 'DataType':
+        ctx['fieldDefinitions'] += '\n    static staticSize: number = %s;' % ctx['offset']
+
     classCode = generateClassCode(ctx)
 
     return rawClassName, classCode
@@ -99,7 +117,7 @@ def parseFieldSize(classType, className, xmlField, typesMap):
     return sz
 
 
-def parseField(className, xmlField, fieldSize, typesMap, ctx):
+def parseField(classType, className, xmlField, fieldSize, typesMap, ctx):
     name = xmlField.get('name')
     
     if xmlField.tag == 'int':
@@ -116,7 +134,7 @@ def parseField(className, xmlField, fieldSize, typesMap, ctx):
         
     elif xmlField.tag == 'RawData':
         if fieldSize == 0:
-            fileSizeExp = 'dataBlockSize() - (%s)' % ctx['offset']
+            fileSizeExp = 'this.dataBlockSize() - (%s)' % ctx['offset']
         else:
             fileSizeExp = fieldSize
 
@@ -138,7 +156,7 @@ def parseField(className, xmlField, fieldSize, typesMap, ctx):
         ctx['fieldInitializations'] += '\n        this.%s = DataReader.readCodePageString(data, %s, %s).toString();' % (
             name, ctx['offset'], fieldSize
         )
-        ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s;' % (name, name)
+        ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s);' % (name, name)
 
     elif xmlField.tag in typesMap:
         t = typesMap[xmlField.tag]
@@ -160,10 +178,31 @@ def parseField(className, xmlField, fieldSize, typesMap, ctx):
     elif xmlField.tag == 'Subblocks':
         name = lcfirst(xmlField.get('type'))
         typeName = xmlField.get('type')
-        ctx['subtypeImports'] += "\nimport %s from 'DataTypes/%s';" % (name, typeName)
-        ctx['fieldDefinitions'] += '\n    %s: %s[];' % (name, typeName)
+        counterLength = xmlField.get('counterlength')
 
-        # TODO read array of subblocks
+        ctx['subtypeImports'] += "\nimport %s from 'DataTypes/%s';" % (typeName, typeName)
+        ctx['fieldDefinitions'] += '\n    %s: Subblocks<%s>;' % (name, typeName)
+
+        if counterLength:
+            length = int(counterLength)
+            subcount = 'DataReader.readUint%(sz)s(data, %(fullOffset)s)' % {
+                'sz': length * 8,
+                'fullOffset': ctx['offset']
+            }
+            ctx['fieldInitializations'] += '\n        this.%s = DataReader.readSubblocksByCount<%s>(%s, data.slice(%s + %s), 0, (%s));' % (
+                name, typeName, typeName, ctx['offset'], counterLength, subcount
+            )
+
+        elif classType == 'CardBlock':
+            ctx['fieldInitializations'] += '\n        this.%s = DataReader.readSubblocksByLength<%s>(%s, data.slice(%s), 0, this.dataBlockSize() - (%s));' % (
+                name, typeName, typeName, ctx['offset'], ctx['offset']
+            )
+        else:
+            raise ValueError("Wrong block type: %s for subblock %s.%s" % (classType, className, name))
+
+        ctx['printOn'] += '\n        report.writeArray(this.%s, tr("%s"));' % (name, name)
+        
+        ctx['offsetextra'] = ' + this.%s.size()' % name
 
     else:
         raise ValueError("Unknown field type %s of tag %s.%s" % (xmlField.tag, className, name))
@@ -171,22 +210,43 @@ def parseField(className, xmlField, fieldSize, typesMap, ctx):
     ctx['offset'] += fieldSize
 
 
+def parseTitle(d, className, fields, ctx):
+    title = d.find('title')
+    if title is not None:
+        if title.get('dynamic'):
+            titleCode = convertDynamicString(title.text, fields)
+        else:
+            titleCode = '"%s"' % title.text
+    else:
+        titleCode = '""'
+    
+    ctx['classTitle'] = titleCode
+
+
 def parseToString(d, className, fields, ctx):
     xmlToString = d.find('toString')
     if xmlToString is not None:
-        toString = xmlToString.text
-        toString = toString.replace("QString", "new QString")
-        toString = toString.replace("formatStrings::", "FormatStrings.")
+        toString = convertDynamicString(xmlToString.text, fields)
     else:
         toString = "new QString('%s')" % className
 
-    for f in fields:
-        toString = toString.replace(f, 'this.%s' % f)
-    toString = toString.replace(".this.", ".")
-
     ctx['toString'] = toString
 
-    
+
+def convertDynamicString(text, fields):
+    text = text.replace("QString", "new QString")
+    text = text.replace("formatStrings::", "FormatStrings.")
+    text = re.sub("tr\([^\(\)]+\)|tr\([^\(\)]*\([^\(\)]*\)[^\(\)]*\)", "new QString(\g<0>)", text)
+
+    for f in fields:
+        text = re.sub('(?<=[^\w\.])%s(?=\W)' % f, 'this.%s' % f, ' %s ' % text)
+
+    text = text.strip();
+
+    if text.endswith(")"):
+        text += ".toString()"
+    return text
+
 def readXml(xmlFilename):
     tree = ElementTree()
     try:
@@ -265,21 +325,14 @@ def lcfirst(a):
 
 def writeCodeFile(name, directory, classCode):
 
-    autoGenWarning = """
+    codeFile = """\
 // This file was AUTO-GENERATED.
 // Make changes in the generator script generate.py,
 // the data definitions in DataDefinitions.xml
 // or derive a class
-"""	
-
-    codeFile = """
-
-%(autoGenWarning)s
 
 %(classCode)s
-
 """ % {
-    "autoGenWarning": autoGenWarning,
     "classCode": classCode
 }
 

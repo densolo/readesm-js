@@ -3,6 +3,7 @@ import Reporter from 'Reporter/Reporter';
 import Block from 'DataTypes/Block';
 import FileUtil from 'utils/FileUtil';
 import * as isEmpty from 'lodash/isEmpty';
+import QString from 'utils/QString';
 
 
 export default class HtmlReporter extends Reporter {
@@ -33,7 +34,7 @@ export default class HtmlReporter extends Reporter {
         return html;
     }
 
-    tagValuePair(tag: string, value: string) {
+    tagValuePair(tag: string|QString, value: string) {
         let copy = HtmlReporter.replaceAmp(value.toString());
         this.collected += `\n<li>${tag}: <b>${copy}</b></li>`;
     }

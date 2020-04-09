@@ -20,7 +20,7 @@ module.exports = {
         extensions: [ '.tsx', '.ts', '.js' ],
     },
     output: {
-        filename: 'main.EsmDownloader.bundle.js',
+        filename: 'main.EsmDownloader.bundle.[hash].js',
         path: path.resolve(__dirname, 'dist'),
         library: 'EsmDownloader'
     },

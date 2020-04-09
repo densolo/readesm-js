@@ -18,7 +18,7 @@ test('convert ddd to json', () => {
 
     console.log("j: " + j.blocks[0]['cardExtendedSerialNumber']);
 
-    expect(j['blocks'].length).toBe(24);
+    expect(j['blocks'].length).toBe(14);
     expect(JSON.stringify(j['blocks'][0], null, 4)).toBe(JSON.stringify({
         "title": "Card ICC identification",
         "className": "CardIccIdentification",

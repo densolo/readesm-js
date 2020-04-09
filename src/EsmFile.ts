@@ -2,7 +2,7 @@
 import * as fs from 'fs';
 
 import Block from 'DataTypes/Block';
-import {blockFactory} from "blockFactory";
+import {blockFactory} from "VuBlocks/blockFactory";
 import TopLevelBlock from 'DataTypes/TopLevelBlock';
 import Reporter from 'Reporter/Reporter';
 import Converter from 'utils/Converter';
@@ -30,8 +30,7 @@ export default class EsmFile {
             
             ef.blocks.push(block);
 
-            //console.log("card type: " + Converter.dec2hexString(block.getBlockType()));
-            //console.log("card size: " + block.size());
+            console.log("card size: " + block.size());
         }
 
         return ef;

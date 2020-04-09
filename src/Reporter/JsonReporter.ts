@@ -2,6 +2,7 @@
 import Reporter from 'Reporter/Reporter';
 import Block from 'DataTypes/Block';
 import * as isEmpty from 'lodash/isEmpty';
+import QString from 'utils/QString';
 
 
 class JsonEntry {
@@ -41,8 +42,8 @@ export default class JsonReporter extends Reporter {
         return JSON.stringify(this.jsonCollected, null, 4);
     }
 
-    tagValuePair(tag: string, value: string) {
-        this.currentEntry[tag] = value;
+    tagValuePair(tag: string|QString, value: string) {
+        this.currentEntry[tag.toString()] = value;
     }
 
     writeBlock(value: Block, tag: string = '') {

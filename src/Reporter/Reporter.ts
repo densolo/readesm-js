@@ -2,7 +2,10 @@
 import * as isEmpty from 'lodash/isEmpty';
 
 import Block from 'DataTypes/Block';
+import DataType from 'DataTypes/DataType';
 import Subblocks from 'DataTypes/Subblocks';
+import QString from 'utils/QString';
+
 
 export default class Reporter {
 
@@ -23,10 +26,10 @@ export default class Reporter {
         return false;
     }
 
-    tagValuePair(tag: string, value: string|number) {
+    tagValuePair(tag: string|QString, value: string|number) {
     }
 
-    writeArray(ray: Subblocks, title: string = '', defaultShown: boolean = true) {
+    writeArray<T extends DataType>(ray: Subblocks<T>, title: string = '', defaultShown: boolean = true) {
         this.arrayStart(ray.numberOfBlocks(), this.title, defaultShown);
         this.nestLevel += 1;
         for (let j = 0; j < ray.numberOfBlocks(); j++) {
@@ -34,8 +37,9 @@ export default class Reporter {
         }
     }
 
-    writeBlock(value: Block, tag: string = '') {
+    writeBlock(value: Block, tag: string|QString = '') {
         this.nestLevel += 1;
+        tag = tag.toString();
         if (isEmpty(tag) && !isEmpty(value.title())) {
             this.subBlock(value, value.title());
         } else {
