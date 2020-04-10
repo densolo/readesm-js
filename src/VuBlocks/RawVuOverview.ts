@@ -49,7 +49,6 @@ export default class RawVuOverview extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.memberStateCertificate = new EncryptedCertificate(data.slice(0))
         this.vuCertificate = new EncryptedCertificate(data.slice(194))
         this.vehicleIdentificationNumber = DataReader.readString(data, 388, 17).toString();

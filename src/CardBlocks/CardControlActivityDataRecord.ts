@@ -39,7 +39,6 @@ export default class CardControlActivityDataRecord extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.controlType = DataReader.readUint8(data, 5);
         this.controlTime = new TimeReal(data.slice(6))
         this.controlCardNumber = new FullCardNumber(data.slice(10))

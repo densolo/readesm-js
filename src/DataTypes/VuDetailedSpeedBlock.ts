@@ -34,7 +34,6 @@ export default class VuDetailedSpeedBlock extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.speedBlockBeginDate = new TimeReal(data.slice(0))
         this.speedsPerSecond = DataReader.readRawData(data, 4, 60);    
     }

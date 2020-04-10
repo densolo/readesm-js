@@ -14,18 +14,17 @@ export default class RawData extends Block {
     }
 
     toString() {
-        return this.toHexString();
+        return RawData.toHexString(new Uint8Array(this.data));
     }
 
-    toHexString() {
-        let items = new Uint8Array(this.data);
-        let allzeros = findIndex(items, (c) => {return c !== 0;}) < 0;
+    static toHexString(data: Uint8Array): string {
+        let allzeros = findIndex(data, (c) => {return c !== 0;}) < 0;
         if (allzeros) {
-            return tr(`All ${this.size()} Byte are zeroed.`);
+            return tr(`All ${data.byteLength} Bytes are zeroed.`);
         }
 
         let rv = '';
-        items.forEach((c) => {
+        data.forEach((c) => {
             rv += ('0' + c.toString(16)).slice(-2) + ' ';
         });
         return rv.replace(/ *$/, '');

@@ -32,7 +32,6 @@ export default class RawVuDetailedSpeedData extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.vuDetailedSpeedBlock = DataReader.readSubblocksByCount<VuDetailedSpeedBlock>(VuDetailedSpeedBlock, data.slice(0 + 2), 0, (DataReader.readUint16(data, 0)));    
     }
 

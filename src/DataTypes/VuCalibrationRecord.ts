@@ -51,7 +51,6 @@ export default class VuCalibrationRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.calibrationPurpose = DataReader.readUint8(data, 0);
         this.workshopName = DataReader.readCodePageString(data, 1, 36).toString();
         this.workshopAddress = DataReader.readCodePageString(data, 37, 36).toString();

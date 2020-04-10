@@ -33,7 +33,6 @@ export default class Block11 extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.header = DataReader.readRawData(data, 0, 15);
         this.block11Record = DataReader.readSubblocksByCount<Block11Record>(Block11Record, data.slice(15 + 2), 0, (DataReader.readUint16(data, 15)));
         this.hasSignature = false;    

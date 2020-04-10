@@ -33,7 +33,6 @@ export default class Name extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.surname = DataReader.readCodePageString(data, 0, 36).toString();
         this.firstNames = DataReader.readCodePageString(data, 36, 36).toString();    
     }

@@ -32,7 +32,6 @@ export default class CardFaultData extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.cardEventRecord = DataReader.readSubblocksByLength<CardEventRecord>(CardEventRecord, data.slice(5), 0, this.dataBlockSize() - (5));    
     }
 

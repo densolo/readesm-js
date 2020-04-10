@@ -23,7 +23,7 @@ import CardVehiclesUsed from 'CardBlocks/CardVehiclesUsed';
 
 export function cardBlockFactory(data: ArrayBuffer, pos: number) {
     let blockType = DataReader.readUint16(data, pos);
-    console.log("cardBlockFactory: " + Converter.dec2hexString(blockType));
+    // console.log("cardBlockFactory: " + Converter.dec2hexString(blockType));
             
     data = data.slice(pos);
 

@@ -32,7 +32,6 @@ export default class SpecificConditions extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.specificConditionRecord = DataReader.readSubblocksByLength<SpecificConditionRecord>(SpecificConditionRecord, data.slice(5), 0, this.dataBlockSize() - (5));    
     }
 

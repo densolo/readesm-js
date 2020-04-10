@@ -25,7 +25,6 @@ export default class %(className)s extends %(baseClass)s {
     
     constructor(data: ArrayBuffer) {
         super(data);
-
 %(fieldInitializations)s    
     }
 

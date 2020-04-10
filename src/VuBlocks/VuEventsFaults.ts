@@ -42,7 +42,6 @@ export default class VuEventsFaults extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.vuFaultRecord = DataReader.readSubblocksByCount<VuFaultRecord>(VuFaultRecord, data.slice(0 + 1), 0, (DataReader.readUint8(data, 0)));
         this.vuEventRecord = DataReader.readSubblocksByCount<VuEventRecord>(VuEventRecord, data.slice(1 + 1), 0, (DataReader.readUint8(data, 1)));
         this.lastOverspeedControlTime = new TimeReal(data.slice(2))

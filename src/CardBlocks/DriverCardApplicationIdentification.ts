@@ -37,7 +37,6 @@ export default class DriverCardApplicationIdentification extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.typeOfTachographCardId = DataReader.readUint8(data, 5);
         this.cardStructureVersion = DataReader.readRawData(data, 6, 2);
         this.noOfEventsPerType = DataReader.readUint8(data, 8);

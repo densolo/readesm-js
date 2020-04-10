@@ -45,7 +45,6 @@ export default class VuTechnical extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.vuManufacturerName = DataReader.readCodePageString(data, 0, 36).toString();
         this.vuManufacturerAddress = DataReader.readCodePageString(data, 36, 36).toString();
         this.vuPartNumber = DataReader.readString(data, 72, 16).toString();

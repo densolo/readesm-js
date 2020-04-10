@@ -29,12 +29,14 @@ export default class Reporter {
     tagValuePair(tag: string|QString, value: string|number) {
     }
 
-    writeArray<T extends DataType>(ray: Subblocks<T>, title: string = '', defaultShown: boolean = true) {
+    writeArray<T extends DataType>(ray: Subblocks<T>, title: string = '', defaultShown: boolean = true) {        
         this.arrayStart(ray.numberOfBlocks(), this.title, defaultShown);
         this.nestLevel += 1;
         for (let j = 0; j < ray.numberOfBlocks(); j++) {
             this.writeBlock(ray.get(j));
         }
+        this.nestLevel -= 1;
+        this.arrayEnd(ray.numberOfBlocks());
     }
 
     writeBlock(value: Block, tag: string|QString = '') {

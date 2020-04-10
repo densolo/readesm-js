@@ -32,7 +32,6 @@ export default class CardCertificate extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.certificate = new EncryptedCertificate(data.slice(5))    
     }
 

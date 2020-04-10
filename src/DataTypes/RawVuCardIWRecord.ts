@@ -46,7 +46,6 @@ export default class RawVuCardIWRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.cardHolderName = new Name(data.slice(0))
         this.cardNumber = new FullCardNumber(data.slice(72))
         this.cardExpiryDate = new TimeReal(data.slice(90))

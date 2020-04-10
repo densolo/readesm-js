@@ -34,7 +34,6 @@ export default class SpecificConditionRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.entryTime = new TimeReal(data.slice(0))
         this.specificConditionType = DataReader.readUint8(data, 4);    
     }

@@ -34,7 +34,6 @@ export default class RawFullCardNumber extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.cardType = DataReader.readUint8(data, 0);
         this.cardIssuingMemberState = DataReader.readUint8(data, 1);
         this.cardNumber = DataReader.readString(data, 2, 16).toString();    

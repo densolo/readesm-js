@@ -52,6 +52,18 @@ export default class ActivityChangeInfo extends DataType {
         }
     }
 
+    heightHint() {
+        switch (this.activity) {
+            case ActivityChangeInfo.REST: return 0.3;
+            case ActivityChangeInfo.AVAILABLE: return 0.15;
+            case ActivityChangeInfo.WORK: return 0.7;
+            case ActivityChangeInfo.DRIVING: return 1.0;
+            case ActivityChangeInfo.UNKNOWN: return 0.2;
+            case ActivityChangeInfo.SHORTREST: return 0.4;
+        }
+        return 0.5;
+    }
+
     className() {
         return "ActivityChangeInfo";
     }
@@ -86,6 +98,18 @@ export default class ActivityChangeInfo extends DataType {
             }
         }
         return tr("unknown activity");
+    }
+
+    color() {
+        switch (this.activity) {
+            case ActivityChangeInfo.REST: return "red";
+            case ActivityChangeInfo.AVAILABLE: return "black";
+            case ActivityChangeInfo.WORK: return "yellow";
+            case ActivityChangeInfo.DRIVING: return "green";
+            case ActivityChangeInfo.UNKNOWN: return "purple";
+            case ActivityChangeInfo.SHORTREST: return "orange";
+        }
+        return "blue";
     }
 
     formatClock(time: number) {

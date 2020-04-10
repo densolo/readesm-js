@@ -38,6 +38,11 @@ export default class JsonReporter extends Reporter {
         this.currentEntry = this.jsonCollected;
     }
 
+    setTitle(newTitle: string) {
+        super.setTitle(newTitle);
+        this.jsonCollected['title'] = newTitle;
+    }
+
     renderReport(): string {
         return JSON.stringify(this.jsonCollected, null, 4);
     }

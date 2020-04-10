@@ -34,7 +34,6 @@ export default class RawRsaPublicKey extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.n = new LargeNumber(data.slice(0), 128)
         this.e = new LargeNumber(data.slice(128), 8)    
     }

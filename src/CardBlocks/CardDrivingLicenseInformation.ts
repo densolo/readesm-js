@@ -33,7 +33,6 @@ export default class CardDrivingLicenseInformation extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.drivingLicenseIssuingAuthorithy = DataReader.readCodePageString(data, 5, 36).toString();
         this.drivingLicenseIssuingNation = DataReader.readUint8(data, 41);
         this.drivingLicenseNumber = DataReader.readString(data, 42, 16).toString();    

@@ -57,7 +57,7 @@ export default class HtmlReporter extends Reporter {
                 if (isEmpty(tag)) {
                     this.collected += this.toggleAbleBlocks(HtmlReporter.replaceAmp(value.toString()), false);
                 } else {
-                    this.collected += this.toggleAbleBlocks(`${lTag}: <b>${HtmlReporter.replaceAmp(value.toString())}</b>`, false);
+                    this.collected += this.toggleAbleBlocks(`${lTag}: <b>${HtmlReporter.replaceAmp(value.toString())}</b>`, true);
                 }
                 value.printOn(this);
                 this.collected += "</ul></li>";

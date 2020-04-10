@@ -31,7 +31,6 @@ export default class Block14 extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.data = DataReader.readRawData(data, 0, 2);
         this.hasSignature = false;    
     }

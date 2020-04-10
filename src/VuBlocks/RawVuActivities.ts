@@ -41,7 +41,6 @@ export default class RawVuActivities extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.timeReal = new TimeReal(data.slice(0))
         this.odometerValueMidnight = DataReader.readUint24(data, 4);
         this.vuCardIWRecord = DataReader.readSubblocksByCount<VuCardIWRecord>(VuCardIWRecord, data.slice(7 + 2), 0, (DataReader.readUint16(data, 7)));

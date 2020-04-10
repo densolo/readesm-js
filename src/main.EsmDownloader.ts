@@ -9,9 +9,10 @@ export function downloadEsmAsJson(filename: string) {
 
     downloadEsmData(filename, (data: ArrayBuffer) => {        
         let ef = EsmFile.parseData(data);
-        let jsonReport = new JsonReporter();
-        ef.printOn(jsonReport);
-        let j = jsonReport.renderReport();
+        let report = new JsonReporter();
+        ef.printOn(report);
+
+        let j = report.renderReport();
 
         fileDownload(j, filename.replace(/^.*\//, '') + '.json', 'application/json');    
     });

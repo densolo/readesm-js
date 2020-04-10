@@ -33,7 +33,6 @@ export default class RawCardDriverActivity extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.oldestRecord = DataReader.readUint16(data, 5);
         this.newestRecord = DataReader.readUint16(data, 7);
         this.cyclicData = DataReader.readRawData(data, 9, this.dataBlockSize() - (9));    

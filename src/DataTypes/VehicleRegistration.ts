@@ -33,7 +33,6 @@ export default class VehicleRegistration extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.vehicleRegistrationNation = DataReader.readUint8(data, 0);
         this.vehicleRegistrationNumber = DataReader.readCodePageString(data, 1, 14).toString();    
     }

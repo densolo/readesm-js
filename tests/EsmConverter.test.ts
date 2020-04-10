@@ -19,6 +19,8 @@ test('convert ddd to json', () => {
     console.log("j: " + j.blocks[0]['cardExtendedSerialNumber']);
 
     expect(j['blocks'].length).toBe(14);
+    expect(j['title']).toBe("Dragut, Gabriel 2017-10-03 to 2017-12-13");
+
     expect(JSON.stringify(j['blocks'][0], null, 4)).toBe(JSON.stringify({
         "title": "Card ICC identification",
         "className": "CardIccIdentification",

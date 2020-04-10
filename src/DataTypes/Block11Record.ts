@@ -37,7 +37,6 @@ export default class Block11Record extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.cardNumber = new FullCardNumber(data.slice(0))
         this.time = new Timespan(data.slice(18))
         this.sometimesDuration = DataReader.readUint16(data, 26);

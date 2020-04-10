@@ -35,7 +35,6 @@ export default class PlainCertificate extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.keyIdentifier = new CertificateAuthority(data.slice(0))
         this.rsaPublicKey = new RsaPublicKey(data.slice(8))    
     }

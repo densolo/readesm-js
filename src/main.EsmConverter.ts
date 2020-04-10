@@ -20,7 +20,6 @@ function main() {
 function convertToHtml(ef: EsmFile, outfile: string) {
     let report = new HtmlReporter();
     ef.printOn(report);
-    report.setTitle(ef.suggestTitle());
 
     let html = report.renderReport();
     FileUtil.writeFile(outfile, html);
@@ -28,10 +27,10 @@ function convertToHtml(ef: EsmFile, outfile: string) {
 }
 
 function convertToJson(ef: EsmFile, outfile: string) {
-    let jsonReport = new JsonReporter();
-    ef.printOn(jsonReport);
+    let report = new JsonReporter();
+    ef.printOn(report);
 
-    let j = jsonReport.renderReport();
+    let j = report.renderReport();
     FileUtil.writeFile(outfile, j);
     console.log(`Converted into JSON in ${outfile}`);
 }

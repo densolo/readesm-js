@@ -42,7 +42,6 @@ export default class DecryptedCertificate extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.certificateProfileIdentifier = DataReader.readUint8(data, 0);
         this.certificateAuthorityReference = new CertificateAuthority(data.slice(1))
         this.certificateHolderAuthorization = new CertificateHolderAuthorization(data.slice(9))

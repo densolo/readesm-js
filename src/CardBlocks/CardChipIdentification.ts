@@ -32,7 +32,6 @@ export default class CardChipIdentification extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.icSerialNumber = DataReader.readRawData(data, 5, 4);
         this.icManufacturingReference = DataReader.readRawData(data, 9, 4);    
     }

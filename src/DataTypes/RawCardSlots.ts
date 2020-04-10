@@ -36,7 +36,6 @@ export default class RawCardSlots extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.cardNumberDriverSlotBegin = new FullCardNumber(data.slice(0))
         this.cardNumberCoDriverSlotBegin = new FullCardNumber(data.slice(18))
         this.cardNumberDriverSlotEnd = new FullCardNumber(data.slice(36))

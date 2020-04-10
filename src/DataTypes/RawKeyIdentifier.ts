@@ -36,7 +36,6 @@ export default class RawKeyIdentifier extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.certificateRequestSerialNumber = DataReader.readRawData(data, 0, 4);
         this.date = new BcdMonthYear(data.slice(4))
         this.type = DataReader.readUint8(data, 6);

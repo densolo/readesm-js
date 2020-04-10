@@ -33,7 +33,6 @@ export default class CardPlaceDailyWorkPeriod extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.placePointerNewestRecord = DataReader.readUint8(data, 5);
         this.placeRecord = DataReader.readSubblocksByLength<PlaceRecord>(PlaceRecord, data.slice(6), 0, this.dataBlockSize() - (6));    
     }

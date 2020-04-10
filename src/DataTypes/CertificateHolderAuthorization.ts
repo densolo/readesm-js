@@ -33,7 +33,6 @@ export default class CertificateHolderAuthorization extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.tachographApplicationId = DataReader.readRawData(data, 0, 6);
         this.equipmentType = DataReader.readUint8(data, 6);    
     }

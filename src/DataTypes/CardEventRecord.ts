@@ -36,7 +36,6 @@ export default class CardEventRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.eventType = DataReader.readUint8(data, 0);
         this.eventTime = new Timespan(data.slice(1))
         this.eventVehicleRegistration = new VehicleRegistration(data.slice(9))    

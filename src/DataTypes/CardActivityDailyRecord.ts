@@ -13,6 +13,7 @@ import DataType from 'DataTypes/DataType';
 import FormatStrings from 'utils/FormatStrings';
 import Reporter from 'Reporter/Reporter';
 import {tr} from 'utils/Translation';
+import SvgDayActivity from 'DataTypes/SvgDayActivity';
 
 import TimeReal from 'DataTypes/TimeReal';
 import RawCardActivityDailyRecord from 'DataTypes/RawCardActivityDailyRecord';
@@ -60,7 +61,16 @@ export default class CardActivityDailyRecord extends RawCardActivityDailyRecord 
         super.printOn(report);
 
         if (report.allowSvg()) {
-            // TODO: code from CardActivityDailyRecord.cpp
+            let visualization = new SvgDayActivity();
+
+            for (let j = 0; j < this.activityChangeInfos.numberOfBlocks(); ++j) {
+                visualization.add(this.activityChangeInfos.get(j).t, 
+                    this.activityChangeInfos.get(j).duration, 
+                    this.activityChangeInfos.get(j).heightHint(), 
+                    this.activityChangeInfos.get(j).color(),
+                    this.activityChangeInfos.get(j).toString());
+            }
+            report.tagValuePair(tr("Visualization"), visualization.toString());
         }
         
         report.writeArray(this.activityChangeInfos, tr("activityChangeInfos"), false);

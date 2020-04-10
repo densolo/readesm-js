@@ -30,7 +30,6 @@ export default class VuCardData extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.hasSignature = false;    
     }
 

@@ -38,7 +38,6 @@ export default class VuControlActivityRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.controlType = DataReader.readUint8(data, 0);
         this.controlTime = new TimeReal(data.slice(1))
         this.controlCardNumber = new FullCardNumber(data.slice(5))

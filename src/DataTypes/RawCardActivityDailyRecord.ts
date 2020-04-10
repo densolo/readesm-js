@@ -37,7 +37,6 @@ export default class RawCardActivityDailyRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.activityRecordPreviousLength = DataReader.readUint16(data, 0);
         this.activityRecordLength = DataReader.readUint16(data, 2);
         this.activityRecordDate = new TimeReal(data.slice(4))

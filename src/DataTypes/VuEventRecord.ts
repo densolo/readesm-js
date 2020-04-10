@@ -38,7 +38,6 @@ export default class VuEventRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.eventType = DataReader.readUint8(data, 0);
         this.eventRecordPurpose = DataReader.readUint8(data, 1);
         this.eventTime = new Timespan(data.slice(2))

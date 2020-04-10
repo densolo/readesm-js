@@ -42,7 +42,6 @@ export default class Identification extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.cardIssuingMemberState = DataReader.readUint8(data, 5);
         this.cardNumber = DataReader.readString(data, 6, 16).toString();
         this.cardIssuingAuthorityName = DataReader.readCodePageString(data, 22, 36).toString();

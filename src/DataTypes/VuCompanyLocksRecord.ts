@@ -37,7 +37,6 @@ export default class VuCompanyLocksRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.lockTime = new Timespan(data.slice(0))
         this.companyName = DataReader.readCodePageString(data, 8, 36).toString();
         this.companyAddress = DataReader.readCodePageString(data, 44, 36).toString();

@@ -32,7 +32,6 @@ export default class LastCardDownload extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.lastCardDownload = new TimeReal(data.slice(5))    
     }
 

@@ -38,7 +38,6 @@ export default class CardVehicleRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.vehicleOdometerBegin = DataReader.readUint24(data, 0);
         this.vehicleOdometerEnd = DataReader.readUint24(data, 3);
         this.vehicleUse = new Timespan(data.slice(6))

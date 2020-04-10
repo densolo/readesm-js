@@ -37,7 +37,6 @@ export default class CardIccIdentification extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.clockStop = DataReader.readUint8(data, 5);
         this.cardExtendedSerialNumber = new ExtendedSerialNumber(data.slice(6))
         this.cardApprovalNumber = DataReader.readRawData(data, 14, 8);

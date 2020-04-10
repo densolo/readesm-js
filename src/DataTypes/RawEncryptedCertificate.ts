@@ -35,7 +35,6 @@ export default class RawEncryptedCertificate extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.sign = DataReader.readRawData(data, 0, 128);
         this.cndash = DataReader.readRawData(data, 128, 58);
         this.certificateAuthorityReference = new CertificateAuthority(data.slice(186))    

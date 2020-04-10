@@ -38,7 +38,6 @@ export default class VuTimeAdjustmentRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.oldTimeValue = new TimeReal(data.slice(0))
         this.newTimeValue = new TimeReal(data.slice(4))
         this.workshopName = DataReader.readString(data, 8, 36).toString();

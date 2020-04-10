@@ -37,7 +37,6 @@ export default class PlaceRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.entryTime = new TimeReal(data.slice(0))
         this.entryTypeDailyWorkPeriod = DataReader.readUint8(data, 4);
         this.dailyWorkPeriodCountry = DataReader.readUint8(data, 5);

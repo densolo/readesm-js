@@ -36,7 +36,6 @@ export default class CertificateAuthority extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.nationNumeric = DataReader.readUint8(data, 0);
         this.nationAlpha = DataReader.readString(data, 1, 3).toString();
         this.keySerialNumber = DataReader.readUint8(data, 4);

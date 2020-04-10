@@ -32,7 +32,6 @@ export default class BcdMonthYear extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.encodedDate = DataReader.readRawData(data, 0, 2);    
     }
 

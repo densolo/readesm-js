@@ -36,9 +36,9 @@ export default class DataReader {
     }
 
     static readCodePageString(data: ArrayBuffer, pos: number, length: number) {
-        let stringData = new Uint8Array(data.slice(pos, length));
+        let stringData = new Uint8Array(data.slice(pos, pos + length));
         if (!DataReader.checkString(stringData.slice(1, -1))) {
-            return "";
+            return `Not a string: ${RawData.toHexString(stringData)}`;
         }
 
         if (DataReader.isISO8859CodePageNumber(stringData[0])) {

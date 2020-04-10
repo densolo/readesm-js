@@ -33,7 +33,6 @@ export default class CardVehiclesUsed extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.vehiclePointerNewestRecord = DataReader.readUint16(data, 5);
         this.cardVehicleRecord = DataReader.readSubblocksByLength<CardVehicleRecord>(CardVehicleRecord, data.slice(7), 0, this.dataBlockSize() - (7));    
     }

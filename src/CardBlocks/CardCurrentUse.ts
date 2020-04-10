@@ -34,7 +34,6 @@ export default class CardCurrentUse extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-
         this.sessionOpenTime = new TimeReal(data.slice(5))
         this.sessionOpenVehicle = new VehicleRegistration(data.slice(9))    
     }

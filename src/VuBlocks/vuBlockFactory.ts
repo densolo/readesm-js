@@ -16,7 +16,7 @@ import VuDetailedSpeedData from 'VuBlocks/VuDetailedSpeedData';
 
 export function vuBlockFactory(data, pos) {
     var blockType = DataReader.readUint8(data, pos + 1);
-    console.log("vuBlockFactory: " + Converter.dec2hexString(blockType));
+    //console.log("vuBlockFactory: " + Converter.dec2hexString(blockType));
     data = data.slice(pos);
 
     if (data.byteLength < 2 || data[0] != 0x76) {
