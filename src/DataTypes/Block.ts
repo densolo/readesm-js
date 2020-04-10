@@ -20,7 +20,7 @@ export default class Block {
     }
 
     className(): string {
-        return "";
+        return this.constructor.name;
     }
 
     title(): string {

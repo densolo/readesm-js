@@ -61,7 +61,7 @@ export default class RawVuOverview extends VuBlock {
         this.cardNumber = new FullCardNumber(data.slice(437))
         this.companyOrWorkshopName = DataReader.readCodePageString(data, 455, 36).toString();
         this.vuCompanyLocksRecord = DataReader.readSubblocksByCount<VuCompanyLocksRecord>(VuCompanyLocksRecord, data.slice(491 + 1), 0, (DataReader.readUint8(data, 491)));
-        this.vuControlActivityRecord = DataReader.readSubblocksByCount<VuControlActivityRecord>(VuControlActivityRecord, data.slice(589 + 1), 0, (DataReader.readUint8(data, 589)));    
+        this.vuControlActivityRecord = DataReader.readSubblocksByCount<VuControlActivityRecord>(VuControlActivityRecord, data.slice(492 + 1), 0, (DataReader.readUint8(data, 492)));    
     }
 
     className() {
@@ -73,7 +73,7 @@ export default class RawVuOverview extends VuBlock {
     }
 
     size() {
-        return 620;
+        return 493;
     }
 
     toString() {

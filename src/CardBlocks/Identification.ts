@@ -80,9 +80,9 @@ export default class Identification extends CardBlock {
         report.writeBlock(this.cardHolderName, tr("cardHolderName"));
         report.writeBlock(this.cardHolderBirthDate, tr("cardHolderBirthDate"));
         report.tagValuePair(tr("cardHolderPreferredLanguage"), this.cardHolderPreferredLanguage);
-        if (this.size() != 148 ) {
+        if (this.dataBlockSize() != 148 ) {
             report.tagValuePair("should have", 148 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

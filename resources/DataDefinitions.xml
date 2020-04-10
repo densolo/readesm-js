@@ -488,7 +488,7 @@
 		</content>
 		<toString> '';
 		let d = this.encodedDate.toUint8Array();
-		qs = Converter.bcdbyte(encodedDate[0]) + Converter.bcdbyte(encodedDate[1]) + '-' + Converter.bcdbyte(encodedDate[2]) + '-' + Converter.bcdbyte(encodedDate[3]);
+		qs = '' + Converter.bcdbyte(d[0]) + Converter.bcdbyte(d[1]) + '-' + padStart(Converter.bcdbyte(d[2]), 2, '0') + '-' + padStart(Converter.bcdbyte(d[3]), 2, '0');
 		</toString>
 	</DataType>
 

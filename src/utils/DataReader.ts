@@ -30,12 +30,40 @@ export default class DataReader {
 
     static readString(data: ArrayBuffer, pos: number, length: number) {
         let rd = new RawData(data.slice(pos), length);
-        return rd.toTextString();
+        let rv = rd.toTextString();
+        rv = rv.replace(/\s+$/g, '');
+        return rv;
     }
 
     static readCodePageString(data: ArrayBuffer, pos: number, length: number) {
-        // TODO: migrate codepageStringCombination from readTypes.cpp 
-        return this.readString(data, pos, length);
+        let stringData = new Uint8Array(data.slice(pos, length));
+        if (!DataReader.checkString(stringData.slice(1, -1))) {
+            return "";
+        }
+
+        if (DataReader.isISO8859CodePageNumber(stringData[0])) {
+            // add support for codecs
+        } else {
+            console.log(`${stringData[0]} is not a code page`);
+        }
+
+        let rv = String.fromCharCode.apply(null, stringData.slice(1, -1));
+        rv = rv.replace(/\0/g, ' ');
+        rv = rv.replace(/\s+$/g, '');
+        return rv;
+    }
+
+    static isISO8859CodePageNumber(number: number): boolean {
+        return number <= 16 && number != 0 && number != 12;
+    }
+
+    static checkString(str: Uint8Array) {
+        for (let j = 0; j < str.length; ++j) {
+            if (str[j] > 0x20 && str[j] != 0xFF && String.fromCharCode(str[j]) != '?') {
+                return true;
+            }
+        }
+        return false;
     }
 
     static readSubblocksByCount<T extends DataType>(blockType: {build(...args: any[]): T}, data: ArrayBuffer, pos: number, count: number): Subblocks<T> {

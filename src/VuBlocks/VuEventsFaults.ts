@@ -44,12 +44,12 @@ export default class VuEventsFaults extends VuBlock {
 
 
         this.vuFaultRecord = DataReader.readSubblocksByCount<VuFaultRecord>(VuFaultRecord, data.slice(0 + 1), 0, (DataReader.readUint8(data, 0)));
-        this.vuEventRecord = DataReader.readSubblocksByCount<VuEventRecord>(VuEventRecord, data.slice(82 + 1), 0, (DataReader.readUint8(data, 82)));
-        this.lastOverspeedControlTime = new TimeReal(data.slice(165))
-        this.firstOverspeedSince = new TimeReal(data.slice(169))
-        this.numberOfOverspeedSince = DataReader.readUint8(data, 173);
-        this.vuOverspeedingEventRecord = DataReader.readSubblocksByCount<VuOverspeedingEventRecord>(VuOverspeedingEventRecord, data.slice(174 + 1), 0, (DataReader.readUint8(data, 174)));
-        this.vuTimeAdjustmentRecord = DataReader.readSubblocksByCount<VuTimeAdjustmentRecord>(VuTimeAdjustmentRecord, data.slice(205 + 1), 0, (DataReader.readUint8(data, 205)));    
+        this.vuEventRecord = DataReader.readSubblocksByCount<VuEventRecord>(VuEventRecord, data.slice(1 + 1), 0, (DataReader.readUint8(data, 1)));
+        this.lastOverspeedControlTime = new TimeReal(data.slice(2))
+        this.firstOverspeedSince = new TimeReal(data.slice(6))
+        this.numberOfOverspeedSince = DataReader.readUint8(data, 10);
+        this.vuOverspeedingEventRecord = DataReader.readSubblocksByCount<VuOverspeedingEventRecord>(VuOverspeedingEventRecord, data.slice(11 + 1), 0, (DataReader.readUint8(data, 11)));
+        this.vuTimeAdjustmentRecord = DataReader.readSubblocksByCount<VuTimeAdjustmentRecord>(VuTimeAdjustmentRecord, data.slice(12 + 1), 0, (DataReader.readUint8(data, 12)));    
     }
 
     className() {
@@ -61,7 +61,7 @@ export default class VuEventsFaults extends VuBlock {
     }
 
     size() {
-        return 303;
+        return 13;
     }
 
     toString() {

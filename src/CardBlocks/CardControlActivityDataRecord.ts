@@ -69,9 +69,9 @@ export default class CardControlActivityDataRecord extends CardBlock {
         report.writeBlock(this.controlCardNumber, tr("controlCardNumber"));
         report.writeBlock(this.controlVehicleRegistration, tr("controlVehicleRegistration"));
         report.writeBlock(this.controlDownloadPeriod, tr("controlDownloadPeriod"));
-        if (this.size() != 51 ) {
+        if (this.dataBlockSize() != 51 ) {
             report.tagValuePair("should have", 51 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

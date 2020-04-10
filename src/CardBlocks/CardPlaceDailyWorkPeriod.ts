@@ -57,9 +57,9 @@ export default class CardPlaceDailyWorkPeriod extends CardBlock {
 
         report.tagValuePair(tr("placePointerNewestRecord"), this.placePointerNewestRecord);
         report.writeArray(this.placeRecord, tr("placeRecord"));
-        if (this.size() != 16  + this.placeRecord.size()) {
-            report.tagValuePair("should have", 16  + this.placeRecord.size());
-            report.tagValuePair("has", this.size());
+        if (this.dataBlockSize() != 6  + this.placeRecord.size()) {
+            report.tagValuePair("should have", 6  + this.placeRecord.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

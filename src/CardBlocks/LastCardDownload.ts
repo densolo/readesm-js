@@ -54,9 +54,9 @@ export default class LastCardDownload extends CardBlock {
     printOn(report: Reporter) {
 
         report.writeBlock(this.lastCardDownload, tr("lastCardDownload"));
-        if (this.size() != 9 ) {
+        if (this.dataBlockSize() != 9 ) {
             report.tagValuePair("should have", 9 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

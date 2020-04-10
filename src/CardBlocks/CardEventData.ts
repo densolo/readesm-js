@@ -54,9 +54,9 @@ export default class CardEventData extends CardBlock {
     printOn(report: Reporter) {
 
         report.writeArray(this.cardEventRecord, tr("cardEventRecord"));
-        if (this.size() != 29  + this.cardEventRecord.size()) {
-            report.tagValuePair("should have", 29  + this.cardEventRecord.size());
-            report.tagValuePair("has", this.size());
+        if (this.dataBlockSize() != 5  + this.cardEventRecord.size()) {
+            report.tagValuePair("should have", 5  + this.cardEventRecord.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

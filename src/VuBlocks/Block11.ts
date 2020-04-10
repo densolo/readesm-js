@@ -48,7 +48,7 @@ export default class Block11 extends VuBlock {
     }
 
     size() {
-        return 73;
+        return 17;
     }
 
     toString() {

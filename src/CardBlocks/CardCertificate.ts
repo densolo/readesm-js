@@ -54,9 +54,9 @@ export default class CardCertificate extends CardBlock {
     printOn(report: Reporter) {
 
         report.writeBlock(this.certificate, tr("certificate"));
-        if (this.size() != 199 ) {
+        if (this.dataBlockSize() != 199 ) {
             report.tagValuePair("should have", 199 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

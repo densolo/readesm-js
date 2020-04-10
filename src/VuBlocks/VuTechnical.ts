@@ -69,7 +69,7 @@ export default class VuTechnical extends VuBlock {
     }
 
     size() {
-        return 303;
+        return 137;
     }
 
     toString() {

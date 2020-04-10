@@ -59,9 +59,9 @@ export default class CardDrivingLicenseInformation extends CardBlock {
         report.tagValuePair(tr("drivingLicenseIssuingAuthorithy"), this.drivingLicenseIssuingAuthorithy);
         report.tagValuePair(tr("drivingLicenseIssuingNation"), FormatStrings.nationNumeric(this.drivingLicenseIssuingNation));
         report.tagValuePair(tr("drivingLicenseNumber"), this.drivingLicenseNumber);
-        if (this.size() != 58 ) {
+        if (this.dataBlockSize() != 58 ) {
             report.tagValuePair("should have", 58 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

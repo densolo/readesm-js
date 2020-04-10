@@ -45,9 +45,9 @@ export default class RawVuActivities extends VuBlock {
         this.timeReal = new TimeReal(data.slice(0))
         this.odometerValueMidnight = DataReader.readUint24(data, 4);
         this.vuCardIWRecord = DataReader.readSubblocksByCount<VuCardIWRecord>(VuCardIWRecord, data.slice(7 + 2), 0, (DataReader.readUint16(data, 7)));
-        this.activityChangeInfo = DataReader.readSubblocksByCount<ActivityChangeInfo>(ActivityChangeInfo, data.slice(136 + 2), 0, (DataReader.readUint16(data, 136)));
-        this.vuPlaceDailyWorkPeriodRecord = DataReader.readSubblocksByCount<VuPlaceDailyWorkPeriodRecord>(VuPlaceDailyWorkPeriodRecord, data.slice(138 + 1), 0, (DataReader.readUint8(data, 138)));
-        this.specificConditionRecord = DataReader.readSubblocksByCount<SpecificConditionRecord>(SpecificConditionRecord, data.slice(166 + 2), 0, (DataReader.readUint16(data, 166)));    
+        this.activityChangeInfo = DataReader.readSubblocksByCount<ActivityChangeInfo>(ActivityChangeInfo, data.slice(9 + 2), 0, (DataReader.readUint16(data, 9)));
+        this.vuPlaceDailyWorkPeriodRecord = DataReader.readSubblocksByCount<VuPlaceDailyWorkPeriodRecord>(VuPlaceDailyWorkPeriodRecord, data.slice(11 + 1), 0, (DataReader.readUint8(data, 11)));
+        this.specificConditionRecord = DataReader.readSubblocksByCount<SpecificConditionRecord>(SpecificConditionRecord, data.slice(12 + 2), 0, (DataReader.readUint16(data, 12)));    
     }
 
     className() {
@@ -59,7 +59,7 @@ export default class RawVuActivities extends VuBlock {
     }
 
     size() {
-        return 171;
+        return 14;
     }
 
     toString() {

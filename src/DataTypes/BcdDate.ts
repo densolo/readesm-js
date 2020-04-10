@@ -51,7 +51,7 @@ export default class BcdDate extends DataType {
     toString() {
 		let qs = '';
 		let d = this.encodedDate.toUint8Array();
-		qs = Converter.bcdbyte(this.encodedDate[0]) + Converter.bcdbyte(this.encodedDate[1]) + '-' + Converter.bcdbyte(this.encodedDate[2]) + '-' + Converter.bcdbyte(this.encodedDate[3]);;
+		qs = '' + Converter.bcdbyte(d[0]) + Converter.bcdbyte(d[1]) + '-' + padStart(Converter.bcdbyte(d[2]), 2, '0') + '-' + padStart(Converter.bcdbyte(d[3]), 2, '0');;
         return qs.toString();
     }
 

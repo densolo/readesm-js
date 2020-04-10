@@ -69,9 +69,9 @@ export default class CardIccIdentification extends CardBlock {
         report.tagValuePair(tr("cardPersonaliserID"), this.cardPersonaliserID.toString());
         report.tagValuePair(tr("embedderIcAssemblerId"), this.embedderIcAssemblerId.toString());
         report.tagValuePair(tr("icIdentifier"), this.icIdentifier.toString());
-        if (this.size() != 30 ) {
+        if (this.dataBlockSize() != 30 ) {
             report.tagValuePair("should have", 30 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

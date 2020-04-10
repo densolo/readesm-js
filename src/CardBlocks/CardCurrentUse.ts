@@ -58,9 +58,9 @@ export default class CardCurrentUse extends CardBlock {
 
         report.writeBlock(this.sessionOpenTime, tr("sessionOpenTime"));
         report.writeBlock(this.sessionOpenVehicle, tr("sessionOpenVehicle"));
-        if (this.size() != 24 ) {
+        if (this.dataBlockSize() != 24 ) {
             report.tagValuePair("should have", 24 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

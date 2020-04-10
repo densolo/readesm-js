@@ -45,7 +45,7 @@ export default class RawVuDetailedSpeedData extends VuBlock {
     }
 
     size() {
-        return 64;
+        return 2;
     }
 
     toString() {

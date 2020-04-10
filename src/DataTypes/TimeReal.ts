@@ -16,6 +16,7 @@ export default class TimeReal extends Block {
             this.time = TimeReal.fromTime_t(tm);
         }
     }
+    
 
     static fromTime_t(seconds: number) {
         return new Date(seconds * 1000);
@@ -26,10 +27,10 @@ export default class TimeReal extends Block {
             return tr("undefined");            
         }
 
-        if (this.time.getHours() == 0 && this.time.getMinutes() == 0 && this.time.getSeconds() == 0) {
-            return this.time.toDateString();
+        let rv = this.time.toJSON();
+        if (rv.match(/.*T00:00:00.000Z$/)) {
+            rv = rv.slice(0, 10);
         }
-
-        return this.time.toString();
+        return rv;
     }
 }

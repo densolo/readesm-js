@@ -57,9 +57,9 @@ export default class CardVehiclesUsed extends CardBlock {
 
         report.tagValuePair(tr("vehiclePointerNewestRecord"), this.vehiclePointerNewestRecord);
         report.writeArray(this.cardVehicleRecord, tr("cardVehicleRecord"));
-        if (this.size() != 38  + this.cardVehicleRecord.size()) {
-            report.tagValuePair("should have", 38  + this.cardVehicleRecord.size());
-            report.tagValuePair("has", this.size());
+        if (this.dataBlockSize() != 7  + this.cardVehicleRecord.size()) {
+            report.tagValuePair("should have", 7  + this.cardVehicleRecord.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

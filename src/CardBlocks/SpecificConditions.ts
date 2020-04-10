@@ -54,9 +54,9 @@ export default class SpecificConditions extends CardBlock {
     printOn(report: Reporter) {
 
         report.writeArray(this.specificConditionRecord, tr("specificConditionRecord"));
-        if (this.size() != 10  + this.specificConditionRecord.size()) {
-            report.tagValuePair("should have", 10  + this.specificConditionRecord.size());
-            report.tagValuePair("has", this.size());
+        if (this.dataBlockSize() != 5  + this.specificConditionRecord.size()) {
+            report.tagValuePair("should have", 5  + this.specificConditionRecord.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

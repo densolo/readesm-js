@@ -56,9 +56,9 @@ export default class CardChipIdentification extends CardBlock {
 
         report.tagValuePair(tr("icSerialNumber"), this.icSerialNumber.toString());
         report.tagValuePair(tr("icManufacturingReference"), this.icManufacturingReference.toString());
-        if (this.size() != 13 ) {
+        if (this.dataBlockSize() != 13 ) {
             report.tagValuePair("should have", 13 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }

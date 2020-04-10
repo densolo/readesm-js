@@ -1,4 +1,5 @@
 
+import * as padStart from 'lodash/padStart';
 import DataType from 'DataTypes/DataType';
 import QString from 'utils/QString';
 import {tr} from 'utils/Translation';
@@ -89,8 +90,8 @@ export default class ActivityChangeInfo extends DataType {
 
     formatClock(time: number) {
         return new QString("%1:%2")
-                .arg(time / 60)
-                .arg(time % 60).toString();
+                .arg(padStart(Math.floor(time / 60), 2, '0'))
+                .arg(padStart(time % 60, 2, '0')).toString();
     }
 
     title() {

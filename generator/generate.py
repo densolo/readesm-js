@@ -81,9 +81,9 @@ def generateDataType(d, typesMap):
 
     if d.tag == 'CardBlock':
         ctx['printOn'] += """
-        if (this.size() != %(offset)i %(offsetextra)s) {
+        if (this.dataBlockSize() != %(offset)i %(offsetextra)s) {
             report.tagValuePair("should have", %(offset)i %(offsetextra)s);
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }""" % {
             'offset': ctx['offset'],
             'offsetextra': ctx['offsetextra']
@@ -179,6 +179,7 @@ def parseField(classType, className, xmlField, fieldSize, typesMap, ctx):
         name = lcfirst(xmlField.get('type'))
         typeName = xmlField.get('type')
         counterLength = xmlField.get('counterlength')
+        fieldSize = 0
 
         ctx['subtypeImports'] += "\nimport %s from 'DataTypes/%s';" % (typeName, typeName)
         ctx['fieldDefinitions'] += '\n    %s: Subblocks<%s>;' % (name, typeName)
@@ -192,6 +193,7 @@ def parseField(classType, className, xmlField, fieldSize, typesMap, ctx):
             ctx['fieldInitializations'] += '\n        this.%s = DataReader.readSubblocksByCount<%s>(%s, data.slice(%s + %s), 0, (%s));' % (
                 name, typeName, typeName, ctx['offset'], counterLength, subcount
             )
+            fieldSize = length
 
         elif classType == 'CardBlock':
             ctx['fieldInitializations'] += '\n        this.%s = DataReader.readSubblocksByLength<%s>(%s, data.slice(%s), 0, this.dataBlockSize() - (%s));' % (

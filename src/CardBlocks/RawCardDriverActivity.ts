@@ -59,9 +59,9 @@ export default class RawCardDriverActivity extends CardBlock {
         report.tagValuePair(tr("oldestRecord"), this.oldestRecord);
         report.tagValuePair(tr("newestRecord"), this.newestRecord);
         report.tagValuePair(tr("cyclicData"), this.cyclicData.toString());
-        if (this.size() != 9 ) {
+        if (this.dataBlockSize() != 9 ) {
             report.tagValuePair("should have", 9 );
-            report.tagValuePair("has", this.size());
+            report.tagValuePair("has", this.dataBlockSize());
         }
     }
 }
