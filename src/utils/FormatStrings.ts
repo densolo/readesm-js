@@ -392,4 +392,22 @@ export default class FormatStrings {
         }
         return new QString(tr("Unknown Manufacturer %1 or equipment not type approved")).arg(code).toString();
     }
+
+    static longMonthName(month: number): string {
+        let months = [
+            'January', 
+            'February', 
+            'March', 
+            'April', 
+            'May',
+            'June', 
+            'July', 
+            'August', 
+            'September',
+            'October', 
+            'November', 
+            'December'
+            ];
+        return months[month];
+    }
 }

@@ -112,7 +112,7 @@ export default class ActivityChangeInfo extends DataType {
         return "blue";
     }
 
-    formatClock(time: number) {
+    static formatClock(time: number) {
         return new QString("%1:%2")
                 .arg(padStart(Math.floor(time / 60), 2, '0'))
                 .arg(padStart(time % 60, 2, '0')).toString();
@@ -121,6 +121,6 @@ export default class ActivityChangeInfo extends DataType {
     title() {
         return new QString(tr("%1 for %2 h"))
             .arg(this.activityName())
-            .arg(this.formatClock(this.duration)).toString(); 
+            .arg(ActivityChangeInfo.formatClock(this.duration)).toString(); 
     }
 }

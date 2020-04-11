@@ -71,8 +71,8 @@ export default class VuOverspeedingEventRecord extends DataType {
         report.tagValuePair(tr("eventType"), FormatStrings.eventType(this.eventType));
         report.tagValuePair(tr("eventRecordPurpose"), FormatStrings.eventRecordPurpose(this.eventRecordPurpose));
         report.writeBlock(this.eventTime, tr("eventTime"));
-        report.tagValuePair(tr("maxSpeedValue"), this.maxSpeedValue);
-        report.tagValuePair(tr("averageSpeedValue"), this.averageSpeedValue);
+        report.tagValuePair(tr("maxSpeedValue"), new QString("%1 km/h").arg(this.maxSpeedValue).toString());
+        report.tagValuePair(tr("averageSpeedValue"), new QString("%1 km/h").arg(this.averageSpeedValue).toString());
         report.writeBlock(this.cardNumberDriverSlotBegin, tr("cardNumberDriverSlotBegin"));
         report.tagValuePair(tr("similarEventsNumber"), this.similarEventsNumber);
     }

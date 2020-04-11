@@ -82,10 +82,10 @@ export default class RawVuCardIWRecord extends DataType {
         report.writeBlock(this.cardNumber, tr("cardNumber"));
         report.writeBlock(this.cardExpiryDate, tr("cardExpiryDate"));
         report.writeBlock(this.cardInsertionTime, tr("cardInsertionTime"));
-        report.tagValuePair(tr("vehicleOdometerValueAtInsertion"), this.vehicleOdometerValueAtInsertion);
+        report.tagValuePair(tr("vehicleOdometerValueAtInsertion"), new QString("%1 km").arg(this.vehicleOdometerValueAtInsertion).toString());
         report.tagValuePair(tr("cardSlotNumber"), this.cardSlotNumber);
         report.writeBlock(this.cardWithdrawalTime, tr("cardWithdrawalTime"));
-        report.tagValuePair(tr("vehicleOdometerValueAtWithdrawal"), this.vehicleOdometerValueAtWithdrawal);
+        report.tagValuePair(tr("vehicleOdometerValueAtWithdrawal"), new QString("%1 km").arg(this.vehicleOdometerValueAtWithdrawal).toString());
         report.writeBlock(this.previousVehicleRegistration, tr("previousVehicleRegistration"));
         report.writeBlock(this.previousCardWithdrawalTime, tr("previousCardWithdrawalTime"));
         report.tagValuePair(tr("manualInputFlag"), this.manualInputFlag);

@@ -69,7 +69,7 @@ export default class RawVuActivities extends VuBlock {
     printOn(report: Reporter) {
 
         report.writeBlock(this.timeReal, tr("timeReal"));
-        report.tagValuePair(tr("odometerValueMidnight"), this.odometerValueMidnight);
+        report.tagValuePair(tr("odometerValueMidnight"), new QString("%1 km").arg(this.odometerValueMidnight).toString());
         report.writeArray(this.vuCardIWRecord, tr("vuCardIWRecord"));
         report.writeArray(this.activityChangeInfo, tr("activityChangeInfo"));
         report.writeArray(this.vuPlaceDailyWorkPeriodRecord, tr("vuPlaceDailyWorkPeriodRecord"));

@@ -17,6 +17,9 @@ export default class TimeReal extends Block {
         }
     }
     
+    date() {
+        return this.time;
+    }
 
     static fromTime_t(seconds: number) {
         return new Date(seconds * 1000);

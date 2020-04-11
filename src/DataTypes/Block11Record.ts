@@ -64,7 +64,7 @@ export default class Block11Record extends DataType {
 
         report.writeBlock(this.cardNumber, tr("cardNumber"));
         report.writeBlock(this.time, tr("time"));
-        report.tagValuePair(tr("sometimesDuration"), this.sometimesDuration);
+        report.tagValuePair(tr("sometimesDuration"), new QString("%1 s").arg(this.sometimesDuration).toString());
         report.tagValuePair(tr("payloadData"), this.payloadData.toString());
     }
 }

@@ -1,5 +1,6 @@
 <html>
     <head>
+    </head>
     <body>
         <ul>
             <li>Input.ddd 
@@ -23,5 +24,5 @@
                 | <a href="javascript:EsmDownloader.downloadEsmAsJson('card_data/C_20180611_1837_I_Jitescu_0000000007HMZ0.DDD');">JSON</a></li>
  
         </ul>
-    <script src="js/main.EsmDownloader.bundle.55c10fe4817600b99f81.js"></script></body>
+    </body>
 </html>

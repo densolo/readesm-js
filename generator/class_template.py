@@ -16,7 +16,7 @@ import Reporter from 'Reporter/Reporter';
 import {tr} from 'utils/Translation';
 %(subtypeImports)s
 
-
+%(comment)s
 export default class %(className)s extends %(baseClass)s {
 
     static BLOCK_TYPE = %(classTypeCode)s;

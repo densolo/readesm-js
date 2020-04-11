@@ -46,11 +46,13 @@ def generateDataType(d, typesMap):
     className = d.get('name')
     classType = d.tag
     rawClassName = 'Raw' + className if d.get('hasrefined') else className
-
+    comment = d.find('comment')
+    
     ctx = {		
         'offset': 5 if classType == 'CardBlock' else 0,	
         'offsetextra': '',
 
+        'comment': "// %s" % comment.text if comment else "",
         'baseClass': classType,
         'className': rawClassName,
         'classTitle': '',
@@ -121,14 +123,25 @@ def parseField(classType, className, xmlField, fieldSize, typesMap, ctx):
     name = xmlField.get('name')
     
     if xmlField.tag == 'int':
+        encoding = xmlField.get('encoding')
+
         ctx['fieldDefinitions'] += '\n    %s: number;' % name
-        ctx['fieldInitializations'] += '\n        this.%s = DataReader.readUint%s(data, %s);' % (
-            name, fieldSize*8, ctx['offset']
-        )
+        
+        if encoding == 'BCD':
+            ctx['fieldInitializations'] += '\n        this.%s = DataReader.readBCD%s(data, %s);' % (
+                name, fieldSize*8, ctx['offset']
+            )
+        else:
+            ctx['fieldInitializations'] += '\n        this.%s = DataReader.readUint%s(data, %s);' % (
+                name, fieldSize*8, ctx['offset']
+            )
         
         tableName = xmlField.get('table')
+        unit = xmlField.get('unit')
         if tableName:
             ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), FormatStrings.%s(this.%s));' % (name, tableName, name)
+        elif unit:
+            ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), new QString("%%1 %s").arg(this.%s).toString());' % (name, unit, name)
         else:
             ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s);' % (name, name)
         

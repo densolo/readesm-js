@@ -30,7 +30,7 @@ export default class CardActivityDailyRecord extends RawCardActivityDailyRecord 
             RawCardActivityDailyRecord.staticSize, this.activityRecordLength - RawCardActivityDailyRecord.staticSize);
 
         if (this.activityChangeInfos.numberOfBlocks() > 0) {
-            for (let j = 0; j < this.activityChangeInfos.numberOfBlocks() - 1; ++j) {
+            for (let j = 0; j < this.activityChangeInfos.numberOfBlocks() - 1; j++) {
                 if (this.activityChangeInfos.get(j + 1).t != 0) {
                     this.activityChangeInfos.get(j).setDuration(this.activityChangeInfos.get(j + 1).t - this.activityChangeInfos.get(j).t, false);
                 } else {

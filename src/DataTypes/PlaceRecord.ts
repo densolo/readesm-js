@@ -71,7 +71,7 @@ export default class PlaceRecord extends DataType {
         report.tagValuePair(tr("entryTypeDailyWorkPeriod"), FormatStrings.dailyWorkPeriod(this.entryTypeDailyWorkPeriod));
         report.tagValuePair(tr("dailyWorkPeriodCountry"), FormatStrings.nationNumeric(this.dailyWorkPeriodCountry));
         report.tagValuePair(tr("dailyWorkPeriodRegion"), FormatStrings.regionNumeric(this.dailyWorkPeriodRegion));
-        report.tagValuePair(tr("vehicleOdometerValue"), this.vehicleOdometerValue);
+        report.tagValuePair(tr("vehicleOdometerValue"), new QString("%1 km").arg(this.vehicleOdometerValue).toString());
     }
 }
 

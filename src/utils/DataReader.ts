@@ -24,6 +24,13 @@ export default class DataReader {
         return new DataView(data.slice(pos, pos + 4)).getUint32(0)
     }
 
+    static readBCD16(data: ArrayBuffer, pos: number) {
+        let start = new Uint8Array(data.slice(pos, pos+2));
+        let rv = (start[0] >> 4) * 1000 + (start[0] & 0x0F) * 100 + (start[1] >> 4) * 10 + (start[1] & 0x0F);
+        // console.log("readBCD16: " + RawData.toHexString(start) + " -> " + rv + " (" + DataReader.readUint16(data, pos) + ")");
+        return rv;
+    }
+
     static readRawData(data: ArrayBuffer, pos: number, length: number) {
         return new RawData(data.slice(pos), length);
     }

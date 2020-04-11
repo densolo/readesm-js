@@ -1,8 +1,16 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 
 module.exports = {
     entry: './src/main.EsmDownloader.ts',
     mode: 'development',
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: 'download.html',
+            template: 'htmlpage/download.html.template'
+        })
+    ],
     module: {
         rules: [
             {

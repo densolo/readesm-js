@@ -67,7 +67,7 @@ export default class DriverCardApplicationIdentification extends CardBlock {
         report.tagValuePair(tr("cardStructureVersion"), this.cardStructureVersion.toString());
         report.tagValuePair(tr("noOfEventsPerType"), this.noOfEventsPerType);
         report.tagValuePair(tr("noOfFaultsPerType"), this.noOfFaultsPerType);
-        report.tagValuePair(tr("activityStructureLength"), this.activityStructureLength);
+        report.tagValuePair(tr("activityStructureLength"), new QString("%1 Bytes").arg(this.activityStructureLength).toString());
         report.tagValuePair(tr("noOfCardVehicleRecords"), this.noOfCardVehicleRecords);
         report.tagValuePair(tr("noOfCardPlaceRecords"), this.noOfCardPlaceRecords);
         if (this.dataBlockSize() != 15 ) {

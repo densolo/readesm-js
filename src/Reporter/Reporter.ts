@@ -30,7 +30,7 @@ export default class Reporter {
     }
 
     writeArray<T extends DataType>(ray: Subblocks<T>, title: string = '', defaultShown: boolean = true) {        
-        this.arrayStart(ray.numberOfBlocks(), this.title, defaultShown);
+        this.arrayStart(ray.numberOfBlocks(), title, defaultShown);
         this.nestLevel += 1;
         for (let j = 0; j < ray.numberOfBlocks(); j++) {
             this.writeBlock(ray.get(j));
