@@ -12,7 +12,7 @@ export default class Reporter {
     protected title: string;
     protected nestLevel: number;
     protected collected: string;
-
+    
     constructor() {
         this.nestLevel = 0;
         this.collected = '';

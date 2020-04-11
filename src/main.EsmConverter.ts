@@ -7,6 +7,7 @@ import HtmlReporter from 'Reporter/HtmlReporter';
 import JsonReporter from 'Reporter/JsonReporter';
 import FileUtil from 'utils/FileUtil';
 import LastCardDownload from 'CardBlocks/LastCardDownload';
+import BlockParseError from 'DataTypes/BlockParseError';
 
 
 function main() {
@@ -16,7 +17,12 @@ function main() {
     if (inputfile == 'analyze') {
         analyzeFiles();
     } else {
-        convertFile(inputfile);
+        let ef = convertFile(inputfile);
+        let err = EsmFile.findTypeInVector<BlockParseError>(BlockParseError, ef.blocks);
+        if (err) {
+            console.log("Failed");
+            process.exit(1);
+        }
     }
     console.log("Done");
 }
@@ -42,6 +48,8 @@ function convertFile(inputfile: string) {
 
     convertToHtml(ef, inputfile + '.html');
     convertToJson(ef, inputfile + '.json');
+
+    return ef;
 }
 
 function convertToHtml(ef: EsmFile, outfile: string) {

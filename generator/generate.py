@@ -175,7 +175,7 @@ def parseField(classType, className, xmlField, fieldSize, typesMap, ctx):
         t = typesMap[xmlField.tag]
         ctx['subtypeImports'] += "\nimport %s from '%s/%s';" % (t.name, t.directory, t.name)
         ctx['fieldDefinitions'] += '\n    %s: %s;' % (name, t.name)
-        ctx['fieldInitializations'] += '\n        this.%s = new %s(data.slice(%s))' % (
+        ctx['fieldInitializations'] += '\n        this.%s = new %s(data.slice(%s));' % (
             name, t.name, ctx['offset']
         )
         ctx['printOn'] += '\n        report.writeBlock(this.%s, tr("%s"));' % (name, name)

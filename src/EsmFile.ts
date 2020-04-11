@@ -11,6 +11,7 @@ import CardDriverActivity from 'CardBlocks/CardDriverActivity';
 import VuOverview from 'VuBlocks/VuOverview';
 import QString from 'utils/QString';
 import {tr} from 'utils/Translation';
+import BlockParseError from 'DataTypes/BlockParseError';
 
 
 export default class EsmFile {
@@ -29,11 +30,16 @@ export default class EsmFile {
 
         let ef = new EsmFile(data);
 
-        while(pos < data.byteLength) {
-            block = blockFactory(data, pos);
-            pos += block.size()            
-            ef.blocks.push(block);
-            // console.log("card size: " + block.size());
+        try {
+            while(pos < data.byteLength) {
+                block = blockFactory(data, pos);
+                pos += block.size()            
+                ef.blocks.push(block);
+                // console.log("card size: " + block.size());
+            }
+        } catch (err) {
+            console.trace();
+            ef.blocks.push(new BlockParseError(err));
         }
 
         return ef;

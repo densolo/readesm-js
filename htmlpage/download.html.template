@@ -7,7 +7,7 @@
 
         <ul>
             <li>Input.ddd 
-      applic          | <a href="files/Input.ddd">Download</a> 
+                | <a href="files/Input.ddd">Download</a> 
                 | <a href="javascript:EsmDownloader.downloadEsmAsJson('files/Input.ddd');">JSON</a></li>
 
             <li>C_20190104_0948_G_Dragut_0000000003XPM001.DDD 
