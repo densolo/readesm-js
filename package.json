@@ -5,7 +5,7 @@
   "main": "src/readesm.js",
   "scripts": {
     "build": "tsc",
-    "build:web": "rm dist/main*bundle*js; rm htmlpage/js/*bundle*js; webpack src/main.EsmDownloader.ts && cp dist/main*.js htmlpage/js/ && cp dist/download.html htmlpage/",
+    "build:web": "bash build_web.sh",
     "convert": "NODE_PATH=./src ts-node src/main.EsmConverter.ts",
     "test": "jest --no-cache"
   },

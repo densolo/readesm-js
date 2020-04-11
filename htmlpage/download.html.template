@@ -1,7 +1,10 @@
 <html>
     <head>
+        <%= htmlWebpackPlugin.tags.headTags %>
     </head>
     <body>
+        <%= htmlWebpackPlugin.tags.bodyTags %>
+
         <ul>
             <li>Input.ddd 
       applic          | <a href="files/Input.ddd">Download</a> 

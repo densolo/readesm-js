@@ -2,6 +2,7 @@
 import DataReader from 'utils/DataReader';    
 import CardBlock from 'CardBlocks/CardBlock';
 import Converter from 'utils/Converter';
+import FormatStrings from 'utils/FormatStrings';
 
 import DriverCardApplicationIdentification from 'CardBlocks/DriverCardApplicationIdentification';
 import LastCardDownload from 'CardBlocks/LastCardDownload';
@@ -23,7 +24,7 @@ import CardVehiclesUsed from 'CardBlocks/CardVehiclesUsed';
 
 export function cardBlockFactory(data: ArrayBuffer, pos: number) {
     let blockType = DataReader.readUint16(data, pos);
-    // console.log("cardBlockFactory: " + Converter.dec2hexString(blockType));
+    //console.log("cardBlockFactory: " + Converter.dec2hexString(blockType));
             
     data = data.slice(pos);
 
@@ -33,7 +34,9 @@ export function cardBlockFactory(data: ArrayBuffer, pos: number) {
 
     switch (blockType) {
 		case DriverCardApplicationIdentification.BLOCK_TYPE: {
-            return new DriverCardApplicationIdentification(data);
+            let rv =  new DriverCardApplicationIdentification(data);
+            console.log(`Parsed DriverCardApplicationIdentification.typeOfTachographCardId: '${FormatStrings.equipmentType(rv.typeOfTachographCardId)}'`);
+            return rv;
         }
 		case LastCardDownload.BLOCK_TYPE: {
             return new LastCardDownload(data);

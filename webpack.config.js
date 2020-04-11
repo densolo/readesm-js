@@ -8,7 +8,8 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'download.html',
-            template: 'htmlpage/download.html.template'
+            template: 'htmlpage/download.html.template',
+            inject: false
         })
     ],
     module: {

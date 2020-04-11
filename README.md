@@ -1,5 +1,8 @@
 # readesm-js
 JavaScript implementation of the reader of ESM tachograph files from https://sourceforge.net/p/readesm/code/HEAD/tree/
+
+Works under Node (https://nodejs.org/) and in browsers.
+
  
 ## Build
 
