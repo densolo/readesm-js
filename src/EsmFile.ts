@@ -29,15 +29,27 @@ export default class EsmFile {
         let pos = 0;
 
         let ef = new EsmFile(data);
+        let errorCounter = 0;
 
         try {
             while(pos < data.byteLength) {
                 block = blockFactory(data, pos);
                 pos += block.size()            
                 ef.blocks.push(block);
+
                 // console.log("card size: " + block.size());
+
+                if (block instanceof BlockParseError) {
+                    errorCounter += 1
+                    if (errorCounter > 5) {
+                        throw new Error("Too many parse errors");
+                    }
+                } else {
+                    errorCounter = 0;
+                }
             }
         } catch (err) {
+            console.error("Parse error: " + err.toString());
             console.trace();
             ef.blocks.push(new BlockParseError(err));
         }

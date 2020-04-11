@@ -12,6 +12,7 @@ import Block14 from 'VuBlocks/Block14';
 import VuEventsFaults from 'VuBlocks/VuEventsFaults';
 import VuActivities from 'VuBlocks/VuActivities';
 import VuDetailedSpeedData from 'VuBlocks/VuDetailedSpeedData';
+import BlockParseError from 'DataTypes/BlockParseError';
 
 
 export function vuBlockFactory(data, pos) {
@@ -53,7 +54,7 @@ export function vuBlockFactory(data, pos) {
         }
         default: {
             console.log("Unknown vu block type: " + Converter.dec2hexString(blockType));
-            return new VuBlock(data);
+            return new BlockParseError("Unknown vu block type: " + Converter.dec2hexString(blockType));
         }
     }
 }

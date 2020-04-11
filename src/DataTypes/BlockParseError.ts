@@ -1,11 +1,11 @@
 
 
-import DataType from 'DataTypes/DataType';
+import TopLevelBlock from 'DataTypes/TopLevelBlock';
 import Reporter from 'Reporter/Reporter';
 import {tr} from 'utils/Translation';
 
 
-export default class BlockParseError extends DataType {
+export default class BlockParseError extends TopLevelBlock {
 
     errorMessage: string;
     
