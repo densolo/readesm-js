@@ -1,9 +1,11 @@
 
 import Reporter from 'Reporter/Reporter';
 import Block from 'DataTypes/Block';
-import FileUtil from 'utils/FileUtil';
 import * as isEmpty from 'lodash/isEmpty';
 import QString from 'utils/QString';
+import 'Reporter/HtmlReporterTemplate.html';
+
+let HTML_TEMPLATE = require('Reporter/HtmlReporterTemplate.html'); 
 
 
 export default class HtmlReporter extends Reporter {
@@ -22,7 +24,7 @@ export default class HtmlReporter extends Reporter {
     }
 
     renderReport(): string {
-        let html = FileUtil.readFile('resources/template.html').toString();
+        let html = HTML_TEMPLATE; //FileUtil.readFile('resources/template.html').toString();
         html = html.replace(/\$title/g, this.title);
         html = html.replace("$content", this.collected);
         html = html.replace(/\$show/g, "show");

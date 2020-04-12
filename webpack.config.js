@@ -5,6 +5,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: './src/main.EsmDownloader.ts',
     mode: 'development',
+    output: {
+        filename: 'main.EsmDownloader.bundle.[hash].js',
+        path: path.resolve(__dirname, 'dist'),
+        library: 'EsmDownloader'
+    },
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'download.html',
@@ -15,9 +20,13 @@ module.exports = {
     module: {
         rules: [
             {
-            test: /\.tsx?$/,
-            use: 'ts-loader',
-            exclude: /node_modules/,
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
+            {
+                test: /\.html$/i,
+                loader: 'html-loader',
             },
         ],
     },
@@ -27,10 +36,5 @@ module.exports = {
             path.resolve(__dirname, 'node_modules')
         ],
         extensions: [ '.tsx', '.ts', '.js' ],
-    },
-    output: {
-        filename: 'main.EsmDownloader.bundle.[hash].js',
-        path: path.resolve(__dirname, 'dist'),
-        library: 'EsmDownloader'
-    },
+    }
 };

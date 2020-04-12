@@ -1,5 +1,6 @@
 logs
 *.log
+out.txt
 .*/
 *.pyc
 

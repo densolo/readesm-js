@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/node": "^7.10.9",
+    "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
     "jest": "^25.3.0",
     "lodash": "^4.17.15",

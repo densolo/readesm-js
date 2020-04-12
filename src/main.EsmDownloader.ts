@@ -3,6 +3,7 @@ let fileDownload = require('js-file-download'); // use require() because it fail
 
 import EsmFile from 'EsmFile';
 import JsonReporter from 'Reporter/JsonReporter';
+import HtmlReporter from 'Reporter/HtmlReporter';
 
 export function downloadEsmAsJson(filename: string) {
     console.log("downloadEsmAsJson: " + filename);
@@ -15,6 +16,21 @@ export function downloadEsmAsJson(filename: string) {
         let j = report.renderReport();
 
         fileDownload(j, filename.replace(/^.*\//, '') + '.json', 'application/json');    
+    });
+
+}
+
+export function downloadEsmAsHtml(filename: string) {
+    console.log("downloadEsmAsHtml: " + filename);
+
+    downloadEsmData(filename, (data: ArrayBuffer) => {        
+        let ef = EsmFile.parseData(data);
+        let report = new HtmlReporter();
+        ef.printOn(report);
+
+        let j = report.renderReport();
+
+        fileDownload(j, filename.replace(/^.*\//, '') + '.html', 'text/html');    
     });
 
 }
