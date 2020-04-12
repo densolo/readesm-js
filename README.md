@@ -34,4 +34,6 @@ The command below will read <file> and produces <file>.html and <file>.json
 <script src="js/main.EsmDownloader.bundle.js"></script>
 
 <a href="javascript:EsmDownloader.downloadEsmAsJson('files/Input.ddd');">Input.ddd JSON</a>
+
+<a href="javascript:EsmDownloader.downloadEsmAsHtml('files/Input.ddd');">Input.ddd HTML</a>
  ```
