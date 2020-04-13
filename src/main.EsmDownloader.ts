@@ -5,6 +5,7 @@ import EsmFile from 'EsmFile';
 import JsonReporter from 'Reporter/JsonReporter';
 import HtmlReporter from 'Reporter/HtmlReporter';
 
+
 export function downloadEsmAsJson(filename: string) {
     console.log("downloadEsmAsJson: " + filename);
 
@@ -28,9 +29,9 @@ export function downloadEsmAsHtml(filename: string) {
         let report = new HtmlReporter();
         ef.printOn(report);
 
-        let j = report.renderReport();
+        let html = report.renderReport();
 
-        fileDownload(j, filename.replace(/^.*\//, '') + '.html', 'text/html');    
+        fileDownload(html, filename.replace(/^.*\//, '') + '.html', 'text/html');    
     });
 
 }

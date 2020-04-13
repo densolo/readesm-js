@@ -22,7 +22,7 @@ export default class HtmlReporter extends Reporter {
     }
 
     renderReport(): string {
-        let html = HTML_TEMPLATE; //FileUtil.readFile('resources/template.html').toString();
+        let html = HTML_TEMPLATE;
         html = html.replace(/\$title/g, this.title);
         html = html.replace("$content", this.collected);
         html = html.replace(/\$show/g, "show");

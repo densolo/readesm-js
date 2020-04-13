@@ -25,10 +25,10 @@ export default class SvgDayGraph extends PictureGenerator {
     
     
     addSvgHull(content: string, width: number) {
-        return new QString("\n<svg xmlns='http://www.w3.org/2000/svg' width='%1' height='135'>\n\t<g transform='translate(10,0)'>")
+        return new QString("\n<div><svg xmlns='http://www.w3.org/2000/svg' width='%1' height='135'>\n\t<g transform='translate(10,0)'>")
             .arg(width).toString()
         + content
-        + "\n\t</g>\n</svg>";
+        + "\n\t</g>\n</svg></div>";
     }
 
 }
