@@ -3,9 +3,7 @@ import Reporter from 'Reporter/Reporter';
 import Block from 'DataTypes/Block';
 import * as isEmpty from 'lodash/isEmpty';
 import QString from 'utils/QString';
-import 'Reporter/HtmlReporterTemplate.html';
-
-let HTML_TEMPLATE = require('Reporter/HtmlReporterTemplate.html'); 
+import {HTML_TEMPLATE} from 'Reporter/HtmlReporterTemplate.html';
 
 
 export default class HtmlReporter extends Reporter {

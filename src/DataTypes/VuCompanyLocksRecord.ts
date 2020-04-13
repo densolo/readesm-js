@@ -37,10 +37,10 @@ export default class VuCompanyLocksRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.lockTime = new Timespan(data.slice(0))
+        this.lockTime = new Timespan(data.slice(0));
         this.companyName = DataReader.readCodePageString(data, 8, 36).toString();
         this.companyAddress = DataReader.readCodePageString(data, 44, 36).toString();
-        this.companyCardNumber = new FullCardNumber(data.slice(80))    
+        this.companyCardNumber = new FullCardNumber(data.slice(80));    
     }
 
     className() {
@@ -62,7 +62,7 @@ export default class VuCompanyLocksRecord extends DataType {
 
     printOn(report: Reporter) {
 
-        report.writeBlock(this.lockTime, tr("lockTime"));
+        report.tagValuePair(tr("lockTime"), this.lockTime.toString());
         report.tagValuePair(tr("companyName"), this.companyName);
         report.tagValuePair(tr("companyAddress"), this.companyAddress);
         report.writeBlock(this.companyCardNumber, tr("companyCardNumber"));

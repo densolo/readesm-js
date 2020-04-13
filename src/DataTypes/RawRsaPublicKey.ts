@@ -57,6 +57,8 @@ export default class RawRsaPublicKey extends DataType {
 
     printOn(report: Reporter) {
 
+        report.tagValuePair(tr("n"), this.n.toString());
+        report.tagValuePair(tr("e"), this.e.toString());
     }
 }
 

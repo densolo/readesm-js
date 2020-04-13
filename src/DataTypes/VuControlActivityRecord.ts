@@ -39,9 +39,9 @@ export default class VuControlActivityRecord extends DataType {
         super(data);
 
         this.controlType = DataReader.readUint8(data, 0);
-        this.controlTime = new TimeReal(data.slice(1))
-        this.controlCardNumber = new FullCardNumber(data.slice(5))
-        this.downloadPeriod = new Timespan(data.slice(23))    
+        this.controlTime = new TimeReal(data.slice(1));
+        this.controlCardNumber = new FullCardNumber(data.slice(5));
+        this.downloadPeriod = new Timespan(data.slice(23));    
     }
 
     className() {
@@ -64,9 +64,9 @@ export default class VuControlActivityRecord extends DataType {
     printOn(report: Reporter) {
 
         report.tagValuePair(tr("controlType"), FormatStrings.controlType(this.controlType));
-        report.writeBlock(this.controlTime, tr("controlTime"));
+        report.tagValuePair(tr("controlTime"), this.controlTime.toString());
         report.writeBlock(this.controlCardNumber, tr("controlCardNumber"));
-        report.writeBlock(this.downloadPeriod, tr("downloadPeriod"));
+        report.tagValuePair(tr("downloadPeriod"), this.downloadPeriod.toString());
     }
 }
 

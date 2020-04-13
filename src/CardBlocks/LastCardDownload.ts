@@ -32,7 +32,7 @@ export default class LastCardDownload extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.lastCardDownload = new TimeReal(data.slice(5))    
+        this.lastCardDownload = new TimeReal(data.slice(5));    
     }
 
     className() {
@@ -52,7 +52,7 @@ export default class LastCardDownload extends CardBlock {
 
     printOn(report: Reporter) {
 
-        report.writeBlock(this.lastCardDownload, tr("lastCardDownload"));
+        report.tagValuePair(tr("lastCardDownload"), this.lastCardDownload.toString());
         if (this.dataBlockSize() != 9 ) {
             report.tagValuePair("should have", 9 );
             report.tagValuePair("has", this.dataBlockSize());

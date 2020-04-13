@@ -37,8 +37,8 @@ export default class Block11Record extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.cardNumber = new FullCardNumber(data.slice(0))
-        this.time = new Timespan(data.slice(18))
+        this.cardNumber = new FullCardNumber(data.slice(0));
+        this.time = new Timespan(data.slice(18));
         this.sometimesDuration = DataReader.readUint16(data, 26);
         this.payloadData = DataReader.readRawData(data, 28, 30);    
     }
@@ -63,7 +63,7 @@ export default class Block11Record extends DataType {
     printOn(report: Reporter) {
 
         report.writeBlock(this.cardNumber, tr("cardNumber"));
-        report.writeBlock(this.time, tr("time"));
+        report.tagValuePair(tr("time"), this.time.toString());
         report.tagValuePair(tr("sometimesDuration"), new QString("%1 s").arg(this.sometimesDuration).toString());
         report.tagValuePair(tr("payloadData"), this.payloadData.toString());
     }

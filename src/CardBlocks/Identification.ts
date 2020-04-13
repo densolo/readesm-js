@@ -45,11 +45,11 @@ export default class Identification extends CardBlock {
         this.cardIssuingMemberState = DataReader.readUint8(data, 5);
         this.cardNumber = DataReader.readString(data, 6, 16).toString();
         this.cardIssuingAuthorityName = DataReader.readCodePageString(data, 22, 36).toString();
-        this.cardIssueDate = new TimeReal(data.slice(58))
-        this.cardValidityBegin = new TimeReal(data.slice(62))
-        this.cardExpiryDate = new TimeReal(data.slice(66))
-        this.cardHolderName = new Name(data.slice(70))
-        this.cardHolderBirthDate = new BcdDate(data.slice(142))
+        this.cardIssueDate = new TimeReal(data.slice(58));
+        this.cardValidityBegin = new TimeReal(data.slice(62));
+        this.cardExpiryDate = new TimeReal(data.slice(66));
+        this.cardHolderName = new Name(data.slice(70));
+        this.cardHolderBirthDate = new BcdDate(data.slice(142));
         this.cardHolderPreferredLanguage = DataReader.readString(data, 146, 2).toString();    
     }
 
@@ -73,9 +73,9 @@ export default class Identification extends CardBlock {
         report.tagValuePair(tr("cardIssuingMemberState"), FormatStrings.nationNumeric(this.cardIssuingMemberState));
         report.tagValuePair(tr("cardNumber"), this.cardNumber);
         report.tagValuePair(tr("cardIssuingAuthorityName"), this.cardIssuingAuthorityName);
-        report.writeBlock(this.cardIssueDate, tr("cardIssueDate"));
-        report.writeBlock(this.cardValidityBegin, tr("cardValidityBegin"));
-        report.writeBlock(this.cardExpiryDate, tr("cardExpiryDate"));
+        report.tagValuePair(tr("cardIssueDate"), this.cardIssueDate.toString());
+        report.tagValuePair(tr("cardValidityBegin"), this.cardValidityBegin.toString());
+        report.tagValuePair(tr("cardExpiryDate"), this.cardExpiryDate.toString());
         report.writeBlock(this.cardHolderName, tr("cardHolderName"));
         report.writeBlock(this.cardHolderBirthDate, tr("cardHolderBirthDate"));
         report.tagValuePair(tr("cardHolderPreferredLanguage"), this.cardHolderPreferredLanguage);

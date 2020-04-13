@@ -40,8 +40,8 @@ export default class CardVehicleRecord extends DataType {
 
         this.vehicleOdometerBegin = DataReader.readUint24(data, 0);
         this.vehicleOdometerEnd = DataReader.readUint24(data, 3);
-        this.vehicleUse = new Timespan(data.slice(6))
-        this.registration = new VehicleRegistration(data.slice(14))
+        this.vehicleUse = new Timespan(data.slice(6));
+        this.registration = new VehicleRegistration(data.slice(14));
         this.vuDataBlockCounter = DataReader.readBCD16(data, 29);    
     }
 
@@ -69,7 +69,7 @@ export default class CardVehicleRecord extends DataType {
 
         report.tagValuePair(tr("vehicleOdometerBegin"), new QString("%1 km").arg(this.vehicleOdometerBegin).toString());
         report.tagValuePair(tr("vehicleOdometerEnd"), new QString("%1 km").arg(this.vehicleOdometerEnd).toString());
-        report.writeBlock(this.vehicleUse, tr("vehicleUse"));
+        report.tagValuePair(tr("vehicleUse"), this.vehicleUse.toString());
         report.writeBlock(this.registration, tr("registration"));
         report.tagValuePair(tr("vuDataBlockCounter"), this.vuDataBlockCounter);
     }

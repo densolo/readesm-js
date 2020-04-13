@@ -49,15 +49,15 @@ export default class RawVuOverview extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.memberStateCertificate = new EncryptedCertificate(data.slice(0))
-        this.vuCertificate = new EncryptedCertificate(data.slice(194))
+        this.memberStateCertificate = new EncryptedCertificate(data.slice(0));
+        this.vuCertificate = new EncryptedCertificate(data.slice(194));
         this.vehicleIdentificationNumber = DataReader.readString(data, 388, 17).toString();
-        this.vehicleRegistrationIdentification = new VehicleRegistration(data.slice(405))
-        this.currentDateTime = new TimeReal(data.slice(420))
-        this.vuDownloadablePeriod = new Timespan(data.slice(424))
+        this.vehicleRegistrationIdentification = new VehicleRegistration(data.slice(405));
+        this.currentDateTime = new TimeReal(data.slice(420));
+        this.vuDownloadablePeriod = new Timespan(data.slice(424));
         this.CardSlotsStatus = DataReader.readUint8(data, 432);
-        this.downloadingTime = new TimeReal(data.slice(433))
-        this.cardNumber = new FullCardNumber(data.slice(437))
+        this.downloadingTime = new TimeReal(data.slice(433));
+        this.cardNumber = new FullCardNumber(data.slice(437));
         this.companyOrWorkshopName = DataReader.readCodePageString(data, 455, 36).toString();
         this.vuCompanyLocksRecord = DataReader.readSubblocksByCount<VuCompanyLocksRecord>(VuCompanyLocksRecord, data.slice(491 + 1), 0, (DataReader.readUint8(data, 491)));
         this.vuControlActivityRecord = DataReader.readSubblocksByCount<VuControlActivityRecord>(VuControlActivityRecord, data.slice(492 + 1), 0, (DataReader.readUint8(data, 492)));    
@@ -86,10 +86,10 @@ export default class RawVuOverview extends VuBlock {
         report.writeBlock(this.vuCertificate, tr("vuCertificate"));
         report.tagValuePair(tr("vehicleIdentificationNumber"), this.vehicleIdentificationNumber);
         report.writeBlock(this.vehicleRegistrationIdentification, tr("vehicleRegistrationIdentification"));
-        report.writeBlock(this.currentDateTime, tr("currentDateTime"));
-        report.writeBlock(this.vuDownloadablePeriod, tr("vuDownloadablePeriod"));
+        report.tagValuePair(tr("currentDateTime"), this.currentDateTime.toString());
+        report.tagValuePair(tr("vuDownloadablePeriod"), this.vuDownloadablePeriod.toString());
         report.tagValuePair(tr("CardSlotsStatus"), this.CardSlotsStatus);
-        report.writeBlock(this.downloadingTime, tr("downloadingTime"));
+        report.tagValuePair(tr("downloadingTime"), this.downloadingTime.toString());
         report.writeBlock(this.cardNumber, tr("cardNumber"));
         report.tagValuePair(tr("companyOrWorkshopName"), this.companyOrWorkshopName);
         report.writeArray(this.vuCompanyLocksRecord, tr("vuCompanyLocksRecord"));

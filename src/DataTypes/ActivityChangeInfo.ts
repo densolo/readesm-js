@@ -3,6 +3,7 @@ import * as padStart from 'lodash/padStart';
 import DataType from 'DataTypes/DataType';
 import QString from 'utils/QString';
 import {tr} from 'utils/Translation';
+import Reporter from 'Reporter/Reporter';
 
 
 export default class ActivityChangeInfo extends DataType {
@@ -118,9 +119,50 @@ export default class ActivityChangeInfo extends DataType {
                 .arg(padStart(time % 60, 2, '0')).toString();
     }
 
+    timespan() {
+        return new QString(tr("from %1 to %2 (%3 h)"))
+            .arg(ActivityChangeInfo.formatClock(this.t))
+            .arg(ActivityChangeInfo.formatClock(this.t + this.duration))
+            .arg(ActivityChangeInfo.formatClock(this.duration))
+            .toString();
+    }
+
+    extraString() {
+        let rv = '';
+        if (this.isSlotState) {
+            rv += (this.p == 0 ? tr("Card inserted") : tr("Card not inserted or withdrawn")) + ", ";
+            rv += (this.s == 0 ? tr("driver slot") : tr("co-driver slot")) + ", ";
+            rv += (this.c == 0 ? tr("single") : tr("crew"));
+        } else {
+            if (this.p == 0) {
+                rv += tr("Card inserted") + ", ";
+                rv += (this.s == 0 ? tr("driver slot") : tr("co-driver slot")) + ", ";
+                rv += (this.c == 0 ? tr("single") : tr("crew"));
+            } else {
+                rv += tr("Card not inserted or withdrawn") + ", ";
+                rv += (this.s == 0 ? tr("driver slot") : tr("co-driver slot")) + ", ";
+                rv += (this.c == 0 ? tr("following activity unknown") : tr("following activity manually entered"));
+            }
+        }
+        return rv;
+    }
+
     title() {
         return new QString(tr("%1 for %2 h"))
             .arg(this.activityName())
             .arg(ActivityChangeInfo.formatClock(this.duration)).toString(); 
+    }
+
+    printOn(report: Reporter) {
+        report.tagValuePair(tr("activity"), this.activityName());
+        report.tagValuePair(tr("time"), this.timespan());
+        report.tagValuePair(tr("duration"), ActivityChangeInfo.formatClock(this.duration));
+        report.tagValuePair(tr("slot status"), this.extraString());
+        report.tagValuePair(tr("Raw data"), new QString("s=%1, c=%2, p=%3, a=%4, t=%5")
+            .arg(this.s)
+            .arg(this.c)
+            .arg(this.p)
+            .arg(this.a)
+            .arg(this.t).toString());
     }
 }

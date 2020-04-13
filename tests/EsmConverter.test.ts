@@ -4,6 +4,7 @@ import EsmFile from 'EsmFile';
 import HtmlReporter from 'Reporter/HtmlReporter';
 import JsonReporter from 'Reporter/JsonReporter';
 import FileUtil from 'utils/FileUtil';
+import * as _ from 'lodash';
 
 
 test('convert ddd to json', () => {
@@ -16,22 +17,21 @@ test('convert ddd to json', () => {
 
     let j = jsonReport.jsonCollected;
 
-    console.log("j: " + j.blocks[0]['cardExtendedSerialNumber']);
+    let block = j['CardIccIdentification'];
 
-    expect(j['blocks'].length).toBe(14);
+    console.log("j: " + block['cardExtendedSerialNumber']);
+
+    expect(_.keys(j).length).toBe(15);
     expect(j['title']).toBe("Dragut, Gabriel 2017-10-03 to 2018-10-31");
 
-    expect(JSON.stringify(j['blocks'][0], null, 4)).toBe(JSON.stringify({
+    expect(JSON.stringify(block, null, 4)).toBe(JSON.stringify({
         "title": "Card ICC identification",
-        "className": "CardIccIdentification",
         "clockStop": 0,
         "cardExtendedSerialNumber": {
             "title": "537377 (2017-05) RFU: 255, Gemalto AG (formerly Trüb AG)",
-            "className": "ExtendedSerialNumber",
             "serialNumber": 537377,
             "date": {
                 "title": "2017-05",
-                "className": "BcdMonthYear",
                 "encodedDate": "05 17"
             }
         },

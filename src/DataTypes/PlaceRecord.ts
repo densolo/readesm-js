@@ -37,7 +37,7 @@ export default class PlaceRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.entryTime = new TimeReal(data.slice(0))
+        this.entryTime = new TimeReal(data.slice(0));
         this.entryTypeDailyWorkPeriod = DataReader.readUint8(data, 4);
         this.dailyWorkPeriodCountry = DataReader.readUint8(data, 5);
         this.dailyWorkPeriodRegion = DataReader.readUint8(data, 6);
@@ -67,7 +67,7 @@ export default class PlaceRecord extends DataType {
 
     printOn(report: Reporter) {
 
-        report.writeBlock(this.entryTime, tr("entryTime"));
+        report.tagValuePair(tr("entryTime"), this.entryTime.toString());
         report.tagValuePair(tr("entryTypeDailyWorkPeriod"), FormatStrings.dailyWorkPeriod(this.entryTypeDailyWorkPeriod));
         report.tagValuePair(tr("dailyWorkPeriodCountry"), FormatStrings.nationNumeric(this.dailyWorkPeriodCountry));
         report.tagValuePair(tr("dailyWorkPeriodRegion"), FormatStrings.regionNumeric(this.dailyWorkPeriodRegion));

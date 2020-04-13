@@ -1,6 +1,6 @@
 logs
 *.log
-out.txt
+out*.txt
 .*/
 *.pyc
 
@@ -12,4 +12,5 @@ node_modules/
 data/
 htmlpage/files/
 htmlpage/card_data/
+resources/C_*.json
 

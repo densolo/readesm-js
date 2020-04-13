@@ -41,7 +41,7 @@ export default class RawVuActivities extends VuBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.timeReal = new TimeReal(data.slice(0))
+        this.timeReal = new TimeReal(data.slice(0));
         this.odometerValueMidnight = DataReader.readUint24(data, 4);
         this.vuCardIWRecord = DataReader.readSubblocksByCount<VuCardIWRecord>(VuCardIWRecord, data.slice(7 + 2), 0, (DataReader.readUint16(data, 7)));
         this.activityChangeInfo = DataReader.readSubblocksByCount<ActivityChangeInfo>(ActivityChangeInfo, data.slice(9 + 2), 0, (DataReader.readUint16(data, 9)));
@@ -68,7 +68,7 @@ export default class RawVuActivities extends VuBlock {
 
     printOn(report: Reporter) {
 
-        report.writeBlock(this.timeReal, tr("timeReal"));
+        report.tagValuePair(tr("timeReal"), this.timeReal.toString());
         report.tagValuePair(tr("odometerValueMidnight"), new QString("%1 km").arg(this.odometerValueMidnight).toString());
         report.writeArray(this.vuCardIWRecord, tr("vuCardIWRecord"));
         report.writeArray(this.activityChangeInfo, tr("activityChangeInfo"));

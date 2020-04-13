@@ -39,7 +39,7 @@ export default class RawCardActivityDailyRecord extends DataType {
 
         this.activityRecordPreviousLength = DataReader.readUint16(data, 0);
         this.activityRecordLength = DataReader.readUint16(data, 2);
-        this.activityRecordDate = new TimeReal(data.slice(4))
+        this.activityRecordDate = new TimeReal(data.slice(4));
         this.activityPresenceCounter = DataReader.readBCD16(data, 8);
         this.activityDayDistance = DataReader.readUint16(data, 10);    
     }
@@ -65,7 +65,7 @@ export default class RawCardActivityDailyRecord extends DataType {
 
         report.tagValuePair(tr("activityRecordPreviousLength"), new QString("%1 Bytes").arg(this.activityRecordPreviousLength).toString());
         report.tagValuePair(tr("activityRecordLength"), new QString("%1 Bytes").arg(this.activityRecordLength).toString());
-        report.writeBlock(this.activityRecordDate, tr("activityRecordDate"));
+        report.tagValuePair(tr("activityRecordDate"), this.activityRecordDate.toString());
         report.tagValuePair(tr("activityPresenceCounter"), this.activityPresenceCounter);
         report.tagValuePair(tr("activityDayDistance"), new QString("%1 km").arg(this.activityDayDistance).toString());
     }

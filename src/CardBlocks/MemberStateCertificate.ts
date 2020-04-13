@@ -32,7 +32,7 @@ export default class MemberStateCertificate extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.certificate = new EncryptedCertificate(data.slice(5))    
+        this.certificate = new EncryptedCertificate(data.slice(5));    
     }
 
     className() {

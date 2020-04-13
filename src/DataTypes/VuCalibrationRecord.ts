@@ -54,10 +54,10 @@ export default class VuCalibrationRecord extends DataType {
         this.calibrationPurpose = DataReader.readUint8(data, 0);
         this.workshopName = DataReader.readCodePageString(data, 1, 36).toString();
         this.workshopAddress = DataReader.readCodePageString(data, 37, 36).toString();
-        this.workshopCardNumber = new FullCardNumber(data.slice(73))
-        this.workshopCardExpiryDate = new TimeReal(data.slice(91))
+        this.workshopCardNumber = new FullCardNumber(data.slice(73));
+        this.workshopCardExpiryDate = new TimeReal(data.slice(91));
         this.vehicleIdentificationNumber = DataReader.readString(data, 95, 17).toString();
-        this.vehicleRegistrationIdentification = new VehicleRegistration(data.slice(112))
+        this.vehicleRegistrationIdentification = new VehicleRegistration(data.slice(112));
         this.wVehicleCharacteristicConstant = DataReader.readUint16(data, 127);
         this.kConstantOfRecordingEquipment = DataReader.readUint16(data, 129);
         this.lTyreCircumference = DataReader.readUint16(data, 131);
@@ -65,9 +65,9 @@ export default class VuCalibrationRecord extends DataType {
         this.authorisedSpeed = DataReader.readUint8(data, 148);
         this.oldOdometerValue = DataReader.readUint24(data, 149);
         this.newOdometerValue = DataReader.readUint24(data, 152);
-        this.oldTimeValue = new TimeReal(data.slice(155))
-        this.newTimeValue = new TimeReal(data.slice(159))
-        this.nextCalibrationDate = new TimeReal(data.slice(163))    
+        this.oldTimeValue = new TimeReal(data.slice(155));
+        this.newTimeValue = new TimeReal(data.slice(159));
+        this.nextCalibrationDate = new TimeReal(data.slice(163));    
     }
 
     className() {
@@ -93,7 +93,7 @@ export default class VuCalibrationRecord extends DataType {
         report.tagValuePair(tr("workshopName"), this.workshopName);
         report.tagValuePair(tr("workshopAddress"), this.workshopAddress);
         report.writeBlock(this.workshopCardNumber, tr("workshopCardNumber"));
-        report.writeBlock(this.workshopCardExpiryDate, tr("workshopCardExpiryDate"));
+        report.tagValuePair(tr("workshopCardExpiryDate"), this.workshopCardExpiryDate.toString());
         report.tagValuePair(tr("vehicleIdentificationNumber"), this.vehicleIdentificationNumber);
         report.writeBlock(this.vehicleRegistrationIdentification, tr("vehicleRegistrationIdentification"));
         report.tagValuePair(tr("wVehicleCharacteristicConstant"), new QString("%1 Impulses/km").arg(this.wVehicleCharacteristicConstant).toString());
@@ -103,9 +103,9 @@ export default class VuCalibrationRecord extends DataType {
         report.tagValuePair(tr("authorisedSpeed"), new QString("%1 km/h").arg(this.authorisedSpeed).toString());
         report.tagValuePair(tr("oldOdometerValue"), new QString("%1 km").arg(this.oldOdometerValue).toString());
         report.tagValuePair(tr("newOdometerValue"), new QString("%1 km").arg(this.newOdometerValue).toString());
-        report.writeBlock(this.oldTimeValue, tr("oldTimeValue"));
-        report.writeBlock(this.newTimeValue, tr("newTimeValue"));
-        report.writeBlock(this.nextCalibrationDate, tr("nextCalibrationDate"));
+        report.tagValuePair(tr("oldTimeValue"), this.oldTimeValue.toString());
+        report.tagValuePair(tr("newTimeValue"), this.newTimeValue.toString());
+        report.tagValuePair(tr("nextCalibrationDate"), this.nextCalibrationDate.toString());
     }
 }
 

@@ -43,11 +43,11 @@ export default class DecryptedCertificate extends DataType {
         super(data);
 
         this.certificateProfileIdentifier = DataReader.readUint8(data, 0);
-        this.certificateAuthorityReference = new CertificateAuthority(data.slice(1))
-        this.certificateHolderAuthorization = new CertificateHolderAuthorization(data.slice(9))
-        this.endOfValidity = new TimeReal(data.slice(16))
-        this.certificateHolderReference = new KeyIdentifier(data.slice(20))
-        this.rsaPublicKey = new RsaPublicKey(data.slice(28))    
+        this.certificateAuthorityReference = new CertificateAuthority(data.slice(1));
+        this.certificateHolderAuthorization = new CertificateHolderAuthorization(data.slice(9));
+        this.endOfValidity = new TimeReal(data.slice(16));
+        this.certificateHolderReference = new KeyIdentifier(data.slice(20));
+        this.rsaPublicKey = new RsaPublicKey(data.slice(28));    
     }
 
     className() {
@@ -72,7 +72,7 @@ export default class DecryptedCertificate extends DataType {
         report.tagValuePair(tr("certificateProfileIdentifier"), this.certificateProfileIdentifier);
         report.writeBlock(this.certificateAuthorityReference, tr("certificateAuthorityReference"));
         report.writeBlock(this.certificateHolderAuthorization, tr("certificateHolderAuthorization"));
-        report.writeBlock(this.endOfValidity, tr("endOfValidity"));
+        report.tagValuePair(tr("endOfValidity"), this.endOfValidity.toString());
         report.writeBlock(this.certificateHolderReference, tr("certificateHolderReference"));
         report.writeBlock(this.rsaPublicKey, tr("rsaPublicKey"));
     }

@@ -35,8 +35,8 @@ export default class VuPlaceDailyWorkPeriodRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.fullCardNumber = new FullCardNumber(data.slice(0))
-        this.placeRecord = new PlaceRecord(data.slice(18))    
+        this.fullCardNumber = new FullCardNumber(data.slice(0));
+        this.placeRecord = new PlaceRecord(data.slice(18));    
     }
 
     className() {

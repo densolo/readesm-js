@@ -41,6 +41,10 @@ export default class CardActivityDailyRecord extends RawCardActivityDailyRecord 
         }
     }
 
+    className() {
+        return "CardActivityDailyRecord";
+    }
+
     title() {
         return new QString(tr("Activities on %1"))
             .arg(this.activityRecordDate.toString()).toString();

@@ -48,14 +48,14 @@ export default class VuTechnical extends VuBlock {
         this.vuManufacturerName = DataReader.readCodePageString(data, 0, 36).toString();
         this.vuManufacturerAddress = DataReader.readCodePageString(data, 36, 36).toString();
         this.vuPartNumber = DataReader.readString(data, 72, 16).toString();
-        this.vuSerialNumber = new ExtendedSerialNumber(data.slice(88))
+        this.vuSerialNumber = new ExtendedSerialNumber(data.slice(88));
         this.vuSoftwareVersion = DataReader.readString(data, 96, 4).toString();
-        this.vuSoftInstallationDate = new TimeReal(data.slice(100))
-        this.vuManufacturingDate = new TimeReal(data.slice(104))
+        this.vuSoftInstallationDate = new TimeReal(data.slice(100));
+        this.vuManufacturingDate = new TimeReal(data.slice(104));
         this.vuApprovalNumber = DataReader.readString(data, 108, 8).toString();
-        this.sensorSerialNumber = new ExtendedSerialNumber(data.slice(116))
+        this.sensorSerialNumber = new ExtendedSerialNumber(data.slice(116));
         this.sensorApprovalNumber = DataReader.readString(data, 124, 8).toString();
-        this.sensorPairingDateFirst = new TimeReal(data.slice(132))
+        this.sensorPairingDateFirst = new TimeReal(data.slice(132));
         this.vuCalibrationRecord = DataReader.readSubblocksByCount<VuCalibrationRecord>(VuCalibrationRecord, data.slice(136 + 1), 0, (DataReader.readUint8(data, 136)));    
     }
 
@@ -83,12 +83,12 @@ export default class VuTechnical extends VuBlock {
         report.tagValuePair(tr("vuPartNumber"), this.vuPartNumber);
         report.writeBlock(this.vuSerialNumber, tr("vuSerialNumber"));
         report.tagValuePair(tr("vuSoftwareVersion"), this.vuSoftwareVersion);
-        report.writeBlock(this.vuSoftInstallationDate, tr("vuSoftInstallationDate"));
-        report.writeBlock(this.vuManufacturingDate, tr("vuManufacturingDate"));
+        report.tagValuePair(tr("vuSoftInstallationDate"), this.vuSoftInstallationDate.toString());
+        report.tagValuePair(tr("vuManufacturingDate"), this.vuManufacturingDate.toString());
         report.tagValuePair(tr("vuApprovalNumber"), this.vuApprovalNumber);
         report.writeBlock(this.sensorSerialNumber, tr("sensorSerialNumber"));
         report.tagValuePair(tr("sensorApprovalNumber"), this.sensorApprovalNumber);
-        report.writeBlock(this.sensorPairingDateFirst, tr("sensorPairingDateFirst"));
+        report.tagValuePair(tr("sensorPairingDateFirst"), this.sensorPairingDateFirst.toString());
         report.writeArray(this.vuCalibrationRecord, tr("vuCalibrationRecord"));
     }
 }

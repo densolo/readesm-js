@@ -178,7 +178,11 @@ def parseField(classType, className, xmlField, fieldSize, typesMap, ctx):
         ctx['fieldInitializations'] += '\n        this.%s = new %s(data.slice(%s));' % (
             name, t.name, ctx['offset']
         )
-        ctx['printOn'] += '\n        report.writeBlock(this.%s, tr("%s"));' % (name, name)
+
+        if xmlField.tag in hasToString:
+			ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s.toString());' % (name, name)
+        else:
+            ctx['printOn'] += '\n        report.writeBlock(this.%s, tr("%s"));' % (name, name)
 
     elif xmlField.tag in ('LargeNumber',):
         typeName = xmlField.tag
@@ -187,6 +191,7 @@ def parseField(classType, className, xmlField, fieldSize, typesMap, ctx):
         ctx['fieldInitializations'] += '\n        this.%s = new %s(data.slice(%s), %s)' % (
             name, typeName, ctx['offset'], fieldSize
         )
+        ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s.toString());' % (name, name)
 
     elif xmlField.tag == 'Subblocks':
         name = lcfirst(xmlField.get('type'))

@@ -37,7 +37,7 @@ export default class ExtendedSerialNumber extends DataType {
         super(data);
 
         this.serialNumber = DataReader.readUint32(data, 0);
-        this.date = new BcdMonthYear(data.slice(4))
+        this.date = new BcdMonthYear(data.slice(4));
         this.equipmentType = DataReader.readUint8(data, 6);
         this.manufacturerCode = DataReader.readUint8(data, 7);    
     }

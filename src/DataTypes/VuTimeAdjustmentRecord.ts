@@ -38,11 +38,11 @@ export default class VuTimeAdjustmentRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.oldTimeValue = new TimeReal(data.slice(0))
-        this.newTimeValue = new TimeReal(data.slice(4))
+        this.oldTimeValue = new TimeReal(data.slice(0));
+        this.newTimeValue = new TimeReal(data.slice(4));
         this.workshopName = DataReader.readString(data, 8, 36).toString();
         this.workshopAddress = DataReader.readString(data, 44, 36).toString();
-        this.workshopCardNumber = new FullCardNumber(data.slice(80))    
+        this.workshopCardNumber = new FullCardNumber(data.slice(80));    
     }
 
     className() {
@@ -64,8 +64,8 @@ export default class VuTimeAdjustmentRecord extends DataType {
 
     printOn(report: Reporter) {
 
-        report.writeBlock(this.oldTimeValue, tr("oldTimeValue"));
-        report.writeBlock(this.newTimeValue, tr("newTimeValue"));
+        report.tagValuePair(tr("oldTimeValue"), this.oldTimeValue.toString());
+        report.tagValuePair(tr("newTimeValue"), this.newTimeValue.toString());
         report.tagValuePair(tr("workshopName"), this.workshopName);
         report.tagValuePair(tr("workshopAddress"), this.workshopAddress);
         report.writeBlock(this.workshopCardNumber, tr("workshopCardNumber"));

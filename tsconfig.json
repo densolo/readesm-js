@@ -8,10 +8,9 @@
         "pretty": true,
         "sourceMap": true,
         "baseUrl": "./src",
-        "rootDir": "./src"
+        "rootDir": "./src",
     },
     "include": [
-        "src/**/*.ts",
-        "src/**/*.html"
+        "src/**/*.ts"
     ]
 }

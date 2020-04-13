@@ -32,6 +32,10 @@ export default class CardDriverActivity extends RawCardDriverActivity {
         )
     }
 
+    className() {
+        return "CardDriverActivity";
+    }
+
     readCyclicData(): ArrayBuffer {
         let rv: Uint8Array;
         let cd = this.cyclicData.toUint8Array();

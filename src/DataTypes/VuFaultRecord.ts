@@ -39,8 +39,8 @@ export default class VuFaultRecord extends DataType {
 
         this.eventType = DataReader.readUint8(data, 0);
         this.eventRecordPurpose = DataReader.readUint8(data, 1);
-        this.eventTime = new Timespan(data.slice(2))
-        this.cardSlots = new CardSlots(data.slice(10))    
+        this.eventTime = new Timespan(data.slice(2));
+        this.cardSlots = new CardSlots(data.slice(10));    
     }
 
     className() {
@@ -64,7 +64,7 @@ export default class VuFaultRecord extends DataType {
 
         report.tagValuePair(tr("eventType"), FormatStrings.eventType(this.eventType));
         report.tagValuePair(tr("eventRecordPurpose"), FormatStrings.eventRecordPurpose(this.eventRecordPurpose));
-        report.writeBlock(this.eventTime, tr("eventTime"));
+        report.tagValuePair(tr("eventTime"), this.eventTime.toString());
         report.writeBlock(this.cardSlots, tr("cardSlots"));
     }
 }

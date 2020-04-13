@@ -34,8 +34,8 @@ export default class CardCurrentUse extends CardBlock {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.sessionOpenTime = new TimeReal(data.slice(5))
-        this.sessionOpenVehicle = new VehicleRegistration(data.slice(9))    
+        this.sessionOpenTime = new TimeReal(data.slice(5));
+        this.sessionOpenVehicle = new VehicleRegistration(data.slice(9));    
     }
 
     className() {
@@ -55,7 +55,7 @@ export default class CardCurrentUse extends CardBlock {
 
     printOn(report: Reporter) {
 
-        report.writeBlock(this.sessionOpenTime, tr("sessionOpenTime"));
+        report.tagValuePair(tr("sessionOpenTime"), this.sessionOpenTime.toString());
         report.writeBlock(this.sessionOpenVehicle, tr("sessionOpenVehicle"));
         if (this.dataBlockSize() != 24 ) {
             report.tagValuePair("should have", 24 );

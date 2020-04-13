@@ -37,8 +37,8 @@ export default class CardEventRecord extends DataType {
         super(data);
 
         this.eventType = DataReader.readUint8(data, 0);
-        this.eventTime = new Timespan(data.slice(1))
-        this.eventVehicleRegistration = new VehicleRegistration(data.slice(9))    
+        this.eventTime = new Timespan(data.slice(1));
+        this.eventVehicleRegistration = new VehicleRegistration(data.slice(9));    
     }
 
     className() {
@@ -61,7 +61,7 @@ export default class CardEventRecord extends DataType {
     printOn(report: Reporter) {
 
         report.tagValuePair(tr("eventType"), FormatStrings.eventType(this.eventType));
-        report.writeBlock(this.eventTime, tr("eventTime"));
+        report.tagValuePair(tr("eventTime"), this.eventTime.toString());
         report.writeBlock(this.eventVehicleRegistration, tr("eventVehicleRegistration"));
     }
 }

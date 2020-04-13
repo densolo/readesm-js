@@ -46,16 +46,16 @@ export default class RawVuCardIWRecord extends DataType {
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.cardHolderName = new Name(data.slice(0))
-        this.cardNumber = new FullCardNumber(data.slice(72))
-        this.cardExpiryDate = new TimeReal(data.slice(90))
-        this.cardInsertionTime = new TimeReal(data.slice(94))
+        this.cardHolderName = new Name(data.slice(0));
+        this.cardNumber = new FullCardNumber(data.slice(72));
+        this.cardExpiryDate = new TimeReal(data.slice(90));
+        this.cardInsertionTime = new TimeReal(data.slice(94));
         this.vehicleOdometerValueAtInsertion = DataReader.readUint24(data, 98);
         this.cardSlotNumber = DataReader.readUint8(data, 101);
-        this.cardWithdrawalTime = new TimeReal(data.slice(102))
+        this.cardWithdrawalTime = new TimeReal(data.slice(102));
         this.vehicleOdometerValueAtWithdrawal = DataReader.readUint24(data, 106);
-        this.previousVehicleRegistration = new VehicleRegistration(data.slice(109))
-        this.previousCardWithdrawalTime = new TimeReal(data.slice(124))
+        this.previousVehicleRegistration = new VehicleRegistration(data.slice(109));
+        this.previousCardWithdrawalTime = new TimeReal(data.slice(124));
         this.manualInputFlag = DataReader.readUint8(data, 128);    
     }
 
@@ -80,14 +80,14 @@ export default class RawVuCardIWRecord extends DataType {
 
         report.writeBlock(this.cardHolderName, tr("cardHolderName"));
         report.writeBlock(this.cardNumber, tr("cardNumber"));
-        report.writeBlock(this.cardExpiryDate, tr("cardExpiryDate"));
-        report.writeBlock(this.cardInsertionTime, tr("cardInsertionTime"));
+        report.tagValuePair(tr("cardExpiryDate"), this.cardExpiryDate.toString());
+        report.tagValuePair(tr("cardInsertionTime"), this.cardInsertionTime.toString());
         report.tagValuePair(tr("vehicleOdometerValueAtInsertion"), new QString("%1 km").arg(this.vehicleOdometerValueAtInsertion).toString());
         report.tagValuePair(tr("cardSlotNumber"), this.cardSlotNumber);
-        report.writeBlock(this.cardWithdrawalTime, tr("cardWithdrawalTime"));
+        report.tagValuePair(tr("cardWithdrawalTime"), this.cardWithdrawalTime.toString());
         report.tagValuePair(tr("vehicleOdometerValueAtWithdrawal"), new QString("%1 km").arg(this.vehicleOdometerValueAtWithdrawal).toString());
         report.writeBlock(this.previousVehicleRegistration, tr("previousVehicleRegistration"));
-        report.writeBlock(this.previousCardWithdrawalTime, tr("previousCardWithdrawalTime"));
+        report.tagValuePair(tr("previousCardWithdrawalTime"), this.previousCardWithdrawalTime.toString());
         report.tagValuePair(tr("manualInputFlag"), this.manualInputFlag);
     }
 }

@@ -40,10 +40,10 @@ export default class CardControlActivityDataRecord extends CardBlock {
         super(data);
 
         this.controlType = DataReader.readUint8(data, 5);
-        this.controlTime = new TimeReal(data.slice(6))
-        this.controlCardNumber = new FullCardNumber(data.slice(10))
-        this.controlVehicleRegistration = new VehicleRegistration(data.slice(28))
-        this.controlDownloadPeriod = new Timespan(data.slice(43))    
+        this.controlTime = new TimeReal(data.slice(6));
+        this.controlCardNumber = new FullCardNumber(data.slice(10));
+        this.controlVehicleRegistration = new VehicleRegistration(data.slice(28));
+        this.controlDownloadPeriod = new Timespan(data.slice(43));    
     }
 
     className() {
@@ -64,10 +64,10 @@ export default class CardControlActivityDataRecord extends CardBlock {
     printOn(report: Reporter) {
 
         report.tagValuePair(tr("controlType"), this.controlType);
-        report.writeBlock(this.controlTime, tr("controlTime"));
+        report.tagValuePair(tr("controlTime"), this.controlTime.toString());
         report.writeBlock(this.controlCardNumber, tr("controlCardNumber"));
         report.writeBlock(this.controlVehicleRegistration, tr("controlVehicleRegistration"));
-        report.writeBlock(this.controlDownloadPeriod, tr("controlDownloadPeriod"));
+        report.tagValuePair(tr("controlDownloadPeriod"), this.controlDownloadPeriod.toString());
         if (this.dataBlockSize() != 51 ) {
             report.tagValuePair("should have", 51 );
             report.tagValuePair("has", this.dataBlockSize());
