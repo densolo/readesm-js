@@ -155,7 +155,9 @@ export default class ActivityChangeInfo extends DataType {
 
     printOn(report: Reporter) {
         report.tagValuePair(tr("activity"), this.activityName());
+        report.tagValuePair(tr("activityCode"), this.a);
         report.tagValuePair(tr("time"), this.timespan());
+        report.tagValuePair(tr("from"), ActivityChangeInfo.formatClock(this.t));
         report.tagValuePair(tr("duration"), ActivityChangeInfo.formatClock(this.duration));
         report.tagValuePair(tr("slot status"), this.extraString());
         report.tagValuePair(tr("Raw data"), new QString("s=%1, c=%2, p=%3, a=%4, t=%5")

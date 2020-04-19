@@ -9,43 +9,63 @@ import HtmlReporter from 'Reporter/HtmlReporter';
 export function downloadEsmAsJson(filename: string) {
     console.log("downloadEsmAsJson: " + filename);
 
-    downloadEsmData(filename, (data: ArrayBuffer) => {        
-        let ef = EsmFile.parseData(data);
-        let report = new JsonReporter();
-        ef.printOn(report);
-
-        let j = report.renderReport();
-
-        fileDownload(j, filename.replace(/^.*\//, '') + '.json', 'application/json');    
+    readEsmData(filename).then((data: ArrayBuffer) => {
+        let j = convertToJson(data);
+        let jsonData = JSON.stringify(j, null, 4);
+        saveFile(jsonData, filename + '.json', 'application/json');
     });
-
 }
 
 export function downloadEsmAsHtml(filename: string) {
     console.log("downloadEsmAsHtml: " + filename);
 
-    downloadEsmData(filename, (data: ArrayBuffer) => {        
-        let ef = EsmFile.parseData(data);
-        let report = new HtmlReporter();
-        ef.printOn(report);
-
-        let html = report.renderReport();
-
-        fileDownload(html, filename.replace(/^.*\//, '') + '.html', 'text/html');    
+    readEsmData(filename).then((data: ArrayBuffer) => {                
+        let html = convertToHtml(data);
+        saveFile(html, filename + '.html', 'text/html');
     });
-
 }
 
-function downloadEsmData(filename: string, callback: (data: any) => void) {
-    var xhr = new XMLHttpRequest();
-    
-    xhr.open("GET", filename);
-    xhr.responseType = "arraybuffer";
+export function convertToJson(data: ArrayBuffer) {        
+    let ef = EsmFile.parseData(data);
+    let report = new JsonReporter();
+    ef.printOn(report);
+    report.renderReport();
+    return report.jsonCollected;
+}
 
-    xhr.onload = function () {
-        if (this.status === 200) {
-            callback(xhr.response);
-        }
-    };
-    xhr.send();
+export function convertToHtml(data: ArrayBuffer) {        
+    let ef = EsmFile.parseData(data);
+    let report = new HtmlReporter();
+    ef.printOn(report);
+    return report.renderReport();
+}
+
+export function saveFile(data, filename, mime) {
+    fileDownload(data, filename.replace(/^.*\//, ''), mime); 
+}
+
+export function readEsmData(filename: string) {
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest();
+    
+        xhr.open("GET", filename);
+        xhr.responseType = "arraybuffer";
+
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                resolve(xhr.response);
+            } else {
+                reject(Error(`Failed to GET filename ${filename} HTTP ${xhr.status} - ${xhr.statusText}`));
+            }
+        };
+
+        xhr.onerror = () => {
+            let msg = `Connection Error while GET filename ${filename}`;
+            console.error(msg);
+            reject(Error(msg));
+        };
+        
+        xhr.send();
+    });
+    
 }

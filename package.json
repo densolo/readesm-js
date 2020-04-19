@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "js-file-download": "^0.4.11",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "pdfmake": "^0.1.65"
   },
   "directories": {
     "test": "tests"
