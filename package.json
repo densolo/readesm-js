@@ -1,17 +1,21 @@
 {
-  "name": "readesm",
-  "version": "1.0.2",
+  "name": "readesm-js",
+  "version": "1.0.8",
   "description": "JavaScript implementation of the reader of ESM tachograph files from https://sourceforge.net/p/readesm/code/HEAD/tree/",
-  "main": "src/readesm.js",
+  "main": "dist/main.EsmDownloader.lib.js",
+  "types": "dist/main.EsmDownloader.d.ts",
   "scripts": {
+    "prepublishOnly": "webpack --config webpack.config.lib.js",
     "build": "tsc",
+    "build:lib": "webpack --config webpack.config.lib.js",
     "build:web": "bash build_web.sh",
-    "convert": "NODE_PATH=./src ts-node src/main.EsmConverter.ts",
+    "convert": "ts-node src/main.EsmConverterTool.ts",
     "test": "jest --no-cache"
   },
-  "author": "",
+  "author": "denis.solo@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "app-module-path": "^2.2.0",
     "js-file-download": "^0.4.11",
     "lodash": "^4.17.15",
     "pdfmake": "^0.1.65"
@@ -41,5 +45,10 @@
   "bugs": {
     "url": "https://github.com/densolo/readesm-js/issues"
   },
-  "homepage": "https://github.com/densolo/readesm-js#readme"
+  "homepage": "https://github.com/densolo/readesm-js#readme",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.js.map",
+    "dist/**/*.d.ts"
+  ]
 }

@@ -25,15 +25,15 @@ export function downloadEsmAsHtml(filename: string) {
     });
 }
 
-export function convertToJson(data: ArrayBuffer) {        
+export function convertToJson(data: ArrayBuffer): any {        
     let ef = EsmFile.parseData(data);
     let report = new JsonReporter();
     ef.printOn(report);
     report.renderReport();
-    return report.jsonCollected;
+    return report.jsonCollected as any;
 }
 
-export function convertToHtml(data: ArrayBuffer) {        
+export function convertToHtml(data: ArrayBuffer): string {        
     let ef = EsmFile.parseData(data);
     let report = new HtmlReporter();
     ef.printOn(report);

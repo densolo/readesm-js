@@ -1,6 +1,7 @@
 
 
 import * as fs from 'fs';
+require('app-module-path').addPath(__dirname);
 
 import EsmFile from 'EsmFile';
 import HtmlReporter from 'Reporter/HtmlReporter';
