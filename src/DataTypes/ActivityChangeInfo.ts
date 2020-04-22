@@ -155,7 +155,7 @@ export default class ActivityChangeInfo extends DataType {
 
     printOn(report: Reporter) {
         report.tagValuePair(tr("activity"), this.activityName());
-        report.tagValuePair(tr("activityCode"), this.a);
+        report.tagValuePair(tr("activityCode"), this.activity);
         report.tagValuePair(tr("time"), this.timespan());
         report.tagValuePair(tr("from"), ActivityChangeInfo.formatClock(this.t));
         report.tagValuePair(tr("duration"), ActivityChangeInfo.formatClock(this.duration));
