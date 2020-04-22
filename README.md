@@ -15,8 +15,14 @@ To build a new version from TypeScript source code
 python generator/generate.py
 
 npm install
-npm run build:web
+npm run build
 npm run test
+```
+
+To publish
+```
+npm build:lib  # (optional)
+npm publish
 ```
 
 ## Command line

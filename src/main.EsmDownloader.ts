@@ -21,7 +21,7 @@ export function downloadEsmAsHtml(filename: string) {
 
     readEsmData(filename).then((data: ArrayBuffer) => {                
         let html = convertToHtml(data);
-        saveFile(html, filename + '.html', 'text/html');
+        saveFile(html, filename + '.html', 'text/html');    
     });
 }
 

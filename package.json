@@ -6,9 +6,8 @@
   "types": "dist/main.EsmDownloader.d.ts",
   "scripts": {
     "prepublishOnly": "webpack --config webpack.config.lib.js",
-    "build": "tsc",
     "build:lib": "webpack --config webpack.config.lib.js",
-    "build:web": "bash build_web.sh",
+    "build": "bash build_web.sh",
     "convert": "ts-node src/main.EsmConverterTool.ts",
     "test": "jest --no-cache"
   },

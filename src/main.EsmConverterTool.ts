@@ -47,13 +47,13 @@ function convertFile(inputfile: string) {
     let data = FileUtil.readFileData(inputfile);
     let ef = EsmFile.parseData(data);
 
-    convertToHtml(ef, inputfile + '.html');
-    convertToJson(ef, inputfile + '.json');
+    convertFileToHtml(ef, inputfile + '.html');
+    convertFileToJson(ef, inputfile + '.json');
 
     return ef;
 }
 
-function convertToHtml(ef: EsmFile, outfile: string) {
+function convertFileToHtml(ef: EsmFile, outfile: string) {
     let report = new HtmlReporter();
     ef.printOn(report);
 
@@ -62,7 +62,7 @@ function convertToHtml(ef: EsmFile, outfile: string) {
     console.log(`Converted into HTML in ${outfile}`);
 }
 
-function convertToJson(ef: EsmFile, outfile: string) {
+function convertFileToJson(ef: EsmFile, outfile: string) {
     let report = new JsonReporter();
     ef.printOn(report);
 

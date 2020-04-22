@@ -10,7 +10,7 @@ node_modules/
 *.iml
 
 data/
-htmlpage/files/
-htmlpage/card_data/
+htmlpage/files
+htmlpage/card_data
 resources/C_*.json
 
