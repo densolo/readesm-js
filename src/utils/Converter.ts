@@ -23,9 +23,4 @@ export default class Converter {
         n += ((c>>4) & 0x0F) * m * 10;
         return n;
     }
-
-
-    static formatYYYYMMDD(dt: Date) {
-        return `${dt.getFullYear()}-${padStart(dt.getMonth()+1, 2, '0')}-${padStart(dt.getDate(), 2, '0')}`;
-    }
 }

@@ -9,7 +9,7 @@ import * as _ from 'lodash';
 
 test('convert ddd to json', () => {
 
-    let data = FileUtil.readFileData('data/Input.ddd');
+    let data = FileUtil.readFileData('tests/data/Input.ddd');
     let ef = EsmFile.parseData(data);
 
     let jsonReport = new JsonReporter();
