@@ -29,7 +29,7 @@ npm publish
 
 The command below will read <file> and produces <file>.html and <file>.json
  ```
- npm run convert -- data/Input.ddd
+ npm run cli -- convert data/Input.ddd
  ```
 
 ## Browser link

@@ -13,22 +13,24 @@ import BlockParseError from 'DataTypes/BlockParseError';
 
 function main() {
     let args = process.argv.slice(2);
-    let inputfile = args.length > 0 ? args[0] : 'data/Input.ddd';
+    let cmd = args.length > 0 ? args[0] : 'convert';
 
-    if (inputfile == 'analyze') {
-        analyzeFiles();
-    } else {
-        let ef = convertFile(inputfile);
-        let err = EsmFile.findTypeInVector<BlockParseError>(BlockParseError, ef.blocks);
+    if (cmd == 'analyze') {
+        handleAnalyze();
+    } else if (cmd == 'convert') {
+        let err = handleConvert(args.slice(1));
         if (err) {
             console.log("Failed");
             process.exit(1);
         }
+    } else {
+        console.error("Unknown arguments: " + args.join(' '));
+        process.exit(1);
     }
     console.log("Done");
 }
 
-function analyzeFiles() {
+function handleAnalyze() {
     fs.readdirSync('htmlpage/card_data').forEach(filename => {
         if (filename.match(/.*\.DDD$/i)) {
             console.log("Parsing " + filename);
@@ -41,6 +43,12 @@ function analyzeFiles() {
             }
         }
     });
+}
+
+function handleConvert(args: string[]) {
+    let inputfile = args.length > 0 ? args[0] : 'files/Input.ddd';
+    let ef = convertFile(inputfile);
+    return EsmFile.findTypeInVector<BlockParseError>(BlockParseError, ef.blocks);
 }
 
 function convertFile(inputfile: string) {
@@ -71,9 +79,8 @@ function convertFileToJson(ef: EsmFile, outfile: string) {
     console.log(`Converted into JSON in ${outfile}`);
 }
 
-main();
-
-
-
+if (typeof require !== 'undefined' && require.main === module) {
+    main();
+}
 
 

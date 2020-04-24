@@ -1,6 +1,6 @@
 {
   "name": "readesm-js",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "JavaScript implementation of the reader of ESM tachograph files from https://sourceforge.net/p/readesm/code/HEAD/tree/",
   "main": "dist/main.EsmDownloader.lib.js",
   "types": "dist/main.EsmDownloader.d.ts",
@@ -8,7 +8,7 @@
     "prepublishOnly": "webpack --config webpack.config.lib.js",
     "build:lib": "webpack --config webpack.config.lib.js",
     "build": "bash build_web.sh",
-    "convert": "ts-node src/main.EsmConverterTool.ts",
+    "cli": "ts-node src/main.cli.ts",
     "test": "jest --no-cache"
   },
   "author": "denis.solo@gmail.com",
