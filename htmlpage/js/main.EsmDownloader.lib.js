@@ -6785,7 +6785,7 @@ var ActivityChangeInfo = /** @class */ (function (_super) {
     };
     ActivityChangeInfo.prototype.printOn = function (report) {
         report.tagValuePair(Translation_1.tr("activity"), this.activityName());
-        report.tagValuePair(Translation_1.tr("activityCode"), this.a);
+        report.tagValuePair(Translation_1.tr("activityCode"), this.activity);
         report.tagValuePair(Translation_1.tr("time"), this.timespan());
         report.tagValuePair(Translation_1.tr("from"), ActivityChangeInfo.formatClock(this.t));
         report.tagValuePair(Translation_1.tr("duration"), ActivityChangeInfo.formatClock(this.duration));

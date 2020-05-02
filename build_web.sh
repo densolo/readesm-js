@@ -6,7 +6,6 @@ rm htmlpage/js/*bundle*.js*
 set -e 
 
 webpack --config webpack.config.min.js
-
 webpack --config webpack.config.js
 
 sed -i '' 's|"main|"js/main|' dist/download.html

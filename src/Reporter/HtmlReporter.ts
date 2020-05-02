@@ -28,7 +28,7 @@ export default class HtmlReporter extends Reporter {
         html = html.replace(/\$show/g, "show");
         html = html.replace(/\$hide/g, "hide");
         html = html.replace("$links", this.linkCollected + "</ul>");
-        html = html.replace(/\$version/g, "ReadESM (1.0.2)");
+        html = html.replace(/\$version/g, "ReadESM (1.0.11)");
 
         return html;
     }

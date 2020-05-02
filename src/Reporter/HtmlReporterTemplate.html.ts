@@ -37,7 +37,7 @@ export const HTML_TEMPLATE: string =
 $links
 $content
 <hr/>
-Report generated with <a href="http://readesm.sourceforge.net/" target="_blank">ReadESM</a> <small>($version)</small>.
+Report generated with <a href="https://github.com/densolo/readesm-js" target="_blank">readesm-js</a> <small>($version)</small>.
 </body>
 </html>
 `
