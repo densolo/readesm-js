@@ -43,7 +43,7 @@ export default class CardDriverActivity extends RawCardDriverActivity {
         let newestRecordLength = DataReader.readUint16(this.cyclicData.data, this.newestRecord + 2);  // (cd[cd[2] % cd.length] << 8) + cd[cd[3] % cd.length]
         let endOfNewestRecord = (this.newestRecord + newestRecordLength) % cd.length;
 
-        if (endOfNewestRecord < this.oldestRecord) {
+        if (endOfNewestRecord <= this.oldestRecord) {
             // console.log(`readCyclicData #1 ${endOfNewestRecord} < ${this.oldestRecord}, newestRecordLength: ${newestRecordLength}, lenth: ${cd.length}`);
             let a1 = cd.slice(this.oldestRecord, this.oldestRecord + cd.length - this.oldestRecord);
             let a2 = cd.slice(0, endOfNewestRecord);
