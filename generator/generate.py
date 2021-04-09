@@ -48,8 +48,8 @@ def generateDataType(d, typesMap):
     rawClassName = 'Raw' + className if d.get('hasrefined') else className
     comment = d.find('comment')
     
-    ctx = {		
-        'offset': 5 if classType == 'CardBlock' else 0,	
+    ctx = {
+        'offset': 5 if classType == 'CardBlock' else 0,
         'offsetextra': '',
 
         'comment': "// %s" % comment.text if comment else "",
@@ -180,7 +180,7 @@ def parseField(classType, className, xmlField, fieldSize, typesMap, ctx):
         )
 
         if xmlField.tag in hasToString:
-			ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s.toString());' % (name, name)
+            ctx['printOn'] += '\n        report.tagValuePair(tr("%s"), this.%s.toString());' % (name, name)
         else:
             ctx['printOn'] += '\n        report.writeBlock(this.%s, tr("%s"));' % (name, name)
 
