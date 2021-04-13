@@ -44,6 +44,22 @@
 		</content>
 	</CardBlock>
 
+	<CardBlock name="CardDownloadWorkshop" type="0x0509">
+		<title>Card Download</title>
+		<content>
+			<int name="noOfCalibrationsSinceDownload" length="2"/>
+		</content>
+	</CardBlock>
+
+	<CardBlock name="Calibration" type="0x050a">
+		<title>Card Download</title>
+		<content>
+			<int name="calibrationTotalNumber" length="2"/>
+			<int name="calibrationPointerNewestRecord" length="1"/>
+			<!-- TODO: calibration records -->
+		</content>
+	</CardBlock>
+
 	<DataType name="Name">
 		<content>
 			<cpstring name="surname" length="36"/>
