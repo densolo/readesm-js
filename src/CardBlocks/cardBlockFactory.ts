@@ -20,6 +20,8 @@ import MemberStateCertificate from 'CardBlocks/MemberStateCertificate';
 import CardCertificate from 'CardBlocks/CardCertificate';
 import CardPlaceDailyWorkPeriod from 'CardBlocks/CardPlaceDailyWorkPeriod';
 import CardVehiclesUsed from 'CardBlocks/CardVehiclesUsed';
+import CardDownloadWorkshop from 'CardBlocks/CardDownloadWorkshop'
+import Calibration from 'CardBlocks/Calibration';
 import BlockParseError from 'DataTypes/BlockParseError';
 
 
@@ -83,7 +85,13 @@ export function cardBlockFactory(data: ArrayBuffer, pos: number) {
         }
         case CardVehiclesUsed.BLOCK_TYPE: {
             return new CardVehiclesUsed(data);
-        }        
+        }
+        case CardDownloadWorkshop.BLOCK_TYPE: {
+            return new CardDownloadWorkshop(data);
+        }
+        case Calibration.BLOCK_TYPE: {
+            return new Calibration(data);
+        }
         default: {
             console.warn("Unknown card block type: " + Converter.dec2hexString(blockType));
             return new BlockParseError("Unknown card block type: " + Converter.dec2hexString(blockType));
