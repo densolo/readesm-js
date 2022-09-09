@@ -50,6 +50,7 @@ export default class VuEventsFaults extends VuBlock {
         this.numberOfOverspeedSince = DataReader.readUint8(data, 12 + recSize);
         this.vuOverspeedingEventRecord = DataReader.readSubblocksByCount<VuOverspeedingEventRecord>(VuOverspeedingEventRecord, data.slice(13 + recSize + 1), 0, (DataReader.readUint8(data, 13 + recSize)));
         this.vuTimeAdjustmentRecord = DataReader.readSubblocksByCount<VuTimeAdjustmentRecord>(VuTimeAdjustmentRecord, data.slice(14 + recSize + 1), 0, (DataReader.readUint8(data, 14 + recSize)));
+        this.nextBlock = this.getNext(data, 0x4)
     }
 
     className() {

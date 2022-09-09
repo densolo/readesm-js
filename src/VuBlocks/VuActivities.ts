@@ -42,6 +42,7 @@ export default class VuActivities extends VuBlock {
 
         this.timeReal = new TimeReal(data.slice(2))
         this.odometerValueMidnight = DataReader.readUint24(data, 6);
+        this.nextBlock = this.getNext(data)
     }
 
     className() {
@@ -52,9 +53,17 @@ export default class VuActivities extends VuBlock {
         return "Activity";
     }
 
+    getNext(data) {
+        const _data = new Uint8Array(data)
+        let i = 0
+        while (i != -1) {
+            i = _data.indexOf(0x76, i+1)
+            if (_data[i + 1] == 0x2 || _data[i + 1] == 0x3) return i
+        }
+    }
 
     size() {
-        return 144;
+        return this.nextBlock;
     }
 
 

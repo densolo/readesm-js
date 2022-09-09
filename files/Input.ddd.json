@@ -1,0 +1,1397 @@
+{
+    "title": "5104JNL 2022-09-07T10:09:25.000Z",
+    "VuOverview": {
+        "title": "Overview",
+        "memberStateCertificate": {
+            "title": "EncryptedCertificate",
+            "sign": "e2 39 02 87 e4 90 28 59 f2 28 54 14 92 cd 40 45 b7 0a 85 04 98 30 b3 52 97 d2 5f d8 ca 2a b5 53 68 83 d0 46 ad 27 9e 02 30 2e 8c e1 72 9b b0 e2 4a 4a 9a 0e 22 b5 e4 ac 8e 28 2e d1 70 86 09 11 f4 8a f8 d3 92 33 ef 6c 73 2c 3f 88 2a b9 55 95 04 09 c6 bf 7b 32 93 11 0a 3f 9c 4a 8d d3 6e ee 4a de 75 77 4a 6b 18 3f 37 ce 94 df 70 06 42 52 5d c5 0b 68 44 a5 e5 e3 d9 1e b9 1f 19 1c 23 3f",
+            "cndash": "72 12 9f 57 f4 c1 55 49 87 c5 12 dc 99 fa d6 86 fa 9e 8c 56 ab 5b 72 60 c2 c5 d4 3b 8b 57 3f b3 67 7b 1c 4b de 30 4f 15 3c 0a fd c1 2b e1 70 13 a3 a5 00 00 00 00 40 00 00 81",
+            "certificateAuthorityReference": {
+                "title": "CertificateAuthority",
+                "nationNumeric": "European Community",
+                "nationAlpha": "EC",
+                "keySerialNumber": 0,
+                "additionalInfo": "ff ff",
+                "caIdentifer": 1
+            }
+        },
+        "vuCertificate": {
+            "title": "EncryptedCertificate",
+            "sign": "60 a0 e8 7f 30 6d e6 11 01 b5 f8 2c 93 9d 81 fa 1c 42 7a f0 12 cf 9c 4c 81 a8 f7 af 50 75 7f 26 2e 9d c1 97 48 7e 7f 26 e7 7f b7 6f e9 5e 86 05 92 ac 53 b9 88 0b 38 ac eb 2c c8 b0 e6 fb 8b f0 38 2b ad 73 28 d0 89 11 8a f9 0c e9 74 6e 80 4b 97 23 c7 6d 49 f1 f7 e1 2e 59 5f 55 37 c2 e0 4e e9 7a 20 c4 8d 9e 18 4d 09 43 54 9f 62 22 d9 c0 61 0b 17 91 9f 4a 90 b9 14 5b d8 b4 1a 99 24 c8",
+            "cndash": "2b 26 b5 34 4d bc 56 98 b1 4b ee a7 02 03 59 3c 72 40 0c 3e ec 34 b7 b1 5c 68 ba 04 54 81 99 82 03 ba 69 d3 0c b2 8a 29 1f 88 d0 67 ee e0 c2 54 a4 d9 00 00 00 00 00 01 00 01",
+            "certificateAuthorityReference": {
+                "title": "CertificateAuthority",
+                "nationNumeric": "Germany",
+                "nationAlpha": "D",
+                "keySerialNumber": 43,
+                "additionalInfo": "00 01",
+                "caIdentifer": 1
+            }
+        },
+        "vehicleIdentificationNumber": "LZYTCTE60F1047099",
+        "vehicleRegistrationIdentification": {
+            "title": "5104JNL (Spain)",
+            "vehicleRegistrationNation": "Spain",
+            "vehicleRegistrationNumber": "5104JNL"
+        },
+        "currentDateTime": {
+            "title": "2022-09-07T10:09:25.000Z"
+        },
+        "vuDownloadablePeriod": {
+            "title": "From 2021-08-04 To 2022-09-07"
+        },
+        "CardSlotsStatus": 0,
+        "downloadingTime": {
+            "title": "2022-08-30T17:30:16.000Z"
+        },
+        "cardNumber": {
+            "title": "EB78163987000103 (Spain, Company Card)",
+            "cardType": "Company Card",
+            "cardIssuingMemberState": "Spain",
+            "cardNumber": "EB78163987000103"
+        },
+        "companyOrWorkshopName": "HERMANOS BRAVO VAZQUEZ SL"
+    },
+    "VuActivities": {
+        "title": "Activity",
+        "timeReal": {
+            "title": "2022-07-31T23:59:59.000Z"
+        },
+        "odometerValueMidnight": 265563
+    },
+    "VuEventsFaults": {
+        "title": "Events and faults",
+        "VuEventRecord": {
+            "records": [
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-07-07T10:14:53.000Z To 2022-07-07T10:15:22.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 3
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-07-12T10:53:46.000Z To 2022-07-12T10:54:36.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 10
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-07-13T13:14:35.000Z To 2022-07-13T13:14:59.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 2
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-07-15T14:05:54.000Z To 2022-07-15T14:07:34.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-07-18T15:42:52.000Z To 2022-07-18T15:57:52.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 41
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-07-22T12:07:01.000Z To 2022-07-22T12:07:25.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 5
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-07-30T14:24:45.000Z To 2022-07-30T14:25:26.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 5
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-08-14T13:41:52.000Z To 2022-08-14T13:42:52.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 8
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-08-20T14:13:20.000Z To 2022-08-20T14:15:01.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 3
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-08-27T13:36:44.000Z To 2022-08-27T13:37:55.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 4
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "one of the 5 longest events over the last 365 days",
+                    "eventTime": "From 2022-07-05T05:09:48.000Z To 2022-07-05T05:20:10.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "one of the 5 longest events over the last 365 days",
+                    "eventTime": "From 2022-07-05T07:51:18.000Z To 2022-07-05T07:59:23.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "one of the 5 longest events over the last 365 days",
+                    "eventTime": "From 2022-07-18T14:11:23.000Z To 2022-07-18T14:24:32.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "one of the 5 longest events over the last 365 days",
+                    "eventTime": "From 2022-07-18T14:58:33.000Z To 2022-07-18T15:08:50.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "4 - General events: Driving without an appropriate card",
+                    "eventRecordPurpose": "one of the 5 longest events over the last 365 days",
+                    "eventTime": "From 2022-07-18T15:42:52.000Z To 2022-07-18T15:57:52.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-01-09T15:39:53.000Z To 2021-01-20T05:39:46.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-04-21T10:39:23.000Z To 2021-04-21T11:20:46.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-08-10T23:00:23.000Z To 2021-08-10T23:59:59.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-08-11T00:53:23.000Z To 2021-08-11T01:48:51.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-08-10T22:46:06.000Z To 2021-09-02T06:48:43.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-09-02T06:48:53.000Z To 2021-09-02T06:48:53.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-09-13T09:37:30.000Z To 2021-09-13T10:31:04.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-01-20T22:29:52.000Z To 2022-01-25T12:13:02.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-01-25T18:06:22.000Z To 2022-01-26T17:14:27.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 2
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-01-26T17:14:37.000Z To 2022-01-26T17:14:37.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "one of the 5 longest events over the last 365 days",
+                    "eventTime": "From 2022-01-20T22:29:52.000Z To 2022-01-25T12:13:02.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "8 - General events: Power supply interruption",
+                    "eventRecordPurpose": "one of the 5 longest events over the last 365 days",
+                    "eventTime": "From 2022-01-25T18:06:22.000Z To 2022-01-26T17:14:27.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuEventRecord",
+                    "eventType": "9 - General events: Motion data error",
+                    "eventRecordPurpose": "the longest event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2020-11-13T12:50:40.000Z To 2020-11-13T12:54:25.000Z",
+                    "cardSlots": {
+                        "title": "CardSlots",
+                        "cardNumberDriverSlotBegin": {
+                            "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                            "cardType": "RFU: 255",
+                            "cardIssuingMemberState": "outside of Europe, not registered",
+                            "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                        }
+                    },
+                    "cardNumberCoDriverSlotBegin": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "cardNumberCoDriverSlotEnd": {
+                        "title": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ (outside of Europe, not registered, RFU: 255)",
+                        "cardType": "RFU: 255",
+                        "cardIssuingMemberState": "outside of Europe, not registered",
+                        "cardNumber": "ÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿÿ"
+                    },
+                    "similarEventsNumber": 1
+                }
+            ]
+        },
+        "lastOverspeedControlTime": "2106-02-07T06:28:15.000Z",
+        "firstOverspeedSince": "2106-02-07T06:28:15.000Z",
+        "numberOfOverspeedSince": 6,
+        "VuOverspeedingEventRecord": {
+            "records": [
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "the most serious event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-05-12T07:44:07.000Z To 2021-05-12T07:44:11.000Z",
+                    "maxSpeedValue": "110 km/h",
+                    "averageSpeedValue": "104 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E53405331K000002 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E53405331K000002"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "the most serious event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-05-15T08:37:49.000Z To 2021-05-15T08:38:18.000Z",
+                    "maxSpeedValue": "109 km/h",
+                    "averageSpeedValue": "104 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E53405331K000002 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E53405331K000002"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "the most serious event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-06-15T09:08:47.000Z To 2021-06-15T09:09:05.000Z",
+                    "maxSpeedValue": "107 km/h",
+                    "averageSpeedValue": "104 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E53405331K000002 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E53405331K000002"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "the most serious event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2021-10-02T06:30:04.000Z To 2021-10-02T06:30:35.000Z",
+                    "maxSpeedValue": "109 km/h",
+                    "averageSpeedValue": "105 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E53405331K000002 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E53405331K000002"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "the most serious event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-04-04T16:31:29.000Z To 2022-04-04T16:31:51.000Z",
+                    "maxSpeedValue": "115 km/h",
+                    "averageSpeedValue": "107 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E51372045G000001 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E51372045G000001"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "the most serious event for one of the last 10 days of occurrence",
+                    "eventTime": "From 2022-06-07T14:08:31.000Z To 2022-06-07T14:08:57.000Z",
+                    "maxSpeedValue": "111 km/h",
+                    "averageSpeedValue": "106 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E51372045G000001 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E51372045G000001"
+                    },
+                    "similarEventsNumber": 1
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "one of the 5 most serious events over the last 365 days",
+                    "eventTime": "From 2021-10-02T06:30:04.000Z To 2021-10-02T06:30:35.000Z",
+                    "maxSpeedValue": "109 km/h",
+                    "averageSpeedValue": "105 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E53405331K000002 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E53405331K000002"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "one of the 5 most serious events over the last 365 days",
+                    "eventTime": "From 2022-04-04T16:31:29.000Z To 2022-04-04T16:31:51.000Z",
+                    "maxSpeedValue": "115 km/h",
+                    "averageSpeedValue": "107 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E51372045G000001 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E51372045G000001"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "one of the 5 most serious events over the last 365 days",
+                    "eventTime": "From 2022-06-07T14:08:31.000Z To 2022-06-07T14:08:57.000Z",
+                    "maxSpeedValue": "111 km/h",
+                    "averageSpeedValue": "106 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E51372045G000001 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E51372045G000001"
+                    },
+                    "similarEventsNumber": 0
+                },
+                {
+                    "title": "VuOverspeedingEventRecord",
+                    "eventType": "7 - General events: Over speeding",
+                    "eventRecordPurpose": "the first event or fault having occurred after the last calibration",
+                    "eventTime": "From 2021-05-12T07:44:07.000Z To 2021-05-12T07:44:11.000Z",
+                    "maxSpeedValue": "110 km/h",
+                    "averageSpeedValue": "104 km/h",
+                    "cardNumberDriverSlotBegin": {
+                        "title": "E53405331K000002 (Spain, Driver Card)",
+                        "cardType": "Driver Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "E53405331K000002"
+                    },
+                    "similarEventsNumber": 0
+                }
+            ]
+        },
+        "VuTimeAdjustmentRecord": {
+            "records": [
+                {
+                    "title": "VuTimeAdjustmentRecord",
+                    "oldTimeValue": "1972-04-30T00:02:15.000Z",
+                    "newTimeValue": "2007-12-13T02:40:07.000Z",
+                    "workshopName": "Knh\u0001\u000fE53405331K000002\u0001\u0007\u0004`]`zmh\u0001\u000f",
+                    "workshopAddress": "E53405331K000002\u0001\u0007\u0004`Èn\u001f`Èn1kh\u0001\u000fE5340",
+                    "workshopCardNumber": {
+                        "title": "31K000002\u0001\u0007\u0004aWül (Yugoslavia, RFU: 53)",
+                        "cardType": "RFU: 53",
+                        "cardIssuingMemberState": "Yugoslavia",
+                        "cardNumber": "31K000002\u0001\u0007\u0004aWül"
+                    }
+                },
+                {
+                    "title": "VuTimeAdjustmentRecord",
+                    "oldTimeValue": "2021-10-02T06:30:35.000Z",
+                    "newTimeValue": "2028-03-02T08:21:35.000Z",
+                    "workshopName": "E53405331K000002\u0001\u0007\u0004bK\u001dabK\u001dwsk\u0001\u000fE5137",
+                    "workshopAddress": "2045G000001\u0001\u0007\u0004b[ßb[ùoj\u0001\u000fE51372045G",
+                    "workshopCardNumber": {
+                        "title": "0001\u0001\u0007\u0005aWülaWüm (Turkey, RFU: 48)",
+                        "cardType": "RFU: 48",
+                        "cardIssuingMemberState": "Turkey",
+                        "cardNumber": "0001\u0001\u0007\u0005aWülaWüm"
+                    }
+                },
+                {
+                    "title": "VuTimeAdjustmentRecord",
+                    "oldTimeValue": "2025-10-28T18:45:25.000Z",
+                    "newTimeValue": "1998-04-14T10:02:24.000Z",
+                    "workshopName": "5331K000002\u0000\u0007\u0005bK\u001dabK\u001dwsk\u0001\u000fE51372045G",
+                    "workshopAddress": "000001\u0000\u0007\u0005b[ßb[ùoj\u0001\u000fE51372045G00000",
+                    "workshopCardNumber": {
+                        "title": "\u0007\u0006`G`Knh\u0001\u000fE5 (No information available, RFU: 49)",
+                        "cardType": "RFU: 49",
+                        "cardIssuingMemberState": "No information available",
+                        "cardNumber": "\u0007\u0006`G`Knh\u0001\u000fE5"
+                    }
+                },
+                {
+                    "title": "VuTimeAdjustmentRecord",
+                    "oldTimeValue": "1997-03-22T19:17:09.000Z",
+                    "newTimeValue": "1997-03-22T01:09:31.000Z",
+                    "workshopName": "000002\u0000\u0000cÁs23$ÓÕÀG\u001fâ& Yø\u0001½çH­ñp\u001b\r+\u0016",
+                    "workshopAddress": "Ñ?ôýúÿJ\u0012\u0017\r+ÊëÍY¼\u0015\u0018À@«$\u0007\u0005÷oú.B\u000b¡",
+                    "workshopCardNumber": {
+                        "title": "ÁhSË\u0019o÷YÁðbM<¦ (Iceland, RFU: 120)",
+                        "cardType": "RFU: 120",
+                        "cardIssuingMemberState": "Iceland",
+                        "cardNumber": "ÁhSË\u0019o÷YÁðbM<¦"
+                    }
+                },
+                {
+                    "title": "VuTimeAdjustmentRecord",
+                    "oldTimeValue": "2006-10-31T19:27:17.000Z",
+                    "newTimeValue": "2054-04-18T20:05:24.000Z",
+                    "workshopName": "§Sg\u0007²1Pöç!>®II¸µ¹V^ôt\u0006?UD \"èVøñ",
+                    "workshopAddress": "iÇv\u0004\u0005 båÈ\u001c11112210//.../.--,,++,,---",
+                    "workshopCardNumber": {
+                        "title": "\u001c\u0016\u0013\u0010\f\t\u0006\u0005\u0004\u0002\u0000\u0000\u0000\u0000\u0000\u0000 (Republic of Moldova, RFU: 40)",
+                        "cardType": "RFU: 40",
+                        "cardIssuingMemberState": "Republic of Moldova",
+                        "cardNumber": "\u001c\u0016\u0013\u0010\f\t\u0006\u0005\u0004\u0002\u0000\u0000\u0000\u0000\u0000\u0000"
+                    }
+                },
+                {
+                    "title": "VuTimeAdjustmentRecord",
+                    "oldTimeValue": "undefined",
+                    "newTimeValue": "undefined",
+                    "workshopName": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000båÈX\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\b\f\r\u000e\u0011\u0014\u0017\u0018",
+                    "workshopAddress": "\u0018\u0019\u001b\u001c\u001c\u001c\u001c\u001d\u001d\u001d\u001e\u001e\u001e\u001e\u001f!$&(*-024566655555567",
+                    "workshopCardNumber": {
+                        "title": "È9;=>@AABCDDEEF (229 - Reserved for future use, RFU: 98)",
+                        "cardType": "RFU: 98",
+                        "cardIssuingMemberState": "229 - Reserved for future use",
+                        "cardNumber": "È9;=>@AABCDDEEF"
+                    }
+                },
+                {
+                    "title": "VuTimeAdjustmentRecord",
+                    "oldTimeValue": "2007-05-13T17:18:00.000Z",
+                    "newTimeValue": "2008-12-18T13:04:10.000Z",
+                    "workshopName": "JIIHHGGGFGHIKLMMMLLLKKKLLMNOOPPOONNN",
+                    "workshopAddress": "MMbåÈÐMMNNNNNOOPOOOONNNNMMMLLMMMNOPQ",
+                    "workshopCardNumber": {
+                        "title": "STUUUUUVVVVVVVVV (83 - Reserved for future use, RFU: 82)",
+                        "cardType": "RFU: 82",
+                        "cardIssuingMemberState": "83 - Reserved for future use",
+                        "cardNumber": "STUUUUUVVVVVVVVV"
+                    }
+                }
+            ]
+        }
+    },
+    "VuDetailedSpeedData": {
+        "title": "Speed Data"
+    },
+    "VuTechnical": {
+        "title": "Technical Data",
+        "vuManufacturerName": "Continental Automotive GmbH",
+        "vuManufacturerAddress": "H.-Hertz-Str.45 78052 VS-Villingen",
+        "vuPartNumber": "1381.7550303002",
+        "vuSerialNumber": {
+            "title": "596586 (2020-05) Vehicle Unit, Continental Automotive GmbH (formerly Siemens AG, before that Siemens VDO Automotive and before that Siemens Automotive)",
+            "serialNumber": 596586,
+            "date": {
+                "title": "2020-05",
+                "encodedDate": "05 20"
+            }
+        },
+        "equipmentType": "Motion Sensor",
+        "manufacturerCode": "Continental Automotive GmbH (formerly Siemens AG, before that Siemens VDO Automotive and before that Siemens Automotive)",
+        "vuSoftwareVersion": "3037",
+        "vuSoftInstallationDate": "2020-05-11T14:56:38.000Z",
+        "vuManufacturingDate": "2020-05-11",
+        "vuApprovalNumber": "e1-84",
+        "sensorSerialNumber": {
+            "title": "13120935 (2015-04) Motion Sensor, Continental Automotive GmbH (formerly Siemens AG, before that Siemens VDO Automotive and before that Siemens Automotive)",
+            "serialNumber": 13120935,
+            "date": {
+                "title": "2015-04",
+                "encodedDate": "04 15"
+            }
+        },
+        "sensorApprovalNumber": "e1-175",
+        "sensorPairingDateFirst": "2016-04-28T08:50:36.000Z",
+        "VuCalibrationRecord": {
+            "records": [
+                {
+                    "title": "VuCalibrationRecord",
+                    "calibrationPurpose": "activation: recording of calibration parameters known, at the moment of the VU activation",
+                    "workshopName": "SOLUCIONES TECNICAS PARA VEHICULOS",
+                    "workshopAddress": "CALLE DE GUILLERMO MESA, 14 PARACU",
+                    "workshopCardNumber": {
+                        "title": "EB86731296000005 (Spain, Workshop Card)",
+                        "cardType": "Workshop Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "EB86731296000005"
+                    },
+                    "workshopCardExpiryDate": "2021-06-02",
+                    "vehicleIdentificationNumber": "LZYTCTE60F1047099",
+                    "vehicleRegistrationIdentification": {
+                        "title": "5104JNL (Spain)",
+                        "vehicleRegistrationNation": "Spain",
+                        "vehicleRegistrationNumber": "5104JNL"
+                    },
+                    "wVehicleCharacteristicConstant": "8831 Impulses/km",
+                    "kConstantOfRecordingEquipment": "8831 Impulses/km",
+                    "lTyreCircumference": "21200 /8 mm",
+                    "tyreSize": "265-70R19.5",
+                    "authorisedSpeed": "100 km/h",
+                    "oldOdometerValue": "219761 km",
+                    "newOdometerValue": "16777215 km",
+                    "oldTimeValue": "2020-11-13T12:16:40.000Z",
+                    "newTimeValue": "2106-02-07T06:28:15.000Z",
+                    "nextCalibrationDate": "2022-11-13T18:00:00.000Z"
+                },
+                {
+                    "title": "VuCalibrationRecord",
+                    "calibrationPurpose": "first installation: first calibration of the VU after its activation",
+                    "workshopName": "SOLUCIONES TECNICAS PARA VEHICULOS",
+                    "workshopAddress": "CALLE DE GUILLERMO MESA, 14 PARACU",
+                    "workshopCardNumber": {
+                        "title": "EB86731296000005 (Spain, Workshop Card)",
+                        "cardType": "Workshop Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "EB86731296000005"
+                    },
+                    "workshopCardExpiryDate": "2021-06-02",
+                    "vehicleIdentificationNumber": "LZYTCTE60F1047099",
+                    "vehicleRegistrationIdentification": {
+                        "title": "5104JNL (Spain)",
+                        "vehicleRegistrationNation": "Spain",
+                        "vehicleRegistrationNumber": "5104JNL"
+                    },
+                    "wVehicleCharacteristicConstant": "8831 Impulses/km",
+                    "kConstantOfRecordingEquipment": "8831 Impulses/km",
+                    "lTyreCircumference": "21200 /8 mm",
+                    "tyreSize": "265-70R19.5",
+                    "authorisedSpeed": "100 km/h",
+                    "oldOdometerValue": "219761 km",
+                    "newOdometerValue": "16777215 km",
+                    "oldTimeValue": "2020-11-13T12:16:40.000Z",
+                    "newTimeValue": "2106-02-07T06:28:15.000Z",
+                    "nextCalibrationDate": "2022-11-13T18:00:00.000Z"
+                },
+                {
+                    "title": "VuCalibrationRecord",
+                    "calibrationPurpose": "installation: first calibration of the VU in the current vehicle",
+                    "workshopName": "SOLUCIONES TECNICAS PARA VEHICULOS",
+                    "workshopAddress": "CALLE DE GUILLERMO MESA, 14 PARACU",
+                    "workshopCardNumber": {
+                        "title": "EB86731296000005 (Spain, Workshop Card)",
+                        "cardType": "Workshop Card",
+                        "cardIssuingMemberState": "Spain",
+                        "cardNumber": "EB86731296000005"
+                    },
+                    "workshopCardExpiryDate": "2021-06-02",
+                    "vehicleIdentificationNumber": "LZYTCTE60F1047099",
+                    "vehicleRegistrationIdentification": {
+                        "title": "5104JNL (Spain)",
+                        "vehicleRegistrationNation": "Spain",
+                        "vehicleRegistrationNumber": "5104JNL"
+                    },
+                    "wVehicleCharacteristicConstant": "8831 Impulses/km",
+                    "kConstantOfRecordingEquipment": "8831 Impulses/km",
+                    "lTyreCircumference": "21200 /8 mm",
+                    "tyreSize": "265-70R19.5",
+                    "authorisedSpeed": "100 km/h",
+                    "oldOdometerValue": "219761 km",
+                    "newOdometerValue": "16777215 km",
+                    "oldTimeValue": "2020-11-13T12:16:40.000Z",
+                    "newTimeValue": "2106-02-07T06:28:15.000Z",
+                    "nextCalibrationDate": "2022-11-13T18:00:00.000Z"
+                }
+            ]
+        }
+    }
+}
