@@ -12,6 +12,7 @@ test('convert ddd to json', () => {
     let data = FileUtil.readFileData('tests/data/Input.ddd');
     let ef = EsmFile.parseData(data);
 
+    console.log('ef', ef)
     let jsonReport = new JsonReporter();
     ef.printOn(jsonReport);
 

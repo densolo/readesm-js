@@ -29,7 +29,7 @@ import EncryptedCertificate from 'DataTypes/EncryptedCertificate';
 export default class VuOverview extends VuBlock {
 
     static BLOCK_TYPE = 0x1;
-    
+
 
     memberStateCertificate: EncryptedCertificate;
     vuCertificate: EncryptedCertificate;
@@ -43,21 +43,21 @@ export default class VuOverview extends VuBlock {
     companyOrWorkshopName: string;
     vuCompanyLocksRecord: VuCompanyLocksRecord[];
     vuControlActivityRecord: VuControlActivityRecord[];
-    
+
     constructor(data: ArrayBuffer) {
         super(data);
 
 
-        this.memberStateCertificate = new EncryptedCertificate(data.slice(0))
-        this.vuCertificate = new EncryptedCertificate(data.slice(194))
-        this.vehicleIdentificationNumber = DataReader.readString(data, 388, 17).toString();
-        this.vehicleRegistrationIdentification = new VehicleRegistration(data.slice(405))
-        this.currentDateTime = new TimeReal(data.slice(420))
-        this.vuDownloadablePeriod = new Timespan(data.slice(424))
-        this.CardSlotsStatus = DataReader.readUint8(data, 432);
-        this.downloadingTime = new TimeReal(data.slice(433))
-        this.cardNumber = new FullCardNumber(data.slice(437))
-        this.companyOrWorkshopName = DataReader.readCodePageString(data, 455, 36).toString();    
+        this.memberStateCertificate = new EncryptedCertificate(data.slice(2))
+        this.vuCertificate = new EncryptedCertificate(data.slice(196))
+        this.vehicleIdentificationNumber = DataReader.readString(data, 390, 17).toString();
+        this.vehicleRegistrationIdentification = new VehicleRegistration(data.slice(407))
+        this.currentDateTime = new TimeReal(data.slice(422))
+        this.vuDownloadablePeriod = new Timespan(data.slice(426))
+        this.CardSlotsStatus = DataReader.readUint8(data, 434);
+        this.downloadingTime = new TimeReal(data.slice(435))
+        this.cardNumber = new FullCardNumber(data.slice(439))
+        this.companyOrWorkshopName = DataReader.readCodePageString(data, 457, 36).toString();
     }
 
     className() {
@@ -68,9 +68,9 @@ export default class VuOverview extends VuBlock {
         return "";
     }
 
-    
+
     size() {
-        return 620;
+        return 721;
     }
 
 
