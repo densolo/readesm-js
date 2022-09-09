@@ -5,9 +5,10 @@ import Block from 'DataTypes/Block';
 export default class TopLevelBlock extends Block {
 
     public static BLOCK_TYPE: number = 0;
-    
+
     validSignature: boolean;
     hasSignature: boolean;
+    nextBlock: number
 
     constructor() {
         super();
@@ -17,6 +18,6 @@ export default class TopLevelBlock extends Block {
     }
 
     getBlockType() {
-        return (<typeof TopLevelBlock>this.constructor).BLOCK_TYPE;        
+        return (<typeof TopLevelBlock>this.constructor).BLOCK_TYPE;
     }
 }

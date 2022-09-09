@@ -25,17 +25,17 @@ import TimeReal from 'DataTypes/TimeReal';
 export default class VuDetailedSpeedBlock extends DataType {
 
     static BLOCK_TYPE = 0;
-    
+
 
     speedBlockBeginDate: TimeReal;
     speedsPerSecond: RawData;
     static staticSize: number = 64;
-    
+
     constructor(data: ArrayBuffer) {
         super(data);
 
         this.speedBlockBeginDate = new TimeReal(data.slice(0));
-        this.speedsPerSecond = DataReader.readRawData(data, 4, 60);    
+        this.speedsPerSecond = DataReader.readRawData(data, 4, 60);
     }
 
     className() {
@@ -43,7 +43,7 @@ export default class VuDetailedSpeedBlock extends DataType {
     }
 
     title() {
-        return "";
+        return "Speed";
     }
 
     size() {

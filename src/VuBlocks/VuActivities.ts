@@ -27,7 +27,7 @@ import SpecificConditionRecord from 'DataTypes/SpecificConditionRecord';
 export default class VuActivities extends VuBlock {
 
     static BLOCK_TYPE = 0x2;
-    
+
 
     timeReal: TimeReal;
     odometerValueMidnight: number;
@@ -35,13 +35,13 @@ export default class VuActivities extends VuBlock {
     activityChangeInfo: ActivityChangeInfo[];
     vuPlaceDailyWorkPeriodRecord: VuPlaceDailyWorkPeriodRecord[];
     specificConditionRecord: SpecificConditionRecord[];
-    
+
     constructor(data: ArrayBuffer) {
         super(data);
 
 
-        this.timeReal = new TimeReal(data.slice(0))
-        this.odometerValueMidnight = DataReader.readUint24(data, 4);    
+        this.timeReal = new TimeReal(data.slice(2))
+        this.odometerValueMidnight = DataReader.readUint24(data, 6);
     }
 
     className() {
@@ -49,12 +49,12 @@ export default class VuActivities extends VuBlock {
     }
 
     title() {
-        return "";
+        return "Activity";
     }
 
-    
+
     size() {
-        return 171;
+        return 144;
     }
 
 

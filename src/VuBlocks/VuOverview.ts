@@ -65,7 +65,7 @@ export default class VuOverview extends VuBlock {
     }
 
     title() {
-        return "";
+        return "Overview";
     }
 
 
