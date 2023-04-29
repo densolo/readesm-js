@@ -10,8 +10,8 @@ export default class TopLevelBlock extends Block {
     hasSignature: boolean;
     nextBlock: number
 
-    constructor() {
-        super();
+    constructor(data) {
+        super(data);
 
         this.validSignature = false;
         this.hasSignature = false;

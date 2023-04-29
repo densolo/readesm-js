@@ -4,16 +4,9 @@
 // or derive a class
 
 
-import * as padStart from 'lodash/padStart';
-import Block from 'DataTypes/Block';
 import DataReader from 'utils/DataReader';
-import Converter from 'utils/Converter';
 import QString from 'utils/QString';
-import RawData from 'DataTypes/RawData';
-import CardBlock from 'CardBlocks/CardBlock';
 import VuBlock from 'VuBlocks/VuBlock';
-import DataType from 'DataTypes/DataType';
-import FormatStrings from 'utils/FormatStrings';
 import Reporter from 'Reporter/Reporter';
 import {tr} from 'utils/Translation';
 
@@ -24,12 +17,14 @@ import VuControlActivityRecord from 'DataTypes/VuControlActivityRecord';
 import VuCompanyLocksRecord from 'DataTypes/VuCompanyLocksRecord';
 import TimeReal from 'DataTypes/TimeReal';
 import EncryptedCertificate from 'DataTypes/EncryptedCertificate';
+import Subblocks from "../DataTypes/Subblocks";
 
 
 export default class VuOverview extends VuBlock {
 
     static BLOCK_TYPE = 0x1;
-
+    static START_OF_BLOCKS = 493;
+    static SIGNATURE_TREP1 = 128;
 
     memberStateCertificate: EncryptedCertificate;
     vuCertificate: EncryptedCertificate;
@@ -41,8 +36,8 @@ export default class VuOverview extends VuBlock {
     downloadingTime: TimeReal;
     cardNumber: FullCardNumber;
     companyOrWorkshopName: string;
-    vuCompanyLocksRecord: VuCompanyLocksRecord[];
-    vuControlActivityRecord: VuControlActivityRecord[];
+    vuCompanyLocksRecord: Subblocks<VuCompanyLocksRecord>;
+    vuControlActivityRecord: Subblocks<VuControlActivityRecord>;
 
     constructor(data: ArrayBuffer) {
         super(data);
@@ -58,6 +53,10 @@ export default class VuOverview extends VuBlock {
         this.downloadingTime = new TimeReal(data.slice(435))
         this.cardNumber = new FullCardNumber(data.slice(439))
         this.companyOrWorkshopName = DataReader.readCodePageString(data, 457, 36).toString();
+        let pos = VuOverview.START_OF_BLOCKS
+        this.vuCompanyLocksRecord = DataReader.readSubblocksByCount<VuCompanyLocksRecord>(VuCompanyLocksRecord, data.slice(pos + 1), 0, (DataReader.readUint8(data, pos)));
+        pos += this.vuCompanyLocksRecord.size() + 1
+        this.vuControlActivityRecord = DataReader.readSubblocksByCount<VuControlActivityRecord>(VuControlActivityRecord, data.slice(pos + 1), 0, (DataReader.readUint8(data, pos)));
     }
 
     className() {
@@ -70,7 +69,8 @@ export default class VuOverview extends VuBlock {
 
 
     size() {
-        return 721;
+        return VuOverview.START_OF_BLOCKS +
+            this.vuCompanyLocksRecord.size() + this.vuControlActivityRecord.size() + 2 + VuOverview.SIGNATURE_TREP1
     }
 
 
