@@ -1,5 +1,5 @@
 
-import DataReader from 'utils/DataReader';    
+import DataReader from 'utils/DataReader';
 import VuBlock from 'VuBlocks/VuBlock';
 import Converter from 'utils/Converter';
 
@@ -16,14 +16,14 @@ import BlockParseError from 'DataTypes/BlockParseError';
 
 
 export function vuBlockFactory(data, pos) {
-    var blockType = DataReader.readUint8(data, pos + 1);
+    const blockType = DataReader.readUint8(data, pos + 1);
     //console.log("vuBlockFactory: " + Converter.dec2hexString(blockType));
     data = data.slice(pos);
 
-    if (data.byteLength < 2 || data[0] != 0x76) {
+    if (data.byteLength < 2 || DataReader.readUint8(data, 0) != 0x76) {
         return new VuBlock(data);
     }
-    
+
     switch (blockType) {
         case VuOverview.BLOCK_TYPE: {
             return new VuOverview(data);

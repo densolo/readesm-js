@@ -27,7 +27,7 @@ import ExtendedSerialNumber from 'DataTypes/ExtendedSerialNumber';
 export default class VuTechnical extends VuBlock {
 
     static BLOCK_TYPE = 0x5;
-    
+
 
     vuManufacturerName: string;
     vuManufacturerAddress: string;
@@ -41,22 +41,22 @@ export default class VuTechnical extends VuBlock {
     sensorApprovalNumber: string;
     sensorPairingDateFirst: TimeReal;
     vuCalibrationRecord: Subblocks<VuCalibrationRecord>;
-    
+
     constructor(data: ArrayBuffer) {
         super(data);
 
-        this.vuManufacturerName = DataReader.readCodePageString(data, 0, 36).toString();
-        this.vuManufacturerAddress = DataReader.readCodePageString(data, 36, 36).toString();
-        this.vuPartNumber = DataReader.readString(data, 72, 16).toString();
-        this.vuSerialNumber = new ExtendedSerialNumber(data.slice(88));
-        this.vuSoftwareVersion = DataReader.readString(data, 96, 4).toString();
-        this.vuSoftInstallationDate = new TimeReal(data.slice(100));
-        this.vuManufacturingDate = new TimeReal(data.slice(104));
-        this.vuApprovalNumber = DataReader.readString(data, 108, 8).toString();
-        this.sensorSerialNumber = new ExtendedSerialNumber(data.slice(116));
-        this.sensorApprovalNumber = DataReader.readString(data, 124, 8).toString();
-        this.sensorPairingDateFirst = new TimeReal(data.slice(132));
-        this.vuCalibrationRecord = DataReader.readSubblocksByCount<VuCalibrationRecord>(VuCalibrationRecord, data.slice(136 + 1), 0, (DataReader.readUint8(data, 136)));    
+        this.vuManufacturerName = DataReader.readCodePageString(data, 2, 36).toString();
+        this.vuManufacturerAddress = DataReader.readCodePageString(data, 38, 36).toString();
+        this.vuPartNumber = DataReader.readString(data, 74, 16).toString();
+        this.vuSerialNumber = new ExtendedSerialNumber(data.slice(90));
+        this.vuSoftwareVersion = DataReader.readString(data, 98, 4).toString();
+        this.vuSoftInstallationDate = new TimeReal(data.slice(102));
+        this.vuManufacturingDate = new TimeReal(data.slice(106));
+        this.vuApprovalNumber = DataReader.readString(data, 110, 8).toString();
+        this.sensorSerialNumber = new ExtendedSerialNumber(data.slice(118));
+        this.sensorApprovalNumber = DataReader.readString(data, 126, 8).toString();
+        this.sensorPairingDateFirst = new TimeReal(data.slice(134));
+        this.vuCalibrationRecord = DataReader.readSubblocksByCount<VuCalibrationRecord>(VuCalibrationRecord, data.slice(138 + 1), 0, (DataReader.readUint8(data, 138)));
     }
 
     className() {
@@ -68,7 +68,7 @@ export default class VuTechnical extends VuBlock {
     }
 
     size() {
-        return 137;
+        return 267 + this.vuCalibrationRecord.size();
     }
 
     toString() {

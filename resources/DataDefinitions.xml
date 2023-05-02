@@ -1,5 +1,8 @@
 <xml>
-	<comment>These data definitions are used to read the data stored in digital tachograph equipment.  They are defined in commission regulation (EC) No 1360/2002 of June 13th, 2002.  The generator script "generate.py" creates code out of these definitions that is then used in the ReadESM project, http://readesm.sourceforge.net/
+	<comment>These data definitions are used to read the data stored in digital tachograph equipment.
+		They are defined in commission regulation (EC) No 1360/2002 of June 13th, 2002.
+		The generator script "generate.py" creates code out of these definitions that is then used in the ReadESM project,
+		http://readesm.sourceforge.net/
 	You may use these definitions under the terms of the GNU General Public License, Version 3.0.
 	Following the naming in Qt and the one mostly used in the commission regulation, class names are capitalized, and data members use a lower-case first letter.</comment>
 

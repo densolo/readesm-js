@@ -1,6 +1,6 @@
 {
-  "name": "readesm-js",
-  "version": "1.0.12",
+  "name": "readesm",
+  "version": "1.0.17",
   "description": "JavaScript implementation of the reader of ESM tachograph files from https://sourceforge.net/p/readesm/code/HEAD/tree/",
   "main": "dist/main.EsmDownloader.lib.js",
   "types": "dist/main.EsmDownloader.d.ts",
@@ -20,6 +20,7 @@
     "pdfmake": "^0.1.65"
   },
   "directories": {
+    "doc": "docs",
     "test": "tests"
   },
   "devDependencies": {

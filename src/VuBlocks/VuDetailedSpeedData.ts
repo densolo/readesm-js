@@ -18,19 +18,21 @@ import Reporter from 'Reporter/Reporter';
 import {tr} from 'utils/Translation';
 
 import VuDetailedSpeedBlock from 'DataTypes/VuDetailedSpeedBlock';
+import VuFaultRecord from "../DataTypes/VuFaultRecord";
+import Subblocks from "../DataTypes/Subblocks";
 
 
 export default class VuDetailedSpeedData extends VuBlock {
 
     static BLOCK_TYPE = 0x4;
-    
 
-    vuDetailedSpeedBlock: VuDetailedSpeedBlock[];
-    
+    vuDetailedSpeedBlock: Subblocks<VuDetailedSpeedBlock>;
+
     constructor(data: ArrayBuffer) {
         super(data);
-
-    
+        this.vuDetailedSpeedBlock = DataReader.readSubblocksByCount<VuDetailedSpeedBlock>(VuDetailedSpeedBlock,
+            data.slice(4), 0, (DataReader.readUint8(data, 2)));
+        this.nextBlock = this.getNext(data, 0x5)
     }
 
     className() {
@@ -38,12 +40,11 @@ export default class VuDetailedSpeedData extends VuBlock {
     }
 
     title() {
-        return "";
+        return "Speed Data";
     }
 
-    
     size() {
-        return 64;
+        return this.nextBlock
     }
 
 

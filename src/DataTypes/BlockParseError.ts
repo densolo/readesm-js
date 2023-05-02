@@ -8,11 +8,11 @@ import {tr} from 'utils/Translation';
 export default class BlockParseError extends TopLevelBlock {
 
     errorMessage: string;
-    
-    constructor(errorMessage: ArrayBuffer|string) {
-        super();
 
-        this.errorMessage = errorMessage.toString();  
+    constructor(errorMessage: ArrayBuffer|string) {
+        super(errorMessage);
+
+        this.errorMessage = errorMessage.toString();
     }
 
     className() {

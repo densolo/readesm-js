@@ -1,7 +1,5 @@
 
-import isEmpty from 'lodash/isEmpty';
 import EsmFile from 'EsmFile';
-import HtmlReporter from 'Reporter/HtmlReporter';
 import JsonReporter from 'Reporter/JsonReporter';
 import FileUtil from 'utils/FileUtil';
 import * as _ from 'lodash';
@@ -12,6 +10,7 @@ test('convert ddd to json', () => {
     let data = FileUtil.readFileData('tests/data/Input.ddd');
     let ef = EsmFile.parseData(data);
 
+    console.log('ef', ef)
     let jsonReport = new JsonReporter();
     ef.printOn(jsonReport);
 
@@ -44,3 +43,11 @@ test('convert ddd to json', () => {
     }, null, 4));
 });
 
+test('convert tgd to json', () => {
+    let data = FileUtil.readFileData('tests/data/TachoFile_E53014218T000001_20230329_20230427.tgd');
+    console.log(EsmFile.parseData(data))
+    data = FileUtil.readFileData('tests/data/TachoFile_6976-KWH_20230329_20230427.tgd');
+    console.log(EsmFile.parseData(data))
+    data = FileUtil.readFileData('tests/data/TachoFile_4449-KCW_20230329_20230427.tgd');
+    console.log(EsmFile.parseData(data))
+});
